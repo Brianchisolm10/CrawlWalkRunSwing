@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crawl — Learn to Move Again</title>
+<meta name="description" content="52 drills. 4 levels. Zero equipment. The card deck that rebuilds balance, reaction, body control, and feel — one card a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F2F0EB; --ink:#16161A; --cobalt:#1D4ED8; --chalk:#FFF; --line:#DDDAD2;
+  --ecto:#7C3AED; --meso:#C2410C; --endo:#15803D;
+  --bal:#1D4ED8; --rea:#C2410C; --bod:#15803D; --fee:#7C3AED; --gold:#B8860B;
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--bone);
+  background-image:radial-gradient(#DAD7CE 1px, transparent 1px);
+  background-size:26px 26px;
+  color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.55;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.hidden{display:none!important}
+.mono{font-family:'Space Mono',monospace}
+img{display:block;max-width:100%}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60}
+.nav-in{max-width:1080px;margin:0 auto;padding:13px 20px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex-shrink:0;cursor:pointer}
+.logo b{font-family:'Anton';font-size:22px;text-transform:uppercase;font-weight:400}
+.nav-links{margin-left:auto;display:flex;gap:22px;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);text-decoration:none;cursor:pointer}
+.nav-links a:hover{color:var(--cobalt)}
+.nav-cta{background:var(--ink);color:var(--chalk)!important;padding:9px 16px;border-radius:999px}
+.nav-cta:hover{background:var(--cobalt)}
+.burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.mobile-menu{display:none;background:var(--chalk);border-bottom:1px solid var(--line);padding:8px 20px 16px}
+.mobile-menu a{display:block;padding:13px 4px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);cursor:pointer}
+.mobile-menu a:last-child{border-bottom:none}
+@media(max-width:760px){.nav-links{display:none}.burger{display:block}.mobile-menu.open{display:block}}
+
+/* ===== BUTTONS / TILES ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--chalk);font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:14px 26px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;transition:background .15s}
+.btn:hover{background:var(--cobalt)}
+.btn.blue{background:var(--cobalt)}
+.btn.blue:hover{background:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--chalk)}
+.tile{background:var(--chalk);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(22,22,26,.05);transition:transform .15s, box-shadow .15s}
+.tile.hov:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,22,26,.10)}
+.icon-sq{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--tint,#EEF2FE);flex-shrink:0}
+.kicker{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700}
+h1{font-family:'Anton';font-size:clamp(38px,8vw,72px);line-height:.94;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--cobalt)}
+section{padding:52px 0}
+.sec-head h2{font-family:'Anton';font-size:clamp(26px,5vw,42px);text-transform:uppercase;line-height:1}
+.sec-sub{font-size:15px;color:#555;max-width:580px;margin-top:12px}
+.photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.ph-credit{font-family:'Space Mono',monospace;font-size:9.5px;color:#aaa;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+
+/* ===== LANDING ===== */
+.hero{padding:48px 0 20px;display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.hero .sub{font-size:16px;color:#4a4a52;margin-top:14px;max-width:480px}
+.hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:520px){.hero-cta .btn{flex:1;min-width:140px}}
+.hero .photo{aspect-ratio:16/11}
+.showcase{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center;padding:34px;margin:8px 0}
+@media(max-width:820px){.showcase{grid-template-columns:1fr;padding:24px}}
+.showcase .photo{aspect-ratio:1/1;max-height:380px}
+.showcase h2{font-family:'Anton';font-size:clamp(24px,4.5vw,38px);text-transform:uppercase;line-height:1}
+.showcase p{font-size:14.5px;color:#555;margin-top:10px;max-width:440px}
+.showcase ul{list-style:none;margin-top:14px}
+.showcase li{font-size:13.5px;padding:5px 0 5px 20px;position:relative;color:#444}
+.showcase li::before{content:"→";position:absolute;left:0;color:var(--cobalt);font-weight:700}
+.mission-line{padding:36px;text-align:center;margin-bottom:8px}
+.mission-line h3{font-family:'Anton';font-size:clamp(20px,3.5vw,28px);text-transform:uppercase}
+.mission-line p{font-size:14px;color:#555;margin:8px auto 16px;max-width:480px}
+
+/* ===== POCKET TEST ===== */
+#pocket{position:fixed;right:18px;bottom:18px;z-index:80;width:300px;max-width:calc(100vw - 36px)}
+#pocket .pk-open{width:100%;padding:18px;text-align:left}
+#pocket .pk-head{display:flex;align-items:center;gap:10px}
+#pocket .pk-head .dot{width:9px;height:9px;border-radius:50%;background:var(--endo);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+#pocket .pk-kicker{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#888}
+#pocket h4{font-family:'Anton';font-size:19px;text-transform:uppercase;margin-top:8px}
+#pocket .cue{font-size:12.5px;color:#555;margin-top:5px}
+#pocket .dose{font-family:'Space Mono',monospace;font-size:10px;color:var(--gold);margin-top:8px;font-weight:700}
+#pocket .test-log{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
+#pocket .test-log button{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:9px 2px;border-radius:8px;border:1px solid var(--line);background:var(--bone);cursor:pointer}
+#pocket .test-log button:hover{background:var(--cobalt);color:var(--chalk);border-color:var(--cobalt)}
+#pocket .test-log button.sel{background:var(--endo);color:var(--chalk);border-color:var(--endo)}
+#pocket .pk-min{position:absolute;top:12px;right:14px;background:none;border:none;font-family:'Space Mono',monospace;font-size:14px;cursor:pointer;color:#999}
+#pocket .pk-pill{display:none;margin-left:auto;background:var(--ink);color:var(--chalk);border:none;border-radius:999px;padding:13px 20px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px rgba(22,22,26,.25);align-items:center;gap:8px}
+#pocket.min .pk-open{display:none}
+#pocket.min{width:auto}
+#pocket.min .pk-pill{display:inline-flex}
+#pocket .pk-pill .dot{width:8px;height:8px;border-radius:50%;background:#3FBF7F;animation:pulse 2s infinite}
+@media(max-width:520px){#pocket{right:12px;bottom:12px}}
+
+/* ===== LAB PAGE ===== */
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;grid-auto-rows:1fr;margin-top:24px}
+@media(max-width:900px){.feed{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.feed{grid-template-columns:1fr}}
+.fcard{padding:20px;cursor:pointer;display:flex;flex-direction:column;position:relative}
+.fcard .top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.fcard .kind{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.fcard h3{font-family:'Anton';font-size:20px;text-transform:uppercase;line-height:1.1}
+.fcard p{font-size:13px;color:#555;margin-top:7px}
+.fcard .spacer{flex:1;min-height:8px}
+.fcard .meta{font-family:'Space Mono',monospace;font-size:10px;color:#999;margin-top:12px;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center}
+.fcard .go{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--cobalt)}
+.fcard .done{position:absolute;top:14px;right:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:var(--endo);color:var(--chalk);padding:3px 8px;border-radius:999px}
+.poll-opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:9px;padding:10px 13px;margin-top:8px;font-family:'Space Grotesk';font-size:13px;font-weight:700;cursor:pointer}
+.poll-opt:hover:not(:disabled){background:var(--ink);color:var(--chalk);border-color:var(--ink)}
+.poll-thanks{font-family:'Space Mono',monospace;font-size:10px;color:var(--endo);margin-top:10px;font-weight:700}
+
+/* ===== EXPLAINER PAGE ===== */
+.exp-head{padding:44px 0 8px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;max-width:760px}
+.exp-head .icon-sq{width:64px;height:64px;border-radius:16px}
+.exp-head h1{font-size:clamp(28px,6vw,52px)}
+.exp-grid{margin-top:22px;max-width:820px}
+.exp-block{padding:24px 0;border-bottom:1px solid var(--line)}
+.exp-block:last-child{border-bottom:none}
+.exp-block h4{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--cobalt);margin-bottom:10px}
+.exp-block p{font-size:14px;color:#444}
+.exp-block ul{list-style:none;margin-top:4px}
+.exp-block li{font-size:13.5px;padding:6px 0 6px 18px;position:relative;color:#444}
+.exp-block li::before{content:"→";position:absolute;left:0;color:var(--cobalt);font-weight:700}
+.exp-block li b{color:var(--ink)}
+.exp-cta{margin:28px 0 60px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* ===== DECK PAGE ===== */
+.deck-hero{padding:44px 0 10px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+@media(max-width:820px){.deck-hero{grid-template-columns:1fr}}
+.deck-hero .photo{aspect-ratio:4/5;max-height:440px}
+.flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:0;align-items:stretch;margin-top:26px}
+@media(max-width:760px){.flow{grid-template-columns:1fr}}
+.flow-step{padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.flow-step .icon-sq{margin-bottom:12px}
+.flow-step h4{font-family:'Anton';font-size:17px;text-transform:uppercase}
+.flow-step .stage{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:5px}
+.flow-step p{font-size:12.5px;color:#555;margin-top:7px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:#B7B3A9}
+@media(max-width:760px){.flow-arrow{transform:rotate(90deg);padding:6px 0}}
+.suit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:900px){.suit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.suit-grid{grid-template-columns:1fr}}
+.suit-cell{padding:20px}
+.suit-cell .icon-sq{margin-bottom:12px}
+.suit-cell h3{font-family:'Anton';font-size:18px;text-transform:uppercase}
+.suit-cell .n{font-family:'Space Mono',monospace;font-size:10px;color:#999;margin-top:2px}
+.suit-cell p{font-size:12.5px;color:#555;margin-top:8px}
+
+/* fascia section */
+section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gradient(#26262c 1px, transparent 1px);background-size:26px 26px}
+.fascia-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:26px}
+@media(max-width:820px){.fascia-grid{grid-template-columns:1fr}}
+.fascia-copy p{font-size:15px;color:#b8b8bf;margin-top:14px}
+.fascia-copy b{color:var(--chalk)}
+.tissue{border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin-top:20px}
+.tissue h4{font-family:'Anton';font-size:18px;text-transform:uppercase;color:var(--chalk)}
+.tissue p{font-size:13.5px;color:#b8b8bf;margin-top:5px}
+.fascia-note{margin-top:24px;border:1px dashed #4a4a52;border-radius:var(--r);padding:16px 18px;font-size:13.5px;color:#b8b8bf}
+.fascia-note b{color:var(--gold)}
+.ladder{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:820px){.ladder{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ladder{grid-template-columns:1fr}}
+.rung{border-left:4px solid var(--cobalt);padding:4px 0 4px 14px}
+.rung .lv{font-family:'Anton';font-size:22px;color:var(--cobalt)}
+.rung h4{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:2px 0 5px;color:var(--chalk)}
+.rung p{font-size:12px;color:#b8b8bf}
+
+/* video hub */
+.hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+@media(max-width:900px){.hub-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.hub-grid{grid-template-columns:1fr}}
+.vid{overflow:hidden;cursor:pointer}
+.vid .vthumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative;border-radius:var(--r) var(--r) 0 0}
+.vid.free .vthumb{background:var(--sc)}
+.vid.locked .vthumb{background:#E9E6DE}
+.vid .vbody{padding:11px 13px}
+.vid h4{font-family:'Anton';font-size:14px;text-transform:uppercase;line-height:1.1}
+.vid .vmeta{font-family:'Space Mono',monospace;font-size:9px;color:#999;margin-top:4px;text-transform:uppercase}
+.vid .flag{position:absolute;top:10px;left:10px;font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--ink);color:var(--chalk)}
+.vid.free .flag{background:var(--chalk);color:var(--ink)}
+.hub-note{margin-top:18px;border:1px dashed #b7b3a9;border-radius:var(--r);padding:15px 17px;font-size:13px;background:rgba(255,255,255,.6)}
+.social-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--chalk);border-radius:999px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;text-decoration:none;color:var(--ink);cursor:pointer}
+.social-btn:hover{background:var(--ink);color:var(--chalk)}
+
+/* mission/about */
+.page-head{padding:44px 0 8px;max-width:720px}
+.page-head .sub{font-size:16px;color:#4a4a52;margin-top:12px}
+.prose{max-width:660px;font-size:15px;color:#3a3a42}
+.prose p{margin-top:14px}
+.prose b{color:var(--ink)}
+.stat-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.stat{padding:18px 22px;flex:1;min-width:140px}
+.stat .num{font-family:'Anton';font-size:30px;color:var(--cobalt)}
+.stat .lab{font-family:'Space Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-top:2px}
+.creds{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cred{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;border:1px solid var(--line);background:var(--chalk);border-radius:999px;padding:8px 14px}
+.pack-tile{padding:30px 32px;margin:8px 0 40px}
+.pack-tile h3{font-family:'Anton';font-size:20px;text-transform:uppercase;letter-spacing:.01em}
+.pack-list{list-style:none;margin-top:16px}
+.pack-list li{position:relative;padding:10px 0 10px 30px;font-size:14.5px;line-height:1.4;color:#333;border-bottom:1px solid var(--line)}
+.pack-list li:last-child{border-bottom:none}
+.pack-list li:before{content:"✓";position:absolute;left:0;top:10px;color:var(--cobalt);font-weight:700;font-size:15px}
+.pack-note{margin-top:16px;font-size:12.5px;color:#777}
+.mission-photo{max-width:720px;margin-top:26px}
+.mission-photo .photo{aspect-ratio:16/10}
+
+/* quiz engine */
+.topbar{display:flex;align-items:center;gap:14px;padding:24px 0 8px}
+.back{background:var(--chalk);border:1px solid var(--line);border-radius:999px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;padding:9px 16px;cursor:pointer}
+.topbar .tt{font-family:'Anton';font-size:18px;text-transform:uppercase}
+.progressbar{height:6px;background:#E0DDD5;border-radius:3px;margin:16px 0 22px;overflow:hidden;max-width:760px}
+.progressbar div{height:100%;background:var(--qc,var(--cobalt));width:0%;transition:width .3s}
+.qwrap{max-width:760px}
+.qcard{padding:26px}
+.qnum{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--qc,var(--cobalt))}
+.scenario{font-family:'Space Mono',monospace;font-size:10px;background:var(--ink);color:var(--chalk);display:inline-block;padding:4px 10px;border-radius:999px;margin:12px 0 2px;letter-spacing:.08em;text-transform:uppercase}
+.qtext{font-family:'Anton';font-size:clamp(19px,4vw,25px);text-transform:uppercase;margin:10px 0 6px;line-height:1.15}
+.qhelp{font-size:13.5px;color:#666;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:10px;font-family:'Space Grotesk';font-size:15px;cursor:pointer}
+.opt:hover{background:var(--qc,var(--cobalt));color:var(--chalk);border-color:var(--qc,var(--cobalt))}
+.blend{padding:26px;margin-bottom:18px}
+.blend h2{font-family:'Anton';font-size:clamp(26px,5vw,38px);text-transform:uppercase;line-height:1}
+.blend .lead{font-size:15px;color:#444;margin-top:10px}
+.bars{margin-top:18px}
+.bar-row{display:grid;grid-template-columns:120px 1fr 46px;gap:10px;align-items:center;margin-bottom:10px}
+@media(max-width:480px){.bar-row{grid-template-columns:90px 1fr 42px}}
+.bar-row .lab{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase}
+.bar-track{height:12px;background:#E0DDD5;border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;transition:width .8s ease}
+.bar-row .pct{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-align:right}
+.type-card{padding:24px;margin-bottom:16px;border-left:6px solid var(--tc)}
+.type-card .tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);background:var(--tc);padding:4px 11px;border-radius:999px}
+.type-card h3{font-family:'Anton';font-size:23px;text-transform:uppercase;margin:10px 0 4px;color:var(--tc)}
+.type-card .what{font-size:14.5px;color:#3a3a42}
+.type-card h4{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:15px 0 8px;color:#555}
+.type-card ul{list-style:none}
+.type-card li{font-size:14px;padding:5px 0 5px 18px;position:relative;color:#333}
+.type-card li::before{content:"→";position:absolute;left:0;color:var(--tc);font-weight:700}
+.crawl-tie{margin-top:15px;background:var(--bone);border-radius:10px;padding:14px;font-size:13.5px}
+.crawl-tie b{color:var(--tc)}
+.share-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.share-btn{flex:1;min-width:150px;background:var(--chalk);border:1px solid var(--line);border-radius:999px;padding:12px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer}
+.share-btn:hover{background:var(--ink);color:var(--chalk)}
+.email-gate{border:1px dashed #b7b3a9;border-radius:var(--r);background:rgba(255,255,255,.7);padding:20px;margin-bottom:16px}
+.email-gate h4{font-family:'Anton';font-size:17px;text-transform:uppercase}
+.email-gate p{font-size:13px;color:#666;margin:6px 0 12px}
+.email-gate .row{display:flex;gap:8px;flex-wrap:wrap}
+.email-gate input{flex:1;min-width:180px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:'Space Grotesk';font-size:14px;background:var(--chalk)}
+.cta-block{background:var(--ink);color:var(--chalk);border-radius:var(--r);padding:26px;text-align:center}
+.cta-block h3{font-family:'Anton';font-size:23px;text-transform:uppercase}
+.cta-block p{font-size:14px;color:#b8b8bf;margin:8px 0 16px}
+.restart{display:block;margin:16px auto 0;background:none;border:none;font-family:'Space Mono',monospace;font-size:12px;color:#777;cursor:pointer;text-decoration:underline}
+
+/* ===== LAB v8 ===== */
+.lab-hero{border-radius:var(--r);overflow:hidden;background:var(--endo);color:var(--chalk);display:grid;grid-template-columns:1.4fr 1fr;margin-top:24px;cursor:pointer;transition:transform .15s, box-shadow .15s}
+.lab-hero:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(21,128,61,.28)}
+@media(max-width:720px){.lab-hero{grid-template-columns:1fr}}
+.lab-hero .lh-copy{padding:34px 30px}
+.lab-hero .lh-kind{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A7E3C1}
+.lab-hero h3{font-family:'Anton';font-size:clamp(28px,5vw,44px);text-transform:uppercase;line-height:.98;margin-top:10px}
+.lab-hero p{font-size:14.5px;color:#D3EEDD;margin-top:12px;max-width:420px}
+.lab-hero .lh-meta{display:flex;gap:14px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.lab-hero .lh-btn{background:var(--chalk);color:var(--endo);font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:12px 22px;border-radius:999px;border:none;cursor:pointer}
+.lab-hero .lh-tag{font-family:'Space Mono',monospace;font-size:11px;color:#A7E3C1;text-transform:uppercase;letter-spacing:.06em}
+.lab-hero .lh-art{position:relative;min-height:170px;background:#116A37}
+.lab-hero .lh-art svg{position:absolute;inset:0;width:100%;height:100%}
+.lab-hero .lh-think{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:26px 24px}
+.lab-hero .lh-think p{color:#fff;font-size:16.5px;line-height:1.5;font-weight:600;font-style:italic;margin:0}
+.lab-hero .lh-think span{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A7E3C1}
+.qz8 .qh .qthought{color:#fff;font-size:13.5px;line-height:1.45;font-weight:600;font-style:italic;margin:0;padding:34px 16px 12px;text-align:left}
+.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+@media(max-width:900px){.lab-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.lab-grid{grid-template-columns:1fr}}
+.qz8{border-radius:var(--r);overflow:hidden;background:var(--chalk);border:1px solid var(--line);cursor:pointer;display:flex;flex-direction:column;transition:transform .15s, box-shadow .15s}
+.qz8:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(22,22,26,.12)}
+.qz8 .qh{position:relative;min-height:110px;display:flex;align-items:center;justify-content:center}
+.qz8 .qh .knd{position:absolute;top:12px;left:14px;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.qz8 .qh .idx{position:absolute;top:10px;right:14px;font-family:'Anton';font-size:15px;color:rgba(255,255,255,.55)}
+.qz8 .qb{padding:18px;display:flex;flex-direction:column;flex:1}
+.qz8 h3{font-family:'Anton';font-size:20px;text-transform:uppercase;line-height:1.08}
+.qz8 p{font-size:13px;color:#555;margin-top:7px;flex:1}
+.qz8 .qm{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:'Space Mono',monospace;font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.06em}
+.qz8 .qm b{color:var(--cobalt);font-size:11px}
+.qz8 .done8{position:absolute;bottom:10px;left:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:rgba(255,255,255,.92);color:var(--ink);padding:3px 9px;border-radius:999px}
+.poll-banner{border-radius:var(--r);background:var(--ink);color:var(--chalk);padding:24px 26px;margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+@media(max-width:760px){.poll-banner{grid-template-columns:1fr}}
+.poll-banner .pb-kind{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.poll-banner h3{font-family:'Anton';font-size:clamp(19px,3.4vw,26px);text-transform:uppercase;margin-top:6px}
+.poll-banner p{font-size:13.5px;color:#b8b8bf;margin-top:4px}
+.poll-banner .pb-opts{display:flex;gap:8px;flex-wrap:wrap}
+.poll-banner .pb-opt{background:transparent;border:1px solid #4a4a52;color:var(--chalk);border-radius:999px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.poll-banner .pb-opt:hover:not(:disabled){background:var(--chalk);color:var(--ink);border-color:var(--chalk)}
+.poll-banner .pb-opt.sel{background:var(--endo);border-color:var(--endo)}
+.tools-head{display:flex;align-items:baseline;gap:12px;margin:34px 0 4px}
+.tools-head h3{font-family:'Anton';font-size:clamp(20px,3.6vw,28px);text-transform:uppercase}
+.tools-head span{font-family:'Space Mono',monospace;font-size:10.5px;color:#999;text-transform:uppercase;letter-spacing:.1em}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+@media(max-width:680px){.tool-grid{grid-template-columns:1fr}}
+.tool8{border-radius:var(--r);border:1px solid var(--line);background:var(--chalk);padding:22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;cursor:pointer;transition:transform .15s, box-shadow .15s}
+.tool8:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(22,22,26,.10)}
+.tool8 .tnum{font-family:'Anton';font-size:30px;color:var(--cobalt);background:#EEF2FE;border-radius:13px;padding:14px 16px;line-height:1}
+.tool8 h3{font-family:'Anton';font-size:19px;text-transform:uppercase}
+.tool8 p{font-size:12.5px;color:#555;margin-top:5px}
+.tool8 .tm{font-family:'Space Mono',monospace;font-size:10px;color:var(--cobalt);font-weight:700;margin-top:8px;text-transform:uppercase}
+.math-block{max-width:620px;margin-top:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--chalk);padding:22px}
+.math-block h4{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--cobalt)}
+.math-block .formula{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;background:var(--bone);border-radius:9px;padding:14px 16px;margin:12px 0;overflow-x:auto;white-space:nowrap}
+.math-block p{font-size:13.5px;color:#444;margin-top:8px}
+.math-block b{color:var(--ink)}
+.seg{display:flex;gap:8px;margin-top:6px}
+.seg button{flex:1;border:1px solid var(--line);background:var(--chalk);border-radius:11px;padding:12px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--chalk);border-color:var(--ink)}
+/* calculators */
+.calc-form{max-width:560px;margin-top:20px}
+.calc-form label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666;margin:14px 0 6px}
+.calc-form input{width:100%;border:1px solid var(--line);border-radius:11px;padding:13px 16px;font-family:'Space Grotesk';font-size:16px;background:var(--chalk)}
+.calc-result{max-width:560px;margin-top:22px;padding:24px}
+.calc-result .big{font-family:'Anton';font-size:46px;color:var(--cobalt);line-height:1}
+.calc-result .unit{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-top:2px}
+.calc-result .expl{font-size:14px;color:#444;margin-top:14px}
+.calc-result table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.calc-result td{padding:7px 4px;border-bottom:1px solid var(--line)}
+.calc-result td:last-child{text-align:right;font-family:'Space Mono',monospace;font-weight:700}
+/* legal */
+.legal{max-width:700px;font-size:14px;color:#3a3a42;padding-bottom:60px}
+.legal h3{font-family:'Anton';font-size:19px;text-transform:uppercase;margin:26px 0 8px}
+.legal p{margin-top:10px}
+.legal .tpl{border:1px dashed #b7b3a9;border-radius:var(--r);padding:14px 16px;font-size:12.5px;background:rgba(255,255,255,.6);margin-top:22px;color:#666}
+/* ===== FOOTER v8 ===== */
+footer{background:var(--ink);color:var(--chalk);margin-top:56px}
+.foot-in{max-width:1080px;margin:0 auto;padding:52px 20px 30px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #2E2E34}
+.foot-word{font-family:'Anton';font-size:clamp(44px,8vw,76px);line-height:.9;text-transform:uppercase}
+.foot-word span{color:var(--cobalt)}
+.foot-tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A92;margin-top:8px}
+.foot-news{min-width:280px;flex:1;max-width:400px}
+.foot-news h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8A92;margin-bottom:10px}
+.foot-news .row{display:flex;gap:8px}
+.foot-news input{flex:1;border:1px solid #3A3A42;border-radius:999px;padding:12px 18px;font-family:'Space Grotesk';font-size:14px;background:#1F1F25;color:var(--chalk)}
+.foot-news input::placeholder{color:#6A6A72}
+.foot-news .btn{padding:12px 20px;font-size:12px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:36px 0}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+.foot-col h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A92;margin-bottom:16px}
+.foot-col a{display:block;font-size:15px;color:#D6D6DC;text-decoration:none;padding:7px 0;cursor:pointer;transition:color .12s, transform .12s}
+.foot-col a:hover{color:var(--chalk);transform:translateX(4px)}
+.foot-col a::after{content:" →";opacity:0;transition:opacity .12s}
+.foot-col a:hover::after{opacity:1}
+.foot-bottom{border-top:1px solid #2E2E34;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.foot-legal{display:flex;gap:22px;flex-wrap:wrap}
+.foot-legal a{font-size:13px;color:#8A8A92;text-decoration:none;cursor:pointer}
+.foot-legal a:hover{color:var(--chalk)}
+.foot-copy{font-family:'Space Mono',monospace;font-size:10.5px;color:#6A6A72}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <span class="logo" onclick="showPage('home')">
+      <svg width="26" height="26" viewBox="0 0 26 26"><rect x="1" y="1" width="24" height="24" rx="6" fill="none" stroke="#16161A" stroke-width="2"/><circle cx="13" cy="17" r="3" fill="#1D4ED8"/><path d="M13 14 L13 7 M13 9 L8 12 M13 9 L18 12" stroke="#16161A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <b>Crawl</b>
+    </span>
+    <div class="nav-links">
+      <a onclick="showPage('deck')">The Deck</a>
+      <a onclick="showPage('lab')">The Lab</a>
+      <a onclick="showPage('mission')">The Mission</a>
+      <a onclick="showPage('about')">About</a>
+      <a class="nav-cta" onclick="preorder()">Preorder — $44</a>
+    </div>
+    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="26" height="20" viewBox="0 0 26 20"><line x1="1" y1="2" x2="25" y2="2" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="10" x2="25" y2="10" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="18" x2="25" y2="18" stroke="#16161A" stroke-width="3" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mmenu">
+    <a onclick="showPage('deck');toggleMenu(false)">The Deck</a>
+    <a onclick="showPage('lab');toggleMenu(false)">The Lab</a>
+    <a onclick="showPage('mission');toggleMenu(false)">The Mission</a>
+    <a onclick="showPage('about');toggleMenu(false)">About</a>
+    <a onclick="preorder();toggleMenu(false)">Preorder — $44</a>
+  </div>
+</nav>
+
+<!-- ================= LANDING ================= -->
+<div id="page-home">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="kicker">52 drills · 4 levels · zero equipment</div>
+        <h1>Learn to <em>Move</em> Again</h1>
+        <p class="sub">One card a day rebuilds the four skills your gym routine skips — balance, reaction, body control, and feel.</p>
+        <div class="hero-cta">
+          <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+          <button class="btn ghost" onclick="showPage('lab')">Test yourself free</button>
+        </div>
+      </div>
+      <div>
+        <div class="photo"><img src="https://design.canva.ai/TMhThftDwnrVNIf" alt="Person balancing barefoot on one leg on morning grass"></div>
+        <div class="ph-credit">Placeholder — real shoot coming</div>
+      </div>
+    </div>
+
+    <div class="tile showcase">
+      <div>
+        <div class="photo"><img src="https://design.canva.ai/OrpvRsA4hd619DX" alt="Hands fanning out the Crawl training card deck"></div>
+        <div class="ph-credit">Placeholder — real product photo coming</div>
+      </div>
+      <div>
+        <div class="kicker">Crawl Vol. 1</div>
+        <h2>The deck</h2>
+        <p>52 drill cards across four suits, each with 4 levels of progression — 208 steps from "start today" to "nobody will believe you." Everything filmed. Nothing needed beyond a ball, a towel, and a floor.</p>
+        <ul>
+          <li>Premium linen cards + the fold-out Crawl Map</li>
+          <li>Every drill filmed at all 4 levels — scan any card</li>
+          <li>Built for tendons, joints, and fascia — not just muscles</li>
+        </ul>
+        <div class="hero-cta">
+          <button class="btn blue" onclick="preorder()">Preorder — $44</button>
+          <button class="btn ghost" onclick="showPage('deck')">Learn more</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin:6px 0 26px">
+      <div class="kicker" style="margin-bottom:12px">From the Lab · free</div>
+      <div class="feed" id="feat" style="margin-top:0"></div>
+      <div style="text-align:center;margin-top:16px"><button class="btn ghost" onclick="showPage('lab')">See the full Lab</button></div>
+    </div>
+
+    <div class="tile mission-line">
+      <h3>Every deck moves a kid.</h3>
+      <p>One deck donated to DMV youth programs for every ten sold — free movement coaching for kids whose zip code shouldn't decide their access.</p>
+      <button class="btn ghost" onclick="showPage('mission')">The Mission</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= THE LAB PAGE ================= -->
+<div id="page-lab" class="hidden">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="kicker">The Lab · free · no signup</div>
+      <h1>Know your body<br><em>in two minutes.</em></h1>
+      <p class="sub">Real assessments, not toys — each one explains what it measures, what your result means, and exactly which cards to start with. Tap one to see how it works.</p>
+    </div>
+    <div class="feed" id="feed"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<!-- ================= EXPLAINER PAGE ================= -->
+<div id="page-explainer" class="hidden">
+  <div class="wrap">
+    <div class="topbar">
+      <button class="back" onclick="showPage('lab')">← The Lab</button>
+    </div>
+    <div class="exp-head">
+      <div class="icon-sq" id="exp-icon"></div>
+      <div>
+        <div class="kicker" id="exp-kick"></div>
+        <h1 id="exp-title"></h1>
+      </div>
+    </div>
+    <div class="exp-grid" id="exp-grid"></div>
+    <div class="exp-cta">
+      <button class="btn blue" id="exp-start">Start the assessment</button>
+      <button class="btn ghost" onclick="showPage('lab')">Back to the Lab</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= THE DECK PAGE (no-scroll) ================= -->
+<div id="page-deck" class="hidden">
+  <div class="wrap">
+    <div class="deck-hero" style="padding:36px 0 6px">
+      <div>
+        <div class="kicker">Crawl Vol. 1 — $44</div>
+        <h1 style="font-size:clamp(32px,6.5vw,58px)">One card a day.<br><em>That's the program.</em></h1>
+        <p class="sub" style="font-size:15px;color:#4a4a52;margin-top:10px">52 drills · 4 levels each · the Crawl Map · full video library. Zero equipment. Ships 2–3 weeks after preorder.</p>
+        <div class="hero-cta" style="margin-top:16px">
+          <button class="btn blue" onclick="preorder()">Preorder — $44</button>
+          <button class="btn ghost" onclick="showPage('science')">The Science</button>
+          <button class="btn ghost" onclick="showPage('videos')">Video Hub</button>
+        </div>
+      </div>
+      <div>
+        <div class="photo" style="aspect-ratio:1/1;max-height:340px"><img src="https://design.canva.ai/OrpvRsA4hd619DX" alt="The Crawl deck held in hands"></div>
+      </div>
+    </div>
+    <div class="tile pack-tile">
+      <h3>What's in the pack</h3>
+      <ul class="pack-list">
+        <li><b>52 drill cards</b> — premium linen finish, across four suits: Balance, Reaction, Body Control, Feel</li>
+        <li><b>208 total progressions</b> — every drill built out to 4 levels, from "start today" to full expression</li>
+        <li><b>The Crawl Map</b> — a fold-out wall poster to check off all 208 steps as you go</li>
+        <li><b>Full video library</b> — 260 filmed demos, every drill at every level, unlocked from day one</li>
+        <li><b>QR-linked cards</b> — scan any card to pull up its videos on the spot, no app or login needed</li>
+        <li><b>Zero equipment required</b> — the whole deck runs on a ball, a towel, and a floor</li>
+        <li><b>A deck for a kid</b> — one deck donated to a DMV youth program for every ten sold</li>
+      </ul>
+      <p class="pack-note">$44 one time, no subscription. Ships 2–3 weeks after preorder closes.</p>
+    </div>
+    <div class="flow" style="margin-top:10px;margin-bottom:40px">
+      <div class="tile flow-step">
+        <div class="icon-sq" style="--tint:#EEF2FE"><svg width="24" height="28" viewBox="0 0 26 30"><rect x="2" y="5" width="17" height="23" rx="3" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><rect x="7" y="1" width="17" height="23" rx="3" fill="#fff" stroke="#1D4ED8" stroke-width="2.5"/><path d="M15.5 8 l4 5 -4 5 -4 -5 z" fill="#1D4ED8"/></svg></div>
+        <div class="stage">Step 01</div><h4>Draw</h4>
+        <p>Pull one card — drill, cues, dose. Two minutes, anywhere.</p>
+      </div>
+      <div class="flow-arrow"><svg width="22" height="16" viewBox="0 0 24 16"><path d="M0 8 H20 M14 2 L21 8 L14 14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="tile flow-step">
+        <div class="icon-sq" style="--tint:#FDEEE6"><svg width="26" height="26" viewBox="0 0 28 28"><circle cx="14" cy="7" r="4" fill="none" stroke="#C2410C" stroke-width="2.5"/><path d="M14 11 L14 19 M14 13 L8 17 M14 13 L20 16 M14 19 L10 26 M14 19 L19 25" stroke="#C2410C" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="stage">Step 02</div><h4>Train</h4>
+        <p>Scan the QR — every drill filmed at all 4 levels.</p>
+      </div>
+      <div class="flow-arrow"><svg width="22" height="16" viewBox="0 0 24 16"><path d="M0 8 H20 M14 2 L21 8 L14 14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="tile flow-step">
+        <div class="icon-sq" style="--tint:#E9F5EE"><svg width="26" height="26" viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" fill="none" stroke="#15803D" stroke-width="2.5"/><path d="M7 14 L12 19 L21 9" stroke="#15803D" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stage">Step 03</div><h4>Track</h4>
+        <p>Check the box on the Crawl Map — 208 total, on your wall.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SCIENCE PAGE ================= -->
+<div id="page-science" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('deck')">← The Deck</button></div>
+  </div>
+  <section class="ink" style="padding-top:30px">
+    <div class="wrap">
+      <div class="kicker" style="color:var(--gold)">The science your gym skips</div>
+      <div class="sec-head"><h2 style="color:var(--chalk)">Strong is a system,<br>not a size.</h2></div>
+      <div class="fascia-grid">
+        <div class="fascia-copy">
+          <p>Muscles get all the credit, but force doesn't travel through muscle alone — it travels through a <b>system</b>: fascia, tendons, ligaments, and joints. Train the system and you don't just look stronger. You move stronger, land safer, and last longer.</p>
+          <p>Here's the part almost nobody programs for: <b>connective tissue adapts slower than muscle</b> — and it responds to consistency, variety, and control, not to heavier Mondays. A short daily practice in unusual positions, at controlled speeds, often barefoot, is close to exactly what this tissue asks for. <b>That's the deck's design brief.</b></p>
+          <div class="fascia-note"><b>A note before you scroll fitness internet:</b> fascia and tendon talk is everywhere right now, and quality varies. Be thoughtful about what you see online — and research anything before you build your training around it. The sources below are a good place to start.</div>
+        </div>
+        <div>
+          <div class="tissue"><h4>Fascia — the force web</h4><p>The connective sheet wrapping every muscle, linking regions into chains. It helps transmit and distribute force across the body — why whole-body, multi-directional movement trains what isolated machines can't reach.</p></div>
+          <div class="tissue"><h4>Tendons — the springs</h4><p>Tendon stiffness — not just muscle size — decides how much of your strength reaches the ground. Springs are built with time under tension, controlled landings, and slow eccentrics.</p></div>
+          <div class="tissue"><h4>Ligaments &amp; joints — the permission slip</h4><p>Your nervous system limits output in ranges it doesn't trust. Well-explored joints raise that ceiling — the clock reaches and odd angles in the deck are trust-building visits.</p></div>
+          <div class="tissue"><h4>The takeaway</h4><p>Bigger muscles on an untrained system is horsepower on bald tires. One card a day rebuilds the tires.</p></div>
+        </div>
+      </div>
+      <div class="ladder">
+        <div class="rung"><div class="lv">LVL 1</div><h4>Acquire</h4><p>Stable, slow, eyes open — the brain builds the map.</p></div>
+        <div class="rung"><div class="lv">LVL 2</div><h4>Load</h4><p>Smaller base, added motion — corrections fire faster.</p></div>
+        <div class="rung"><div class="lv">LVL 3</div><h4>Disrupt</h4><p>Eyes closed, new surfaces, reactions — senses get promoted.</p></div>
+        <div class="rung"><div class="lv">LVL 4</div><h4>Express</h4><p>Speed and chaos — the pattern runs without thinking.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Check it yourself</h2></div>
+      <p class="sec-sub">Curated reading and watching — these open live searches of the peer-reviewed literature and public videos, so they never go stale. Hand-picked individual links land here at launch.</p>
+      <div class="suit-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="tile suit-cell">
+          <h3>Read the research</h3>
+          <p style="margin-top:10px"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=one+leg+balance+mortality" target="_blank" rel="noopener" style="color:var(--cobalt)">One-leg balance &amp; long-term health — PubMed</a></p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/?term=tendon+adaptation+resistance+training" target="_blank" rel="noopener" style="color:var(--cobalt)">How tendons adapt to training — PubMed</a></p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/?term=sitting+rising+test" target="_blank" rel="noopener" style="color:var(--cobalt)">The sitting-rising test — PubMed</a></p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/?term=fascia+force+transmission" target="_blank" rel="noopener" style="color:var(--cobalt)">Fascia &amp; force transmission — PubMed</a></p>
+        </div>
+        <div class="tile suit-cell">
+          <h3>Watch the explainers</h3>
+          <p style="margin-top:10px"><a href="https://www.youtube.com/results?search_query=tendon+stiffness+training+science" target="_blank" rel="noopener" style="color:var(--cobalt)">Tendon stiffness &amp; training — YouTube</a></p>
+          <p><a href="https://www.youtube.com/results?search_query=fascia+anatomy+explained" target="_blank" rel="noopener" style="color:var(--cobalt)">What fascia actually is — YouTube</a></p>
+          <p><a href="https://www.youtube.com/results?search_query=balance+training+longevity+science" target="_blank" rel="noopener" style="color:var(--cobalt)">Balance &amp; healthy aging — YouTube</a></p>
+        </div>
+      </div>
+      <div class="hero-cta" style="margin:28px 0 50px">
+        <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+        <button class="btn ghost" onclick="showPage('videos')">Video Hub</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= VIDEO HUB PAGE ================= -->
+<div id="page-videos" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('deck')">← The Deck</button></div>
+    <div class="page-head" style="padding-top:10px">
+      <div class="kicker">Video Hub</div>
+      <h1>Every drill, <em>filmed.</em></h1>
+      <p class="sub">A few Level 1 drills are free — enough to start tonight. The full library of 260 videos unlocks with the deck.</p>
+    </div>
+    <div class="hub-grid" id="vidgrid"></div>
+    <div class="hub-note"><b class="mono" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase">Filming in progress —</b> the library goes live at launch. Preorders get every video from day one; free drills post here and on our channels weekly.</div>
+    <div class="social-row" style="margin-bottom:50px">
+      <span class="social-btn" onclick="alert('YouTube channel launches with the video library.')">YouTube</span>
+      <span class="social-btn" onclick="alert('Instagram launches with daily drill Reels.')">Instagram</span>
+      <span class="social-btn" onclick="alert('TikTok launches with daily drill clips.')">TikTok</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DONATE PAGE ================= -->
+<div id="page-donate" class="hidden">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="kicker">Donate</div>
+      <h1>Fund a kid's<br><em>first card.</em></h1>
+      <p class="sub">Every dollar goes to free movement sessions, decks, and equipment for youth programs in Prince George's and Montgomery County. No tryouts, no fees, no barriers.</p>
+    </div>
+    <div class="stat-row" style="max-width:720px">
+      <div class="tile stat"><div class="num">$11</div><div class="lab">Puts a deck in a rec center</div></div>
+      <div class="tile stat"><div class="num">$44</div><div class="lab">Funds a group session</div></div>
+      <div class="tile stat"><div class="num">$132</div><div class="lab">Sponsors a kid for a season</div></div>
+    </div>
+    <div class="email-gate" style="max-width:720px;margin-top:26px">
+      <h4>Direct giving opens at launch</h4>
+      <p>Leave your email and we'll notify you the moment donations open — until then, every preorder already contributes through the 1-in-10 deck pledge.</p>
+      <div class="row"><input type="email" placeholder="you@email.com" id="donate-email"><button class="btn blue" onclick="captureEmail('donate-email')">Notify me</button></div>
+    </div>
+    <div class="hero-cta" style="margin:24px 0 60px">
+      <button class="btn ghost" onclick="showPage('mission')">Read the full Mission</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= NEWSLETTER PAGE ================= -->
+<div id="page-news" class="hidden">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="kicker">Newsletter</div>
+      <h1>One drill.<br><em>Every week.</em></h1>
+      <p class="sub">The Crawl letter: one drill with the science behind it, one test to try, and first access to drops and preorders. No spam, unsubscribe anytime.</p>
+    </div>
+    <div class="email-gate" style="max-width:720px">
+      <h4>Join the list</h4>
+      <p>Free forever. Your first email includes the 5-test Movement Age protocol as a printable sheet.</p>
+      <div class="row"><input type="email" placeholder="you@email.com" id="news-email"><button class="btn blue" onclick="captureEmail('news-email')">Sign up</button></div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+</div>
+
+<!-- ================= MISSION PAGE ================= -->
+<div id="page-mission" class="hidden">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="kicker">The Mission</div>
+      <h1>Every deck<br><em>moves a kid.</em></h1>
+      <p class="sub">Crawl started on courts and rec-center floors in the DMV — coaching young athletes whose access to real movement training depended on their zip code. That's still the point.</p>
+    </div>
+    <div class="mission-photo">
+      <div class="photo"><img src="https://design.canva.ai/TI0Df26o-k3bH_V" alt="Coach teaching a young athlete balance on an outdoor court"></div>
+      <div class="ph-credit">Placeholder — real session photos coming</div>
+    </div>
+    <div class="prose" style="margin-top:26px">
+      <p><b>A share of every deck sold funds free movement sessions and equipment for youth programs</b> in Prince George's and Montgomery County, Maryland. When you buy Vol. 1, a kid gets coached. Simple math.</p>
+      <p>The same 52 drills in your box run at those sessions — no tryouts, no fees, no barriers. Movement skill shouldn't be a luxury good, and a deck of cards is cheap enough to make sure it isn't.</p>
+    </div>
+    <div class="stat-row">
+      <div class="tile stat"><div class="num">1:10</div><div class="lab">Deck donated per 10 sold</div></div>
+      <div class="tile stat"><div class="num">DMV</div><div class="lab">Where it starts</div></div>
+      <div class="tile stat"><div class="num">$0</div><div class="lab">Cost to a kid, ever</div></div>
+    </div>
+    <div class="hero-cta" style="margin:28px 0 60px">
+      <button class="btn blue" onclick="showPage('donate')">Support the Mission</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ABOUT PAGE ================= -->
+<div id="page-about" class="hidden">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="kicker">About</div>
+      <h1>Why <em>"Crawl"?</em></h1>
+      <p class="sub">Crawling was your first training program — cross-body coordination, joint stability, ground contact, feel. Modern life erased it: shoes mute your feet, screens fix your gaze, chairs delete the floor.</p>
+    </div>
+    <div class="prose">
+      <p><b>Crawl rebuilds the base, one card a day.</b> Not another workout plan — a skills practice for the nervous system and the connective tissue it rides on, sized to fit the busiest life: two minutes, a floor, and honesty about where you're starting.</p>
+      <p>It's built by <b>Brian C</b>, a sports performance specialist and coach with 5+ years of coaching experience in the DMV. The progressions in the deck are the same ones he runs with youth athletes, post-rehab clients, and everyday movers rebuilding from zero — now written down, filmed, and shuffled into a box.</p>
+      <p>One rule governs everything here: <b>the test is free, the training is simple, and the science is explained in plain language.</b> If a claim can't survive that, it doesn't ship.</p>
+    </div>
+    <div class="creds">
+      <span class="cred">MS EXERCISE SCIENCE</span>
+      <span class="cred">CISSN — SPORTS NUTRITION</span>
+      <span class="cred">5+ YEARS COACHING</span>
+      <span class="cred">DMV BORN &amp; RAISED</span>
+    </div>
+    <div class="hero-cta" style="margin:28px 0 60px">
+      <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+      <button class="btn ghost" onclick="showPage('lab')">Try the Lab</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CALCULATOR PAGE ================= -->
+<div id="page-calc" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('lab')">← The Lab</button></div>
+    <div class="exp-head">
+      <div class="icon-sq" id="calc-icon"></div>
+      <div><div class="kicker" id="calc-kick"></div><h1 id="calc-title" style="font-size:clamp(26px,5.5vw,46px)"></h1></div>
+    </div>
+    <p class="sec-sub" id="calc-desc" style="margin-top:8px"></p>
+    <div class="calc-form" id="calc-form"></div>
+    <div class="hero-cta" style="margin-top:18px"><button class="btn blue" id="calc-run">Calculate</button></div>
+    <div class="tile calc-result hidden" id="calc-out"></div>
+    <div style="height:60px"></div>
+  </div>
+</div>
+
+<!-- ================= LEGAL PAGES ================= -->
+<div id="page-terms" class="hidden">
+  <div class="wrap">
+    <div class="page-head"><div class="kicker">Legal</div><h1>Terms of <em>Service</em></h1></div>
+    <div class="legal">
+      <p>Welcome to Crawl. By using this website, you agree to these terms.</p>
+      <h3>Use of the site</h3>
+      <p>This site provides educational content, self-assessments, calculators, and products related to movement and fitness. You may use it for personal, non-commercial purposes. You agree not to misuse the site, scrape its content, or attempt to interfere with its operation.</p>
+      <h3>Educational content only</h3>
+      <p>All quizzes, tests, calculators, articles, and drills are for general education. They are not medical advice, diagnosis, or treatment, and are not a substitute for guidance from a qualified professional who knows your situation.</p>
+      <h3>Products &amp; orders</h3>
+      <p>Prices, availability, and shipping timelines are shown at checkout and may change. Preorders are estimates of ship dates, not guarantees. Refund and return terms are provided at the point of sale.</p>
+      <h3>Intellectual property</h3>
+      <p>The Crawl name, deck, card designs, drill progressions, videos, and site content are the property of Crawl and may not be reproduced or resold without written permission.</p>
+      <h3>Limitation of liability</h3>
+      <p>To the fullest extent permitted by law, Crawl is not liable for injuries, losses, or damages arising from use of this site or its content. Physical training carries inherent risk; you assume that risk when you train.</p>
+      <h3>Governing law</h3>
+      <p>These terms are governed by the laws of the State of Maryland, USA.</p>
+      <div class="tpl">This is a working template prepared for launch. Have an attorney review before the store goes live.</div>
+    </div>
+  </div>
+</div>
+
+<div id="page-privacy" class="hidden">
+  <div class="wrap">
+    <div class="page-head"><div class="kicker">Legal</div><h1>Privacy <em>Policy</em></h1></div>
+    <div class="legal">
+      <h3>What we collect</h3>
+      <p>If you join the newsletter, preorder, or request donation updates, we collect the email address you provide. Quiz answers, poll votes, and test logs currently stay on your own device — they are not transmitted to us or stored on our servers.</p>
+      <h3>How we use it</h3>
+      <p>Emails are used to send the content you asked for: the newsletter, launch updates, and order information. We do not sell or rent your information to anyone.</p>
+      <h3>Cookies &amp; analytics</h3>
+      <p>We use minimal, privacy-respecting analytics to understand overall site traffic. We do not run advertising trackers.</p>
+      <h3>Your choices</h3>
+      <p>Every email includes an unsubscribe link. To have your email removed entirely, contact us and we will delete it.</p>
+      <h3>Children</h3>
+      <p>This site is intended for adults. Youth programming through the Mission is run in person with parent or guardian consent.</p>
+      <div class="tpl">This is a working template prepared for launch. Have an attorney review before collecting customer data at scale.</div>
+    </div>
+  </div>
+</div>
+
+<div id="page-disclaimer" class="hidden">
+  <div class="wrap">
+    <div class="page-head"><div class="kicker">Legal</div><h1>Health <em>Disclaimer</em></h1></div>
+    <div class="legal">
+      <p><b>Consult a physician before beginning any exercise program</b>, including the drills, tests, and progressions on this site and in the Crawl deck.</p>
+      <h3>Not medical advice</h3>
+      <p>Quizzes, movement tests, calculators, and educational content here are for general information. They do not diagnose, treat, or assess any medical condition, and results are playful estimates — not clinical measurements.</p>
+      <h3>Assumption of risk</h3>
+      <p>Physical training involves inherent risk of injury. Balance and eyes-closed work should be performed near stable support. Stop any drill that causes pain, dizziness, or discomfort. You are responsible for training within your own abilities and environment.</p>
+      <h3>Individual results vary</h3>
+      <p>References to research describe population-level findings. Your results depend on your starting point, consistency, health status, and many factors outside our control.</p>
+      <div class="tpl">Built by a sports performance specialist (MS Exercise Science, CISSN). This disclaimer also appears in the deck manual card.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUIZ VIEW ============ -->
+<div id="quizview" class="hidden">
+  <div class="wrap qwrap">
+    <div class="topbar">
+      <button class="back" onclick="showPage('lab')">← The Lab</button>
+      <span class="tt" id="qz-title"></span>
+    </div>
+    <div class="progressbar"><div id="pbar"></div></div>
+    <div id="qbody"></div>
+  </div>
+</div>
+
+<!-- ============ RESULT VIEW ============ -->
+<div id="resultview" class="hidden">
+  <div class="wrap qwrap">
+    <div class="topbar">
+      <button class="back" onclick="showPage('lab')">← The Lab</button>
+      <span class="tt">Your result</span>
+    </div>
+    <div class="tile blend">
+      <h2 id="r-title"></h2>
+      <p class="lead" id="r-lead"></p>
+      <div class="bars" id="r-bars"></div>
+    </div>
+    <div class="share-row">
+      <button class="share-btn" onclick="copyResult()" id="copybtn">Copy my result</button>
+      <button class="share-btn" onclick="nextQuiz()">Try another quiz</button>
+    </div>
+    <div id="r-cards"></div>
+    <div class="email-gate">
+      <h4>Get your full starter plan</h4>
+      <p>Your result + your first 7 cards + the science behind them, in one email. No spam, ever.</p>
+      <div class="row"><input type="email" placeholder="you@email.com" id="email"><button class="btn blue" onclick="fakeSubmit()">Send it</button></div>
+    </div>
+    <div class="cta-block">
+      <h3>Your starting cards are in the box</h3>
+      <p>52 drills · 4 levels · the Crawl Map · every drill filmed. One card a day.</p>
+      <button class="btn blue" onclick="preorder()">Get the Deck — $44</button>
+      <button class="restart" onclick="retake()">Retake this quiz</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= POCKET TEST ================= -->
+<div id="pocket">
+  <button class="pk-pill" onclick="togglePocket()"><span class="dot"></span>Today's Test</button>
+  <div class="tile pk-open">
+    <button class="pk-min" onclick="togglePocket()" aria-label="Minimize">—</button>
+    <div class="pk-head"><span class="dot"></span><span class="pk-kicker">Today's Test · resets daily</span></div>
+    <h4 id="pk-name">The Blind Stand</h4>
+    <p class="cue" id="pk-cue">One leg. Eyes closed. Time yourself — stop when your foot touches down.</p>
+    <div class="dose" id="pk-dose">Target: 10 seconds each side</div>
+    <div class="test-log">
+      <button id="pk-a" onclick="logTest('pass')">Hit it</button>
+      <button id="pk-b" onclick="logTest('close')">Close</button>
+      <button id="pk-c" onclick="logTest('miss')">Training it</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div>
+        <div class="foot-word">CRA<span>WL</span></div>
+        <div class="foot-tag">Learn to move again · one card a day</div>
+      </div>
+      <div class="foot-news">
+        <h5>One drill, every week — free</h5>
+        <div class="row"><input type="email" placeholder="you@email.com" id="foot-email"><button class="btn blue" onclick="captureEmail('foot-email')">Join</button></div>
+      </div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h5>The Deck</h5>
+        <a onclick="showPage('deck')">How it works</a>
+        <a onclick="showPage('science')">The science</a>
+        <a onclick="showPage('videos')">Video hub</a>
+        <a onclick="preorder()">Preorder Vol. 1</a>
+      </div>
+      <div class="foot-col">
+        <h5>The Lab</h5>
+        <a onclick="openExplainer('age')">Movement Age test</a>
+        <a onclick="openExplainer('sense')">Dominant Sense</a>
+        <a onclick="openExplainer('somato')">Body Type</a>
+        <a onclick="openCalc('onerm')">1-Rep Max calculator</a>
+        <a onclick="openCalc('bodyfat')">Body Fat &amp; BMI</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a onclick="showPage('mission')">The Mission</a>
+        <a onclick="showPage('about')">About Crawl</a>
+        <a onclick="showPage('donate')">Donate</a>
+        <a onclick="showPage('news')">Newsletter</a>
+      </div>
+      <div class="foot-col">
+        <h5>Follow</h5>
+        <a onclick="alert('Instagram launches with daily drill Reels.')">Instagram</a>
+        <a onclick="alert('TikTok launches with daily drill clips.')">TikTok</a>
+        <a onclick="alert('YouTube launches with the video library.')">YouTube</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        <a onclick="showPage('terms')">Terms</a>
+        <a onclick="showPage('privacy')">Privacy</a>
+        <a onclick="showPage('disclaimer')">Disclaimer</a>
+      </div>
+      <div class="foot-copy">© 2026 CRAWL · BUILT BY A SPORTS PERFORMANCE SPECIALIST (MS, CISSN)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= QUIZ DATA + EXPLAINERS ================= */
+const QUIZZES = {
+somato:{
+  title:"What's Your Body Type?", color:"var(--meso)", tint:"#FDEEE6", kind:"Quiz",
+  icon:`<svg width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="8" width="4" height="14" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/><rect x="10" y="5" width="6" height="17" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/><rect x="19" y="10" width="6" height="12" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/></svg>`,
+  desc:"Eight tiny scenarios reveal your somatotype blend — and how to train WITH your body.", meta:"8 questions · 2 min",
+  explainer:{
+    kick:"Assessment 03 · Somatotype",
+    measures:"Your somatotype blend — where your natural frame sits between ectomorph (lean), mesomorph (muscular), and endomorph (powerful). Nobody is one pure type; the quiz maps your mix across all three.",
+    science:"Somatotyping goes back to 1940s body-composition research. The original personality claims didn't survive science — but the body-composition patterns are real, and they're a useful starting point for how much recovery, food, and strength emphasis your training needs. Starting point, not destiny: training moves these markers more than genetics set them.",
+    results:["<b>Ectomorph</b> — lean frame, fast metabolism; strength must be built deliberately","<b>Mesomorph</b> — responsive frame; the risk is coasting on talent","<b>Endomorph</b> — powerful frame; the game is daily movement volume","<b>Blends</b> — most people score across two types; you get both playbooks"],
+    use:"Your result adjusts how you use the deck: which suits to lead with, how to dose rest and cardio, and which cards attack your frame's blind spot. It also feeds your starter-plan email."
+  },
+  keys:["e","m","n"],
+  labels:{e:{n:"Ecto",c:"var(--ecto)"}, m:{n:"Meso",c:"var(--meso)"}, n:{n:"Endo",c:"var(--endo)"}},
+  qs:[
+    {s:"Scenario", q:"7am Saturday. Zero obligations. Your body's first vote:", o:[["I'm already awake and low-key restless","e"],["Let's MOVE — run, hoop, lift, something","m"],["Slow start, big breakfast — then I'm solid all day","n"]]},
+    {s:"Do this now", q:"Wrap your fingers around your opposite wrist.", help:"Actually do it. Classic frame-size check.", o:[["They overlap easily — small frame","e"],["Fingertips just barely touch","m"],["They don't quite meet — big frame","n"]]},
+    {s:"Flashback", q:"Middle school PE. Which kid were you?", o:[["Fast and wiry — but the skinny one","e"],["Picked first. Every time.","m"],["The strongest kid in the grade","n"]]},
+    {s:"Scenario", q:"Life happens — six weeks, no training. The mirror says:", o:[["You shrank. Everything you built faded.","e"],["Honestly? Barely changed.","m"],["The weight moved in fast and unpacked.","n"]]},
+    {s:"Scenario", q:"Thanksgiving. You went back for round two. Your body:", o:[["Hungry again by the car ride home","e"],["Turned it straight into tomorrow's energy","m"],["Stored it. Efficiently. With interest.","n"]]},
+    {s:"Scenario", q:"Getting fitted for a wedding. The tailor's problem:", o:[["Everything's baggy — take it ALL in","e"],["Fits off the rack. Annoying, I know.","m"],["Shoulders and thighs need room to live","n"]]},
+    {s:"Scenario", q:"A coach watches you train once. Their first note:", o:[["\"We need to feed this engine more.\"","e"],["\"Quick learner — your body answers fast.\"","m"],["\"The raw strength is already here.\"","n"]]},
+    {s:"Choose", q:"A genie offers one athletic gift. You take:", o:[["Endless endurance — I never gas out","e"],["Instant explosiveness — spring-loaded","m"],["Immovable strength — good luck moving me","n"]]}
+  ],
+  results:{
+    e:{name:"Ectomorph", color:"var(--ecto)", what:"The lean frame: long limbs, fast metabolism, lighter build. You shine in endurance, agility, and quickness relative to bodyweight — building strength takes deliberate, patient work.",
+      train:["Strength first: heavy 3–5 rep basics build what your frame doesn't hand you free","Keep cardio short — your engine already idles hot","Eat more than feels natural; protein at every meal","Rest 2–3 minutes between sets — full recovery beats rushing"],
+      tie:"Your Crawl edge: Suits <b>◆ Balance</b> and <b>■ Feel</b> — long levers make balance harder AND more valuable to train. Start with ◆1, ◆4, ■6."},
+    m:{name:"Mesomorph", color:"var(--meso)", what:"The responsive frame: natural muscle, fast adaptation to almost anything. Your risk was never effort — it's coasting on talent and skipping the unglamorous skill work.",
+      train:["You handle volume and variety — periodize so adaptation never stalls","Your trap: skipping hard-but-boring balance and feel work","Compete on precision, not just output","You CAN train hard daily. Doesn't mean you should."],
+      tie:"Your Crawl edge: <b>Levels 3–4</b> are your missing 10%. Start ▲4, ▲13, ●13 and get productively humbled."},
+    n:{name:"Endomorph", color:"var(--endo)", what:"The powerful frame: wide base, strong bones, natural strength, efficient energy storage. You dominate strength contexts — the whole game is staying in motion daily.",
+      train:["Lead with daily movement volume — frequent short sessions win","Pair every strength block with a conditioning finisher","Carbs around training, protein always","Low-impact power (sleds, bikes, med balls) builds engine, spares joints"],
+      tie:"Your Crawl edge: <b>one card a day IS your program</b> — daily movement by design. Start ▲1, ▲6, ■4."}
+  },
+  blendLead:"Nobody is one pure type — your blend is your starting point, not your ceiling."
+},
+sense:{
+  title:"What's Your Dominant Sense?", color:"var(--cobalt)", tint:"#EEF2FE", kind:"Quiz",
+  icon:`<svg width="28" height="26" viewBox="0 0 28 26"><ellipse cx="14" cy="13" rx="11" ry="7" fill="none" stroke="#1D4ED8" stroke-width="2"/><circle cx="14" cy="13" r="3.2" fill="#1D4ED8"/></svg>`,
+  desc:"Eyes, inner ear, or feet — which system runs your balance? Seven scenarios expose it.", meta:"7 questions · 2 min",
+  explainer:{
+    kick:"Assessment 02 · Sensory profile",
+    measures:"Which of your three balance inputs you over-rely on: vision (eyes), the vestibular system (inner ear motion sensors), or somatosensation (the feel from your feet, joints, and muscles).",
+    science:"Every moment you're upright, these three systems vote on where 'balanced' is, and your brain weights the votes. Most adults let vision chair the meeting — which works until the lights go out, the ground changes, or the eyes get busy tracking something. Sensory reweighting — training the under-used inputs — is a core principle in balance rehabilitation and athletic training alike.",
+    results:["<b>Vision-Dominant</b> — the most common pattern; eyes-closed work is your fastest win","<b>Vestibular-Sensitive</b> — head motion registers loudly; gradual rotation training pays off","<b>Feel-Dominant</b> — the rarest pattern; your growth edge is speed and chaos"],
+    use:"Your result prescribes a suit: vision-dominant movers get sent to ■ Feel, vestibular-sensitive movers get specific head-motion cards, feel-dominant movers get ● Reaction. It's the most directly actionable result in the Lab."
+  },
+  keys:["v","b","s"],
+  labels:{v:{n:"Vision",c:"var(--cobalt)"}, b:{n:"Vestibular",c:"var(--rea)"}, s:{n:"Feel",c:"var(--fee)"}},
+  qs:[
+    {s:"Scenario", q:"3am. Power's out. You have to cross the house.", o:[["Phone flashlight. Immediately. Non-negotiable.","v"],["Slow steps, one hand out, head very steady","b"],["Just walk it — my feet know this floor","s"]]},
+    {s:"Do this now", q:"Stand up. One leg. Close your eyes. Count.", help:"Seriously — do it. We'll wait.", o:[["Wobbled almost instantly","v"],["Held a bit, then drifted sideways","b"],["Honestly? Pretty comfortable.","s"]]},
+    {s:"Scenario", q:"The teacups ride finally stops. You are:", o:[["Locking eyes on anything that isn't moving","v"],["Spinning internally for a full minute","b"],["Fine the second my feet hit pavement","s"]]},
+    {s:"Scenario", q:"Subway lurches. No handle free. You…", o:[["Stare at a fixed point like my life depends on it","v"],["Feel every stop and start in my stomach","b"],["Surf it — my legs do the math","s"]]},
+    {s:"Scenario", q:"Wedding dance floor. Someone's teaching a move.", o:[["Show me twice — I copy what I SEE","v"],["Give me the beat first — I need the rhythm","b"],["Put my hands in position — I learn by feel","s"]]},
+    {s:"Scenario", q:"Steep rocky downhill on a trail:", o:[["Eyes glued to my feet, every single step","v"],["Careful on the quick head turns — they cost me","b"],["Barely looking down, honestly","s"]]},
+    {s:"Scenario", q:"First time ever on a paddleboard:", o:[["Staring at the horizon to survive","v"],["Every ripple registers somewhere in my inner ear","b"],["Legs figured it out by minute two","s"]]}
+  ],
+  results:{
+    v:{name:"Vision-Dominant", color:"var(--cobalt)", what:"You balance with your eyes. It works — until the lights go out, your eyes get a job, or you glance away at the wrong moment. Most common pattern in adults, and the most trainable.",
+      train:["Eyes-closed work is your fastest gain — start embarrassingly easy","Practice balance while your eyes do OTHER jobs","Daily barefoot time — give your feet their voice back","Progress: eyes open → soft gaze → closed. Never skip a step."],
+      tie:"Your Crawl prescription: the <b>■ Feel suit is your medicine</b>. Start ■1 and ■6, then ◆13 when you're brave."},
+    b:{name:"Vestibular-Sensitive", color:"var(--rea)", what:"Your inner ear speaks loudly — spins, stops, and head motion register hard. That sensitivity is information, not weakness; training teaches your system to hear it without overreacting.",
+      train:["Head-turn drills while balancing — small doses, often","Rotation work built up gradually — never straight to spins","Gaze-stability practice: eyes locked while the head moves","Stop each drill BEFORE dizziness, not after"],
+      tie:"Your Crawl prescription: <b>◆10 Head-Turn Hold and ▲5 180 Jump Stick</b> are your project cards. Start ◆10 at Level 1."},
+    s:{name:"Feel-Dominant", color:"var(--fee)", what:"You trust your feet and joints — the rarest and most enviable pattern. Your growth edge is speed and chaos: feel-dominant movers can run a beat behind when reactions must be instant.",
+      train:["Add reaction and unpredictability to everything","Train at speeds where feel alone can't keep up","Visual-tracking drills sharpen your least-used input","Keep the barefoot habit — it's why you're good"],
+      tie:"Your Crawl prescription: the <b>● Reaction suit</b> will grow you fastest. Start ●1, ●5, ●13 — chaos is your curriculum."}
+  },
+  blendLead:"All three systems vote on every step you take. This is which one has been running the meeting."
+},
+age:{
+  title:"What's Your Movement Age?", color:"var(--endo)", tint:"#E9F5EE", kind:"Physical test",
+  icon:`<svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="none" stroke="#15803D" stroke-width="2"/><path d="M13 7 L13 13 L17.5 15.5" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+  desc:"Five real micro-tests. Your body answers, not your opinions. Results may sting — usefully.", meta:"5 tests · 3 min · stand up",
+  explainer:{
+    kick:"Assessment 01 · Physical",
+    measures:"Your movement age — a playful composite of five real capacities: single-leg balance (eyes open and closed), floor-to-stand ability, tandem gait, and lower-body power endurance. It's the difference between your calendar age and how your body actually moves.",
+    science:"These five tests aren't invented — versions of each appear in clinical and longevity research. Eyes-closed single-leg time declines sharply with age and responds to training within weeks. The sitting-rising test and chair-stand test are both studied markers of functional capacity that keep showing up in research on healthy aging. We've bundled them into one honest score.",
+    results:["<b>20s</b> — control, feel, and power all answering; maintain with Level 3–4 work","<b>30s</b> — solid base with early leaks; train the lowest test first","<b>40s–50s</b> — vision and momentum are compensating; very fixable","<b>60s+</b> — the biggest upside in the room; every session moves this number"],
+    use:"Your score tells you which level to start the deck at and which suit to lead with — then you retest monthly and watch the number fall. The Crawl Map is built around exactly this loop. Not a medical assessment; if a test feels unsafe, skip it and stay near support."
+  },
+  keys:["y"], isTest:true,
+  labels:{y:{n:"Score",c:"var(--endo)"}},
+  qs:[
+    {s:"Test 1 of 5", q:"Stand on one leg, eyes OPEN. Time it.", help:"Phone timer. Shoes off if you can. Stop when your foot touches down.", o:[["45+ seconds — could've kept going",4],["20–45 seconds",3],["10–20 seconds",2],["Under 10 seconds",1]]},
+    {s:"Test 2 of 5", q:"Same leg. Eyes CLOSED. Time it.", help:"This is the honest one. Everyone's number falls off a cliff.", o:[["20+ seconds",4],["10–20 seconds",3],["4–10 seconds",2],["Under 4 — it happened fast",1]]},
+    {s:"Test 3 of 5", q:"Sit all the way down on the floor. Now stand back up.", help:"Any style. Notice exactly what you needed.", o:[["No hands, no knees — smooth both ways",4],["One hand or one knee touched down",3],["Both hands / real support needed",2],["Grabbed furniture — a whole event",1]]},
+    {s:"Test 4 of 5", q:"Walk heel-to-toe in a straight line. Ten steps.", help:"Like a tightrope. Count clean steps before you wobble off.", o:[["All 10 — could do it backward",4],["All 10, with some arm drama",3],["Made it 5–9 steps",2],["Under 5 — that line is a liar",1]]},
+    {s:"Test 5 of 5", q:"Stand up and sit down from a chair 10 times, fast. No hands.", help:"Roughly time it.", o:[["Under 15 seconds",4],["15–20 seconds",3],["20–30 seconds",2],["30+ or my hands got involved",1]]}
+  ],
+  results:{ y:{name:"",color:"var(--endo)",what:"",train:[],tie:""} },
+  blendLead:""
+},
+suit:{
+  title:"Which Suit Are You?", color:"var(--fee)", tint:"#F2ECFC", kind:"Quiz",
+  icon:`<svg width="26" height="26" viewBox="0 0 26 26"><path d="M7 3 l4 5 -4 5 -4 -5 z" fill="#7C3AED"/><circle cx="19" cy="8" r="4" fill="#7C3AED"/><path d="M7 15 l4 7 -8 0 z" fill="#7C3AED"/><rect x="15.5" y="15" width="7" height="7" rx="1" fill="#7C3AED"/></svg>`,
+  desc:"Every mover has a home suit — and one they've been quietly avoiding. Six scenarios expose both.", meta:"6 questions · 90 sec",
+  explainer:{
+    kick:"Assessment 04 · Movement identity",
+    measures:"Your movement personality — which of the deck's four suits (◆ Balance, ● Reaction, ▲ Body Control, ■ Feel) matches how you naturally move, compete, and respond to the world.",
+    science:"The lightest assessment in the Lab, and deliberately so — but it's built on something real: movers self-select. Steady people gravitate to control work and avoid chaos; reactive people love games and dodge stillness. Knowing your bias tells you two things — where you'll enjoy the deck immediately, and where your actual growth is hiding.",
+    results:["<b>◆ Balance</b> — the stabilizer; growth suit is ● Reaction","<b>● Reaction</b> — the responder; growth suit is ■ Feel","<b>▲ Body Control</b> — the athlete; growth suit is ◆ Balance","<b>■ Feel</b> — the intuitive; growth suit is ▲ Body Control"],
+    use:"Start in your home suit to build the habit, then deliberately visit your growth suit twice a week — the deck is designed so your favorite cards fund your least favorite ones."
+  },
+  keys:["q1","q2","q3","q4"],
+  labels:{q1:{n:"◆ Balance",c:"var(--bal)"}, q2:{n:"● Reaction",c:"var(--rea)"}, q3:{n:"▲ Body Ctrl",c:"var(--bod)"}, q4:{n:"■ Feel",c:"var(--fee)"}},
+  qs:[
+    {s:"Scenario", q:"Pickup game, first possession. You're the one who…", o:[["Holds position — cannot be moved off my spot","q1"],["Jumps the passing lane nobody saw","q2"],["Makes the athletic play that gets replayed","q3"],["Somehow always knows where everyone is","q4"]]},
+    {s:"Scenario", q:"Everything's on fire at work/school. You become…", o:[["The calm one — steady while it burns","q1"],["The fast one — already responding","q2"],["The decisive one — pick a door, commit","q3"],["The perceptive one — reading what's actually wrong","q4"]]},
+    {s:"Choose", q:"Pick your training arena:", o:[["A quiet turf strip. Just me and the work.","q1"],["Chaos — balls flying, calls coming, game on","q2"],["Open field. Room to fly.","q3"],["Barefoot on grass at sunrise","q4"]]},
+    {s:"Scenario", q:"Your best friend describes you in one line:", o:[["\"Never panics. Ever.\"","q1"],["\"Fastest reply in the group chat.\"","q2"],["\"All gas once they decide.\"","q3"],["\"Reads the room before anyone speaks.\"","q4"]]},
+    {s:"Choose", q:"A genie offers one physical superpower:", o:[["Unshakeable — nothing knocks me over","q1"],["Instant reflexes","q2"],["Perfect body control — parkour everything","q3"],["Total body awareness — feel everything","q4"]]},
+    {s:"Scenario", q:"Your actual nightmare moment:", o:[["Getting caught off-balance in front of everyone","q1"],["Being a step too slow when it mattered","q2"],["Losing control mid-move","q3"],["Being completely disconnected from my body","q4"]]}
+  ],
+  results:{
+    q1:{name:"◆ Balance", color:"var(--bal)", what:"You're the stabilizer — steady, consistent, hard to shake. Your movement (and your personality) is built on control before flash.",
+      train:["Your comfort zone is stillness — add motion to your stability","You'll love the ◆ suit; you NEED the ● suit","Progress by shrinking your base, not adding weight","Eyes-closed work will feel like home fast"],
+      tie:"Home suit: <b>◆ Balance</b>. Growth suit: <b>● Reaction</b>. Start ◆4, then force yourself into ●5."},
+    q2:{name:"● Reaction", color:"var(--rea)", what:"You're the responder — quick-triggered, competitive, most alive when things get unpredictable. You process fast and move faster.",
+      train:["Games over sets — you need a scoreboard to stay engaged","Your speed hides sloppy landings; slow down to clean up","Stillness work will feel like torture. That's the tell.","Pair every reaction session with one slow control card"],
+      tie:"Home suit: <b>● Reaction</b>. Growth suit: <b>■ Feel</b>. Start ●13, then sit with ■5."},
+    q3:{name:"▲ Body Control", color:"var(--bod)", what:"You're the athlete — explosive, committed, physical. You'd rather jump it, stick it, and feel the impact than talk about it.",
+      train:["Landings before takeoffs — absorb better, jump higher","Your intensity needs a governor: quality gates every session","Deceleration work protects the career your explosiveness builds","Film yourself — your feel and reality occasionally disagree"],
+      tie:"Home suit: <b>▲ Body Control</b>. Growth suit: <b>◆ Balance</b>. Start ▲4, then ◆6."},
+    q4:{name:"■ Feel", color:"var(--fee)", what:"You're the intuitive — body-aware, perceptive, tuned in. You notice what others miss, in movement and in rooms.",
+      train:["Your awareness is elite; your output speed may lag behind it","Add time pressure to everything you already do well","Reaction work converts your feel into fast decisions","Teach someone else a drill — your feel translates beautifully"],
+      tie:"Home suit: <b>■ Feel</b>. Growth suit: <b>▲ Body Control</b>. Start ■4, then ▲4 at full send."}
+  },
+  blendLead:"Your home suit is where you'll start. Your lowest bar is where you'll grow."
+}
+};
+
+/* ============ DAILY POLL BANK ============
+   One poll per day, rotating by date. TO EDIT YOUR OWN POLLS:
+   Phase 1 (now): edit this list — add a line, save, redeploy.
+   Phase 2 (no-code): move these rows to a Google Sheet published to the web;
+   the site fetches today's row so you edit polls from your phone, no code.
+   Ask Claude to wire the Sheet when you're ready. */
+const POLL_BANK = [
+  {title:"Poll: The 10-Second Test", blurb:"Can you stand on one leg, eyes closed, for 10 full seconds? Try it first. Be honest.", opts:["Yes, comfortably","Made it, barely","Not even close"]},
+  {title:"Poll: Floor Check", blurb:"When did you last sit on the floor — on purpose, not because you dropped something?", opts:["Today, easily","This week","The floor and I are strangers"]},
+  {title:"Poll: Barefoot Truth", blurb:"How many waking hours a day are your feet actually out of shoes?", opts:["3+ hours","About an hour","My feet live in shoes"]},
+  {title:"Poll: The Get-Up", blurb:"Right now — could you stand up from the floor without using your hands?", opts:["Yes, smooth","With a wobble","Not testing that today"]},
+  {title:"Poll: Last Sprint", blurb:"When did you last run at 100% — actually all-out?", opts:["This month","This year","Sometime last decade"]},
+  {title:"Poll: Catch Check", blurb:"Someone tosses you keys without warning. Your odds?", opts:["Clean catch, every time","Coin flip","We both hear them hit the floor"]},
+  {title:"Poll: Stairs Story", blurb:"Do you ever take stairs two at a time anymore?", opts:["Always","When nobody's watching","Stairs are the enemy"]}
+];
+const POLL_ICON = `<svg width="24" height="26" viewBox="0 0 24 26"><rect x="2" y="2" width="20" height="22" rx="4" fill="none" stroke="#16161A" stroke-width="2"/><path d="M7 13 L10.5 16.5 L17 9.5" stroke="#16161A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+function todaysPoll(){
+  const dayIndex = Math.floor(Date.now() / 86400000) % POLL_BANK.length;
+  return {id:"daily-"+dayIndex, ...POLL_BANK[dayIndex]};
+}
+
+let current=null, idx=0, scores={}, completed={}, pollsState={}, testLog=null;
+
+/* ============ CALCULATORS ============ */
+const CALCS = {
+  onerm:{ title:"1-Rep Max Calculator", kind:"Calculator", tint:"#EEF2FE", kick:"Tool 01 · Strength", tnum:"1RM",
+    icon:`<svg width="26" height="26" viewBox="0 0 26 26"><rect x="1" y="9" width="4" height="8" rx="1" fill="#1D4ED8"/><rect x="21" y="9" width="4" height="8" rx="1" fill="#1D4ED8"/><rect x="6" y="11" width="14" height="4" rx="1" fill="none" stroke="#1D4ED8" stroke-width="2"/></svg>`,
+    desc:"Estimate your one-rep max from any set — plus working weights for every training zone.",
+    meta:"2 inputs · instant",
+    math:{formula:"1RM = weight × (1 + reps ÷ 30)",
+      expl:"This is the <b>Epley formula</b>, the most widely used 1RM estimate. The logic: every clean rep you complete beyond the first suggests roughly 1/30th more strength in reserve. Lift 185 lbs for 5 reps and the math reads 185 × (1 + 5/30) = 185 × 1.167 ≈ <b>216 lbs</b>. It's most accurate between 2 and 10 reps — past 12, fatigue muddies the estimate, which is why the calculator caps there. The same equation also runs backward: once your 1RM is known, your approximate max for any rep count is <b>1RM ÷ (1 + reps÷30)</b> — that's how the full 1RM–12RM chart in your results is built."},
+    inputs:[{id:"w",label:"Weight lifted (lbs)",ph:"185"},{id:"r",label:"Reps completed (1–12)",ph:"5"}],
+    run:(v)=>{
+      const w=+v.w, r=+v.r;
+      if(!w||!r||r<1||r>12) return {err:"Enter a weight and 1–12 reps (estimates get unreliable past 12)."};
+      const max=Math.round(w*(1+r/30));
+      const repRows=Array.from({length:12},(_,i)=>{
+        const n=i+1, f=1+n/30, wt=Math.round(max/f);
+        const you=n===r?" style='font-weight:700'":"";
+        return `<tr${you}><td>${n}RM${n===r?" · your set":""}</td><td>${wt} lbs</td><td style='opacity:.75'>${max} ÷ ${f.toFixed(3)}</td></tr>`;
+      }).join("");
+      const zones=[[95,"Strength / heavy singles"],[85,"Strength work (3–5 reps)"],[75,"Hypertrophy (8–10 reps)"],[65,"Volume & technique"],[50,"Speed & power work"]]
+        .map(x=>`<tr><td>${x[1]}</td><td>${Math.round(max*x[0]/100)} lbs (${x[0]}%)</td></tr>`).join("");
+      return {big:max+" lbs", unit:"Estimated 1-rep max (Epley)",
+        expl:`<b>Your math:</b> ${w} × (1 + ${r}÷30) = ${w} × ${(1+r/30).toFixed(3)} ≈ <b>${max} lbs</b>. An estimate, not an invitation — you never need to test a true max to train well.
+        <br><br><b>Your full rep-max chart (1RM–12RM):</b> the same formula runs in reverse. If 1RM = weight × (1 + reps÷30), then the weight you should handle for <i>n</i> reps = 1RM ÷ (1 + n÷30). Every row below shows that division so you can see exactly how each number is possible:
+        <table><tr><th style='text-align:left'>Rep max</th><th style='text-align:left'>Weight</th><th style='text-align:left'>How</th></tr>${repRows}</table>
+        <br><b>Training zones</b> (as % of your 1RM):<table>${zones}</table><div class='crawl-tie' style='margin-top:14px'><b>The Crawl angle:</b> strength you can't control is strength you can't use. Pair heavy days with ▲ Body Control cards — the landings and stops that let this number show up in real movement.</div>`};
+    }},
+  bodyfat:{ title:"Body Fat & BMI", kind:"Calculator", tint:"#F2ECFC", kick:"Tool 02 · Body composition", tnum:"BF%",
+    icon:`<svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="6" r="4" fill="none" stroke="#7C3AED" stroke-width="2.2"/><path d="M13 10 L13 18 M13 12 L7 16 M13 12 L19 16 M13 18 L9 24 M13 18 L17 24" stroke="#7C3AED" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`,
+    desc:"Height, weight, age — nothing else. Get your BMI and an estimated body fat percentage, with the math shown.",
+    meta:"4 inputs · no equipment",
+    math:{formula:"BMI = weight(kg) ÷ height(m)²   ·   BF% = 1.20×BMI + 0.23×age − 10.8×S − 5.4",
+      expl:"Two equations working together. <b>BMI</b> is just weight scaled to height — a rough size index. The <b>Deurenberg formula</b> then estimates body fat from BMI, age, and sex (S = 1 for male, 0 for female — the formula was built that way because typical fat distribution differs by sex; age matters because body composition shifts even at the same BMI). <b>Straight talk:</b> both are population estimates. BMI can read muscular people as 'overfat' and can miss low muscle mass — treat the number as a starting point to track over time, not a verdict."},
+    inputs:[{id:"h",label:"Height (inches)",ph:"70"},{id:"wt",label:"Weight (lbs)",ph:"175"},{id:"age",label:"Age (years)",ph:"28"},{id:"sex",label:"Sex (for the formula)",type:"seg",opts:["Male","Female"]}],
+    run:(v)=>{
+      const h=+v.h, w=+v.wt, a=+v.age, sx=v.sex;
+      if(!h||!w||!a||sx===undefined) return {err:"Fill in height, weight, age, and select an option for the formula."};
+      const bmi = (w/2.205) / Math.pow(h*0.0254,2);
+      const S = sx===0 ? 1 : 0;
+      const bf = 1.20*bmi + 0.23*a - 10.8*S - 5.4;
+      const bmiCat = bmi<18.5?"below the 'normal' BMI range":bmi<25?"in the 'normal' BMI range":bmi<30?"in the 'overweight' BMI range":"in the 'obese' BMI range";
+      return {big:bf.toFixed(1)+"%", unit:"Estimated body fat (Deurenberg) · BMI "+bmi.toFixed(1),
+        expl:`<b>Your math:</b> BMI = ${(w/2.205).toFixed(1)}kg ÷ ${(h*0.0254).toFixed(2)}m² = <b>${bmi.toFixed(1)}</b>, which lands ${bmiCat}. Then BF% = 1.20×${bmi.toFixed(1)} + 0.23×${a} − 10.8×${S} − 5.4 = <b>${bf.toFixed(1)}%</b>.<br><br>Remember what this is: an estimate from three numbers. It can't see muscle, bone density, or where you carry weight. The useful move is tracking the <i>same</i> estimate over months — direction beats precision.<div class='crawl-tie' style='margin-top:14px'><b>The Crawl angle:</b> body composition follows daily movement more than occasional heroics. One card a day is the habit engine; the numbers here just keep score.</div>`};
+    }}
+};
+const CALC_ORDER=["onerm","bodyfat"];
+let currentCalc=null;
+function openCalc(k){
+  currentCalc=k; const C=CALCS[k];
+  hideAll();
+  document.getElementById("page-calc").classList.remove("hidden");
+  document.getElementById("pocket").style.display="none";
+  document.getElementById("calc-icon").style.setProperty("--tint",C.tint);
+  document.getElementById("calc-icon").innerHTML=C.icon;
+  document.getElementById("calc-kick").textContent=C.kick;
+  document.getElementById("calc-title").textContent=C.title;
+  document.getElementById("calc-desc").textContent=C.desc;
+  document.getElementById("calc-form").innerHTML=C.inputs.map(i=>{
+    if(i.type==="seg") return `<label>${i.label}</label><div class="seg" id="ci-${i.id}">${i.opts.map((o,j)=>`<button type="button" data-v="${j}" onclick="segPick('${i.id}',${j})">${o}</button>`).join("")}</div>`;
+    return `<label for="ci-${i.id}">${i.label}</label><input type="number" inputmode="decimal" id="ci-${i.id}" placeholder="${i.ph}">`;
+  }).join("") + (C.math?`<div class="math-block"><h4>The math — shown, not hidden</h4><div class="formula">${C.math.formula}</div><p>${C.math.expl}</p></div>`:"");
+  segState={};
+  document.getElementById("calc-out").classList.add("hidden");
+  document.getElementById("calc-run").onclick=runCalc;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+let segState={};
+function segPick(id,j){
+  segState[id]=j;
+  document.querySelectorAll(`#ci-${id} button`).forEach(b=>b.classList.toggle("on",+b.dataset.v===j));
+}
+function runCalc(){
+  const C=CALCS[currentCalc], vals={};
+  C.inputs.forEach(i=>{ vals[i.id] = i.type==="seg" ? segState[i.id] : document.getElementById("ci-"+i.id).value; });
+  const r=C.run(vals);
+  const out=document.getElementById("calc-out");
+  out.classList.remove("hidden");
+  out.innerHTML = r.err
+    ? `<div class="expl" style="color:#C2410C;font-weight:700">${r.err}</div>`
+    : `<div class="big">${r.big}</div><div class="unit">${r.unit}</div><div class="expl">${r.expl}</div>`;
+  out.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+/* ================= LAB FEED ================= */
+const ORDER=["age","sense","somato","suit"];
+const THOUGHTS = {
+  age:`Your birth certificate has one number. Your body keeps a different one.`,
+  sense:`Close your eyes mid-step and one of three systems takes the wheel. Do you know which?`,
+  somato:`Sherrington called it "our secret sense" — the one nobody taught you to train.`,
+  suit:`Everyone has a home suit. Everyone also has one they've been quietly avoiding.`
+};
+const QCOLOR = {age:"#15803D", sense:"#1D4ED8", somato:"#C2410C", suit:"#7C3AED"};
+function renderFeed(){
+  const f=document.getElementById("feed"); if(!f) return; f.innerHTML="";
+  const P = todaysPoll();
+  const A = QUIZZES["age"];
+  /* hero assessment */
+  f.innerHTML += `<div class="lab-hero" style="grid-column:1/-1" onclick="openExplainer('age')">
+    <div class="lh-copy">
+      <div class="lh-kind">Assessment 01 · Physical test${completed["age"]?" · ✓ taken":""}</div>
+      <h3>${A.title}</h3>
+      <p>Five real micro-tests — one-leg stands, the floor get-up, the tightrope walk. Your body answers, not your opinions.</p>
+      <div class="lh-meta"><button class="lh-btn">How it works →</button><span class="lh-tag">${A.meta}</span></div>
+    </div>
+    <div class="lh-art lh-think"><p>Researchers time how long you can stand on one leg with your eyes closed — because the number falls off a cliff with age, and climbs back within weeks of practice.</p><span>Food for thought before you test</span></div>
+  </div>`;
+  /* quiz cards */
+  ["sense","somato","suit"].forEach((k,i)=>{
+    const Q=QUIZZES[k];
+    f.innerHTML+=`<div class="qz8" onclick="openExplainer('${k}')">
+      <div class="qh" style="background:${QCOLOR[k]}">
+        <span class="knd">${Q.kind}</span><span class="idx">0${i+2}</span>
+        <p class="qthought">${THOUGHTS[k]}</p>
+        ${completed[k]?'<span class="done8">✓ Taken</span>':''}
+      </div>
+      <div class="qb"><h3>${Q.title}</h3><p>${Q.desc}</p>
+        <div class="qm"><span>${Q.meta}</span><b>How it works →</b></div></div>
+    </div>`;
+  });
+  /* daily poll banner */
+  const voted=pollsState[P.id];
+  f.innerHTML+=`<div class="poll-banner" style="grid-column:1/-1">
+    <div><div class="pb-kind">Today's poll · new daily</div><h3>${P.title.replace("Poll: ","")}</h3><p>${voted!==undefined?"✓ Logged — a fresh poll drops tomorrow.":P.blurb}</p></div>
+    <div class="pb-opts">${P.opts.map((o,j)=>`<button class="pb-opt ${voted===j?"sel":""}" onclick="votePoll('${P.id}',${j})" ${voted!==undefined?"disabled":""}>${o}</button>`).join("")}</div>
+  </div>`;
+  /* tools */
+  f.innerHTML+=`<div style="grid-column:1/-1"><div class="tools-head"><h3>Tools</h3><span>Numbers, with the math shown</span></div>
+    <div class="tool-grid">${CALC_ORDER.map(k=>{const C=CALCS[k];return `<div class="tool8" onclick="openCalc('${k}')">
+      <div class="tnum">${C.tnum}</div>
+      <div><h3>${C.title}</h3><p>${C.desc}</p><div class="tm">Open the tool →</div></div>
+    </div>`}).join("")}</div></div>`;
+}
+function renderFeat(){
+  const f=document.getElementById("feat"); if(!f) return; f.innerHTML="";
+  const A=QUIZZES["age"], S=QUIZZES["sense"], C=CALCS["onerm"];
+  f.innerHTML=`
+    <div class="qz8" onclick="openExplainer('age')">
+      <div class="qh" style="background:${QCOLOR.age}"><span class="knd">Physical test</span><p class="qthought">${THOUGHTS.age}</p></div>
+      <div class="qb"><h3>${A.title}</h3><p>Five real micro-tests. Your body answers, not your opinions.</p>
+      <div class="qm"><span>${A.meta}</span><b>How it works →</b></div></div></div>
+    <div class="qz8" onclick="openExplainer('sense')">
+      <div class="qh" style="background:${QCOLOR.sense}"><span class="knd">Quiz</span><p class="qthought">${THOUGHTS.sense}</p></div>
+      <div class="qb"><h3>${S.title}</h3><p>${S.desc}</p>
+      <div class="qm"><span>${S.meta}</span><b>How it works →</b></div></div></div>
+    <div class="qz8" onclick="openCalc('onerm')">
+      <div class="qh" style="background:#16161A"><span class="knd">Calculator</span><svg width="60" height="60" viewBox="0 0 60 60"><rect x="4" y="22" width="8" height="16" rx="2" fill="#fff"/><rect x="48" y="22" width="8" height="16" rx="2" fill="#fff"/><rect x="14" y="26" width="32" height="8" rx="2" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div>
+      <div class="qb"><h3>${C.title}</h3><p>${C.desc}</p>
+      <div class="qm"><span>${C.meta}</span><b>Open →</b></div></div></div>`;
+}
+function votePoll(id,i){ pollsState[id]=i; renderFeed(); }
+
+/* ================= EXPLAINER ================= */
+function openExplainer(k){
+  const Q=QUIZZES[k], E=Q.explainer;
+  hideAll();
+  document.getElementById("page-explainer").classList.remove("hidden");
+  document.getElementById("exp-icon").style.setProperty("--tint",Q.tint);
+  document.getElementById("exp-icon").innerHTML=Q.icon;
+  document.getElementById("exp-kick").textContent=E.kick;
+  document.getElementById("exp-title").textContent=Q.title;
+  document.getElementById("exp-grid").innerHTML=`
+    <div class="exp-block"><h4>What it measures</h4><p>${E.measures}</p></div>
+    <div class="exp-block"><h4>The science</h4><p>${E.science}</p></div>
+    <div class="exp-block"><h4>What results mean</h4><ul>${E.results.map(r=>`<li>${r}</li>`).join("")}</ul></div>
+    <div class="exp-block"><h4>How to use your result</h4><p>${E.use}</p></div>`;
+  document.getElementById("exp-start").onclick=()=>startQuiz(k);
+  document.getElementById("exp-start").textContent = Q.isTest ? "Start the tests — stand up" : "Start the assessment";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ================= POCKET TEST ================= */
+function togglePocket(){ document.getElementById("pocket").classList.toggle("min"); }
+function logTest(v){
+  testLog=v;
+  ["pk-a","pk-b","pk-c"].forEach(id=>document.getElementById(id).classList.remove("sel"));
+  document.getElementById(v==="pass"?"pk-a":v==="close"?"pk-b":"pk-c").classList.add("sel");
+}
+
+/* ================= ROUTING ================= */
+const PAGES=["home","lab","explainer","deck","science","videos","mission","about","donate","news","calc","terms","privacy","disclaimer"];
+function hideAll(){
+  PAGES.forEach(x=>document.getElementById("page-"+x).classList.add("hidden"));
+  document.getElementById("quizview").classList.add("hidden");
+  document.getElementById("resultview").classList.add("hidden");
+}
+function showPage(p){
+  hideAll();
+  document.getElementById("page-"+p).classList.remove("hidden");
+  if(p==="lab") renderFeed();
+  /* pocket test visible only on home */
+  document.getElementById("pocket").style.display = (p==="home") ? "block" : "none";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function toggleMenu(force){
+  const m=document.getElementById("mmenu");
+  if(force===false){m.classList.remove("open");return}
+  m.classList.toggle("open");
+}
+function preorder(){ alert("Preorder opens soon — take a quiz and drop your email for first access."); }
+
+/* ================= QUIZ ENGINE ================= */
+function startQuiz(k){
+  current=k; idx=0; scores={};
+  QUIZZES[k].keys.forEach(x=>scores[x]=0);
+  hideAll();
+  document.getElementById("pocket").style.display="none";
+  document.getElementById("quizview").classList.remove("hidden");
+  document.getElementById("quizview").style.setProperty("--qc",QUIZZES[k].color);
+  document.getElementById("qz-title").textContent=QUIZZES[k].title;
+  renderQ();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderQ(){
+  const Q=QUIZZES[current];
+  document.getElementById("pbar").style.width=(idx/Q.qs.length*100)+"%";
+  if(idx>=Q.qs.length) return showResult();
+  const q=Q.qs[idx];
+  document.getElementById("qbody").innerHTML=`<div class="tile qcard" style="--qc:${Q.color}">
+    <div class="qnum" style="color:${Q.color}">Question ${idx+1} / ${Q.qs.length}</div>
+    ${q.s?`<div class="scenario">${q.s}</div>`:""}
+    <div class="qtext">${q.q}</div>
+    ${q.help?`<div class="qhelp">${q.help}</div>`:""}
+    ${q.o.map((o,i)=>`<button class="opt" style="--qc:${Q.color}" onclick="answer(${i})">${o[0]}</button>`).join("")}
+  </div>`;
+}
+function answer(i){
+  const Q=QUIZZES[current], o=Q.qs[idx].o[i];
+  if(Q.isTest){ scores.y+=Number(o[1]); } else { scores[o[1]]++; }
+  idx++; renderQ();
+}
+function showResult(){
+  completed[current]=true;
+  const Q=QUIZZES[current];
+  hideAll();
+  document.getElementById("resultview").classList.remove("hidden");
+  const barsEl=document.getElementById("r-bars"), cardsEl=document.getElementById("r-cards");
+  barsEl.innerHTML=""; cardsEl.innerHTML="";
+  if(Q.isTest){
+    const s=scores.y; let ageTxt,msg,tips;
+    if(s>=18){ageTxt="20s";msg="Your movement system is running young — control, feel, and power are all picking up the phone.";
+      tips=["Maintain with Level 3–4 cards — you've earned the chaos","You're ready for the full deck at speed","Retest monthly. Defend the number."];}
+    else if(s>=14){ageTxt="30s";msg="Solid base with early leaks — the eyes-closed test or the floor get-up probably told on you.";
+      tips=["Your lowest test = your first suit. Train the leak, not the strength.","10 minutes a day closes these gaps in weeks","Retest in 30 days — this bracket moves fast"];}
+    else if(s>=9){ageTxt="40s–50s";msg="Your body is compensating — vision and momentum are covering for balance and feel. Normal, common, and very fixable.";
+      tips=["Start at Level 1. No shame — that's what it's for.","Eyes-closed and floor-transition cards are the priority","One card a day. The compound interest is real."];}
+    else{ageTxt="60s+";msg="Your movement age is running ahead of your calendar — which means the upside is enormous. Every session moves this number.";
+      tips=["Level 1 cards only for month one — build the floor","Balance near a wall or counter. Safety first, always.","Retest monthly and watch the age fall. It will."];}
+    document.getElementById("r-title").textContent=`Movement age: ${ageTxt}`;
+    document.getElementById("r-lead").textContent=msg+" (Score: "+s+"/20 — a playful estimate, not a medical assessment.)";
+    barsEl.innerHTML=`<div class="bar-row"><span class="lab" style="color:${Q.color}">Score</span><div class="bar-track"><div class="bar-fill" style="background:${Q.color};width:${s/20*100}%"></div></div><span class="pct">${s}/20</span></div>`;
+    cardsEl.innerHTML=`<div class="tile type-card" style="--tc:${Q.color}">
+      <span class="tag">Your plan</span><h3>Lower the number</h3>
+      <p class="what">Movement age isn't fixed — it's the most trainable number you own. Balance and feel respond to practice within weeks at any calendar age.</p>
+      <h4>Do this next</h4><ul>${tips.map(t=>`<li>${t}</li>`).join("")}</ul>
+      <div class="crawl-tie">The deck's <b>Crawl Map</b> tracks all 208 progressions — your retest scores climb as the boxes fill.</div></div>`;
+    window._shareText=`My movement age: ${ageTxt} (${s}/20) on the Crawl movement test. What's yours?`;
+  } else {
+    const total=Object.values(scores).reduce((a,b)=>a+b,0);
+    const sorted=[...Q.keys].sort((a,b)=>scores[b]-scores[a]);
+    const prim=sorted[0], sec=sorted[1];
+    const isBlend=scores[sec]>=scores[prim]-1&&scores[sec]>0;
+    const R=Q.results;
+    document.getElementById("r-title").textContent=isBlend?`${R[prim].name} × ${R[sec].name}`:R[prim].name;
+    document.getElementById("r-lead").textContent=Q.blendLead;
+    Q.keys.forEach(k=>{
+      const p=Math.round(scores[k]/total*100);
+      barsEl.innerHTML+=`<div class="bar-row"><span class="lab" style="color:${Q.labels[k].c}">${Q.labels[k].n}</span><div class="bar-track"><div class="bar-fill" style="background:${Q.labels[k].c};width:0%" data-w="${p}"></div></div><span class="pct">${p}%</span></div>`;
+    });
+    setTimeout(()=>{document.querySelectorAll(".bar-fill[data-w]").forEach(b=>b.style.width=b.dataset.w+"%")},60);
+    (isBlend?[prim,sec]:[prim]).forEach((t,i)=>{
+      const T=R[t];
+      cardsEl.innerHTML+=`<div class="tile type-card" style="--tc:${T.color}">
+        <span class="tag">${i===0?"Your primary result":"Your secondary result"}</span>
+        <h3>${T.name}</h3><p class="what">${T.what}</p>
+        <h4>How to optimize your training</h4>
+        <ul>${T.train.map(x=>`<li>${x}</li>`).join("")}</ul>
+        <div class="crawl-tie">${T.tie}</div></div>`;
+    });
+    window._shareText=`I got ${R[prim].name} on "${Q.title}" from Crawl. What are you?`;
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function copyResult(){
+  const t=window._shareText||"Crawl — know your body in 2 minutes";
+  if(navigator.clipboard){navigator.clipboard.writeText(t+" "+window.location.href).then(()=>{
+    document.getElementById("copybtn").textContent="✓ Copied — paste it anywhere";
+    setTimeout(()=>document.getElementById("copybtn").textContent="Copy my result",2200);
+  }).catch(()=>{});}
+}
+function nextQuiz(){
+  const r=ORDER.filter(k=>!completed[k]);
+  if(r.length) openExplainer(r[0]); else showPage("lab");
+}
+function retake(){ startQuiz(current); }
+function captureEmail(id){
+  const e=document.getElementById(id);
+  if(e.value.includes("@")){ e.value=""; e.placeholder="✓ You're on the list."; }
+  else{ e.placeholder="Enter a valid email"; }
+}
+function fakeSubmit(){
+  const e=document.getElementById("email");
+  if(e.value.includes("@")){ e.value=""; e.placeholder="✓ Sent! Check your inbox."; }
+  else{ e.placeholder="Enter a valid email"; }
+}
+
+/* ================= VIDEO HUB ================= */
+const PLAY=`<svg width="42" height="42" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="#fff"/><path d="M17 13 L31 22 L17 31 Z" fill="#16161A"/></svg>`;
+const LOCKSVG=`<svg width="28" height="34" viewBox="0 0 30 36"><rect x="3" y="15" width="24" height="17" rx="4" fill="none" stroke="#8a877e" stroke-width="2.5"/><path d="M9 15 v-4.5 a6 6 0 0 1 12 0 v4.5" fill="none" stroke="#8a877e" stroke-width="2.5"/><circle cx="15" cy="23" r="2.6" fill="#8a877e"/></svg>`;
+const VIDS=[
+  {nm:"Single-Leg Hold", sc:"#1D4ED8", lvl:"LVL 1 · ◆1", free:true},
+  {nm:"Eyes-Closed Single-Leg", sc:"#7C3AED", lvl:"LVL 1 · ■6", free:true},
+  {nm:"Snap-Down Landing", sc:"#15803D", lvl:"LVL 1 · ▲1", free:true},
+  {nm:"Ball Drop Catch", sc:"#C2410C", lvl:"LVL 1 · ●2", free:true},
+  {nm:"Blind Clock Reach", sc:"#1D4ED8", lvl:"LVL 4 · ◆13", free:false},
+  {nm:"Chaos Ball", sc:"#C2410C", lvl:"LVL 4 · ●13", free:false},
+  {nm:"Reactive Cut", sc:"#15803D", lvl:"LVL 4 · ▲13", free:false},
+  {nm:"Blindfold Flow", sc:"#7C3AED", lvl:"LVL 4 · ■13", free:false}
+];
+function renderVids(){
+  const g=document.getElementById("vidgrid"); if(!g) return; g.innerHTML="";
+  VIDS.forEach(v=>{
+    g.innerHTML+=`<div class="tile hov vid ${v.free?"free":"locked"}" style="--sc:${v.sc}" onclick="${v.free?"alert('Free videos post here after the filming sessions.')":"alert('Levels 2\\u20134 unlock with the deck.')"}">
+      <div class="vthumb">${v.free?PLAY:LOCKSVG}<span class="flag">${v.free?"Free":"Deck only"}</span></div>
+      <div class="vbody"><h4>${v.nm}</h4><div class="vmeta">${v.lvl}</div></div>
+    </div>`;
+  });
+}
+renderFeed(); renderVids(); renderFeat();
+</script>
+</body>
+</html>
