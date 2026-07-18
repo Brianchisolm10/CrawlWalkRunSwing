@@ -412,6 +412,97 @@ nav{background:rgba(250,247,240,.94)}
 .pc-pips i.on{background:var(--sc)}
 .pc-foot span{font-family:'Space Mono',monospace;font-size:7.8px;letter-spacing:.05em;text-transform:uppercase;color:#8A9288;text-align:right}
 .hero-note{text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8A9288;margin-top:14px}
+/* ===== shop: box shots ===== */
+.boxshot{position:relative;width:170px;height:200px;margin:0 auto;flex:0 0 auto}
+.boxshot .bs-cards i{position:absolute;top:8px;left:50%;width:120px;height:168px;background:var(--chalk);border:1px solid #E7E0D2;border-radius:8px;box-shadow:0 8px 20px rgba(15,74,45,.16)}
+.boxshot .bs-cards i:first-child{transform:translateX(-72%) rotate(-8deg)}
+.boxshot .bs-cards i:last-child{transform:translateX(-28%) rotate(7deg)}
+.boxshot .bs-box{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:132px;height:170px;background:var(--da);border-radius:7px;box-shadow:0 16px 30px rgba(15,74,45,.28), inset 0 0 0 5px rgba(255,255,255,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:12px;text-align:center}
+.boxshot .bs-box b{font-family:'Fraunces',serif;font-size:27px;color:#fff;line-height:1}
+.boxshot .bs-vol{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.boxshot .bs-tag{font-size:10px;color:rgba(255,255,255,.92);line-height:1.3;font-weight:600}
+.boxshot .bs-suits{display:flex;gap:8px;font-size:11px;opacity:.9}
+.boxshot.big{width:230px;height:270px}
+.boxshot.big .bs-cards i{width:160px;height:224px;border-radius:10px}
+.boxshot.big .bs-box{width:176px;height:228px}
+.boxshot.big .bs-box b{font-size:36px}
+.boxshot.big .bs-tag{font-size:12px}
+.boxshot.mini{width:92px;height:104px}
+.boxshot.mini .bs-cards{display:none}
+.boxshot.mini .bs-box{width:82px;height:104px;gap:4px;padding:8px}
+.boxshot.mini .bs-box b{font-size:16px}
+.boxshot.mini .bs-tag,.boxshot.mini .bs-suits{display:none}
+.boxshot.mini .bs-vol{font-size:6.5px}
+/* ===== storefront grid ===== */
+.store-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px}
+@media(max-width:1020px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.store-grid{grid-template-columns:1fr}}
+.store-tile{padding:26px 20px 20px;display:flex;flex-direction:column;gap:16px;border-top:4px solid var(--da);transition:box-shadow .15s, transform .15s}
+.store-tile:hover{box-shadow:0 18px 40px rgba(15,74,45,.14);transform:translateY(-3px)}
+.st-info h3{font-family:'Fraunces',serif;font-size:24px}
+.st-who{font-size:13px;color:#4E5A50;margin-top:5px;line-height:1.45;min-height:38px}
+.st-row{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.st-price{font-family:'Fraunces',serif;font-size:24px;color:var(--ink);margin-right:auto}
+.btn.sm{padding:9px 16px;font-size:13px}
+.give-line{margin-top:22px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6B7A70}
+/* ===== deck detail ===== */
+.dv-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:30px 0 8px}
+@media(max-width:820px){.dv-hero{grid-template-columns:1fr}.dv-box{order:-1}}
+.dv-box{display:flex;justify-content:center}
+.inside-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+@media(max-width:820px){.inside-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.in-item{padding:18px;text-align:center}
+.in-item b{display:block;font-family:'Fraunces',serif;font-size:30px;color:var(--cobalt)}
+.in-item span{display:block;font-size:12px;color:#4E5A50;margin-top:5px;line-height:1.4}
+.dv-cards{margin-top:8px;padding-bottom:24px}
+.sci-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+@media(max-width:820px){.sci-grid{grid-template-columns:1fr}}
+.sci-card{padding:24px;border-top:4px solid var(--da)}
+.sci-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--da);letter-spacing:.1em}
+.sci-card h4{font-family:'Fraunces',serif;font-size:19px;margin-top:8px}
+.sci-card p{font-size:13.5px;color:#3E5147;margin-top:8px;line-height:1.55}
+.vid-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+@media(max-width:820px){.vid-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vid-tile{position:relative;aspect-ratio:16/10;border-radius:6px;background:linear-gradient(135deg,var(--moss),#0A3521);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden;transition:transform .15s}
+.vid-tile:hover{transform:translateY(-3px)}
+.vid-tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--da) 34%, transparent), transparent 60%)}
+.vt-lvl{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);z-index:1}
+.vt-play{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--moss);display:flex;align-items:center;justify-content:center;font-size:15px;padding-left:4px;z-index:1}
+.vt-cap{font-size:11.5px;color:rgba(255,255,255,.85);font-weight:600;z-index:1}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;max-width:760px}
+.faq-item{padding:0}
+.faq-item summary{padding:16px 20px;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;position:relative}
+.faq-item summary::after{content:"+";position:absolute;right:18px;top:12px;font-size:20px;color:var(--cobalt)}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{padding:0 20px 16px;font-size:13.5px;color:#3E5147;line-height:1.55}
+/* sticky buy bar */
+.buybar{position:fixed;left:0;right:0;bottom:0;background:var(--chalk);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(15,74,45,.10);z-index:60;display:block}
+#page-deckview.hidden .buybar{display:none}
+.bb-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 18px}
+.bb-in span{font-size:14px}
+@media(min-width:861px){#dv-buybar{display:none !important}}
+/* ===== order page ===== */
+.order-body{display:grid;grid-template-columns:1.35fr .85fr;gap:18px;margin-top:26px;align-items:start}
+@media(max-width:860px){.order-body{grid-template-columns:1fr}}
+#order-list{display:flex;flex-direction:column;gap:12px}
+.order-row{display:flex;align-items:center;gap:18px;padding:16px 18px;cursor:pointer;border-left:4px solid transparent;transition:border-color .15s, box-shadow .15s}
+.order-row:hover{box-shadow:0 10px 26px rgba(15,74,45,.10)}
+.order-row.picked{border-left-color:var(--da);box-shadow:0 0 0 1.5px var(--da)}
+.or-info{flex:1;min-width:0}
+.or-info h3{font-family:'Fraunces',serif;font-size:20px}
+.or-info p{font-size:12.5px;color:#4E5A50;margin-top:3px;line-height:1.4}
+.or-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.or-side .st-price{font-size:19px;margin:0}
+.or-btn{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt)}
+.order-row.picked .or-btn{color:var(--da)}
+.order-summary{padding:24px;position:sticky;top:86px}
+.order-summary h3{font-family:'Fraunces',serif;font-size:21px;margin-bottom:10px}
+.sum-row{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.sum-empty{font-size:13px;color:#8A9288;padding:8px 0}
+.sum-total{display:flex;justify-content:space-between;font-family:'Fraunces',serif;font-size:19px;padding:12px 0 4px}
+.sum-note{font-size:11.5px;color:#6B7A70;line-height:1.5;margin:8px 0 14px}
+.order-summary input{width:100%;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--bone);margin-bottom:10px}
+.sum-fine{font-size:12px;color:var(--cobalt);font-weight:600;margin-top:10px;min-height:16px}
 /* deck line selector */
 .deck-tabs{position:relative;z-index:4;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:960px;margin:46px auto 0;padding:0 16px}
 .dtab{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:14px 14px 12px;cursor:pointer;text-align:center;font-family:'Source Sans 3',sans-serif;transition:border-color .15s, box-shadow .15s;display:flex;flex-direction:column;justify-content:flex-start}
@@ -563,7 +654,7 @@ footer{background:var(--moss)}
       <a onclick="showPage('lab')">The Lab</a>
       <a onclick="showPage('mission')">The Mission</a>
       <a onclick="showPage('about')">About</a>
-      <a class="nav-cta" onclick="preorder()">Preorder — $44</a>
+      <a class="nav-cta" onclick="preorder()">Reserve a deck</a>
     </div>
     <button class="burger" onclick="toggleMenu()" aria-label="Menu">
       <svg width="26" height="20" viewBox="0 0 26 20"><line x1="1" y1="2" x2="25" y2="2" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="10" x2="25" y2="10" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="18" x2="25" y2="18" stroke="#16161A" stroke-width="3" stroke-linecap="round"/></svg>
@@ -574,7 +665,7 @@ footer{background:var(--moss)}
     <a onclick="showPage('lab');toggleMenu(false)">The Lab</a>
     <a onclick="showPage('mission');toggleMenu(false)">The Mission</a>
     <a onclick="showPage('about');toggleMenu(false)">About</a>
-    <a onclick="preorder();toggleMenu(false)">Preorder — $44</a>
+    <a onclick="preorder();toggleMenu(false)">Reserve a deck</a>
   </div>
 </nav>
 
@@ -587,7 +678,7 @@ footer{background:var(--moss)}
       <h1>Learn to move <em>again</em></h1>
       <p class="sub">One card a day rebuilds the four skills your gym routine skips — balance, reaction, body control, and feel.</p>
       <div class="hero-cta">
-        <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+        <button class="btn blue" onclick="preorder()">Reserve your deck</button>
         <button class="btn ghost" onclick="showPage('lab')">Test yourself free</button>
       </div>
     </div>
@@ -595,27 +686,6 @@ footer{background:var(--moss)}
     <div class="hero-note" id="hero-note"></div>
     <div class="deck-tabs" id="deck-tabs"></div>
     <div class="hero-cta" style="justify-content:center;margin-top:22px"><button class="btn blue" style="background:var(--moss);color:var(--chalk)" onclick="showPage('deck')">Learn more about the deck</button></div>
-
-    <div class="tile showcase">
-      <div>
-        <div class="photo"><img src="https://design.canva.ai/OrpvRsA4hd619DX" alt="Hands fanning out the Crawl training card deck"></div>
-        <div class="ph-credit">Placeholder — real product photo coming</div>
-      </div>
-      <div>
-        <div class="kicker">Crawl Vol. 1</div>
-        <h2>The deck</h2>
-        <p>52 drill cards across four suits, each with 4 levels of progression — 208 steps from "start today" to "nobody will believe you." Everything filmed. Nothing needed beyond a ball, a towel, and a floor.</p>
-        <ul>
-          <li>Premium linen cards + the fold-out Crawl Map</li>
-          <li>Every drill filmed at all 4 levels — scan any card</li>
-          <li>Built for tendons, joints, and fascia — not just muscles</li>
-        </ul>
-        <div class="hero-cta">
-          <button class="btn blue" onclick="preorder()">Preorder — $44</button>
-          <button class="btn ghost" onclick="showPage('deck')">Learn more</button>
-        </div>
-      </div>
-    </div>
 
     <div style="margin:6px 0 26px">
       <div class="kicker" style="margin-bottom:12px">From the Lab · free</div>
@@ -669,35 +739,14 @@ footer{background:var(--moss)}
 <!-- ================= THE DECK PAGE (no-scroll) ================= -->
 <div id="page-deck" class="hidden">
   <div class="wrap">
-    <div class="deck-hero" style="padding:36px 0 6px">
-      <div>
-        <div class="kicker">Crawl Vol. 1 — $44</div>
-        <h1 style="font-size:clamp(32px,6.5vw,58px)">One card a day.<br><em>That's the program.</em></h1>
-        <p class="sub" style="font-size:15px;color:#4a4a52;margin-top:10px">52 drills · 4 levels each · the Crawl Map · full video library. Zero equipment. Ships 2–3 weeks after preorder.</p>
-        <div class="hero-cta" style="margin-top:16px">
-          <button class="btn blue" onclick="preorder()">Preorder — $44</button>
-          <button class="btn ghost" onclick="showPage('science')">The Science</button>
-          <button class="btn ghost" onclick="showPage('videos')">Video Hub</button>
-        </div>
-      </div>
-      <div>
-        <div class="photo" style="aspect-ratio:1/1;max-height:340px"><img src="https://design.canva.ai/OrpvRsA4hd619DX" alt="The Crawl deck held in hands"></div>
-      </div>
+    <div class="calc-head" style="padding-top:28px">
+      <div class="kicker">The Decks · four programs, one system</div>
+      <h1 style="font-size:clamp(30px,6vw,52px)">Pick the deck built<br><em>for your life</em></h1>
+      <p class="sec-sub" style="max-width:700px">Same 52-card system, same filmed levels, same suits — tuned to four different bodies and four different goals. Every box: 52 cards, 208 filmed progressions, and a fold-out progress map for your wall.</p>
     </div>
-    <div class="tile pack-tile">
-      <h3>What's in the pack</h3>
-      <ul class="pack-list">
-        <li><b>52 drill cards</b> — premium linen finish, across four suits: Balance, Reaction, Body Control, Feel</li>
-        <li><b>208 total progressions</b> — every drill built out to 4 levels, from "start today" to full expression</li>
-        <li><b>The Crawl Map</b> — a fold-out wall poster to check off all 208 steps as you go</li>
-        <li><b>Full video library</b> — 260 filmed demos, every drill at every level, unlocked from day one</li>
-        <li><b>QR-linked cards</b> — scan any card to pull up its videos on the spot, no app or login needed</li>
-        <li><b>Zero equipment required</b> — the whole deck runs on a ball, a towel, and a floor</li>
-        <li><b>A deck for a kid</b> — one deck donated to a DMV youth program for every ten sold</li>
-      </ul>
-      <p class="pack-note">$44 one time, no subscription. Ships 2–3 weeks after preorder closes.</p>
-    </div>
-    <div class="flow" style="margin-top:10px;margin-bottom:40px">
+    <div class="store-grid" id="store-grid"></div>
+    <div class="give-line">◆ One deck donated to a DMV youth program for every ten sold.</div>
+<div class="flow" style="margin-top:10px;margin-bottom:40px">
       <div class="tile flow-step">
         <div class="icon-sq" style="--tint:#E9F1E6"><svg width="24" height="28" viewBox="0 0 26 30"><rect x="2" y="5" width="17" height="23" rx="3" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><rect x="7" y="1" width="17" height="23" rx="3" fill="#fff" stroke="#1D4ED8" stroke-width="2.5"/><path d="M15.5 8 l4 5 -4 5 -4 -5 z" fill="#1D4ED8"/></svg></div>
         <div class="stage">Step 01</div><h4>Draw</h4>
@@ -756,6 +805,32 @@ footer{background:var(--moss)}
   </div>
 </div>
 
+<!-- ================= DECK DETAIL PAGE ================= -->
+<div id="page-deckview" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('deck')">← All decks</button></div>
+    <div id="dv-body"></div>
+  </div>
+  <div class="buybar" id="dv-buybar"></div>
+</div>
+
+<!-- ================= ORDER / RESERVE PAGE ================= -->
+<div id="page-order" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('deck')">← All decks</button></div>
+    <div class="calc-head">
+      <div class="kicker">Reserve · pay nothing today</div>
+      <h1 style="font-size:clamp(28px,5.5vw,46px)">Build your box</h1>
+      <p class="sec-sub" style="max-width:700px">Pick one deck or stack several. Reserving is free — it locks founders' access, first shipment, and first crack at multi-deck bundle pricing when preorders open.</p>
+    </div>
+    <div class="order-body">
+      <div id="order-list"></div>
+      <div class="order-summary tile" id="order-summary"></div>
+    </div>
+    <div style="height:70px"></div>
+  </div>
+</div>
+
 <!-- ================= SCIENCE PAGE ================= -->
 <div id="page-science" class="hidden">
   <div class="wrap">
@@ -806,7 +881,7 @@ footer{background:var(--moss)}
         </div>
       </div>
       <div class="hero-cta" style="margin:28px 0 50px">
-        <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+        <button class="btn blue" onclick="preorder()">Reserve your deck</button>
         <button class="btn ghost" onclick="showPage('videos')">Video Hub</button>
       </div>
     </div>
@@ -881,10 +956,6 @@ footer{background:var(--moss)}
       <h1>Every deck<br><em>moves a kid.</em></h1>
       <p class="sub">Crawl started on courts and rec-center floors in the DMV — coaching young athletes whose access to real movement training depended on their zip code. That's still the point.</p>
     </div>
-    <div class="mission-photo">
-      <div class="photo"><img src="https://design.canva.ai/TI0Df26o-k3bH_V" alt="Coach teaching a young athlete balance on an outdoor court"></div>
-      <div class="ph-credit">Placeholder — real session photos coming</div>
-    </div>
     <div class="prose" style="margin-top:26px">
       <p><b>A share of every deck sold funds free movement sessions and equipment for youth programs</b> in Prince George's and Montgomery County, Maryland. When you buy Vol. 1, a kid gets coached. Simple math.</p>
       <p>The same 52 drills in your box run at those sessions — no tryouts, no fees, no barriers. Movement skill shouldn't be a luxury good, and a deck of cards is cheap enough to make sure it isn't.</p>
@@ -920,7 +991,7 @@ footer{background:var(--moss)}
       <span class="cred">DMV BORN &amp; RAISED</span>
     </div>
     <div class="hero-cta" style="margin:28px 0 60px">
-      <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+      <button class="btn blue" onclick="preorder()">Reserve your deck</button>
       <button class="btn ghost" onclick="showPage('lab')">Try the Lab</button>
     </div>
   </div>
@@ -1047,7 +1118,7 @@ footer{background:var(--moss)}
     <div class="cta-block">
       <h3>Your starting cards are in the box</h3>
       <p>52 drills · 4 levels · the Crawl Map · every drill filmed. One card a day.</p>
-      <button class="btn blue" onclick="preorder()">Get the Deck — $44</button>
+      <button class="btn blue" onclick="preorder()">Reserve your deck — $44</button>
       <button class="restart" onclick="retake()">Retake this quiz</button>
     </div>
   </div>
@@ -1089,7 +1160,7 @@ footer{background:var(--moss)}
         <a onclick="showPage('deck')">How it works</a>
         <a onclick="showPage('science')">The science</a>
         <a onclick="showPage('videos')">Video hub</a>
-        <a onclick="preorder()">Preorder Vol. 1</a>
+        <a onclick="preorder()">Reserve a deck</a>
       </div>
       <div class="foot-col">
         <h5>The Lab</h5>
@@ -1512,7 +1583,130 @@ function renderDeckCards(){
 function pickDeck(k){ currentDeck=k; renderDeckTabs(); renderDeckCards(); }
 renderDeckTabs(); renderDeckCards();
 
-const PAGES=["home","lab","explainer","deck","science","videos","mission","about","donate","news","calc","terms","privacy","disclaimer"];
+/* ===== DECK LINE: shop data ===== */
+const DECK_META = {
+  crawl:{ accent:"var(--cobalt)", tag:"Learn to move again", pitch:"The athlete's deck. Balance, reaction, body control, and feel — the four skills that make every sport easier and every season safer.",
+    sci:[["Trained balance prevents injury","Neuromuscular and balance training programs significantly reduce ankle and knee injuries in young athletes — it's the most consistent finding in sports injury prevention research."],
+         ["Landings are learnable","Athletes taught to land and decelerate well show measurably lower ACL injury risk. Drop &amp; Stick isn't a warm-up filler — it's the highest-value skill in the deck."],
+         ["Broad first, special later","Athletes who build multiple movement skills before specializing get injured less and play longer — the consensus position of the American Orthopaedic Society for Sports Medicine."]],
+    faq:["Which age is this for?|Youth through college and beyond — levels 1 to 4 mean a 10-year-old and a D1 athlete can run the same card at different depths.",
+         "Do I need equipment?|A ball, a towel, a low ledge. Nothing you don't already have."]},
+  rebuild:{ accent:"var(--bal)", tag:"Keep the muscle that matters", pitch:"For anyone losing weight — including on GLP-1 medications — who refuses to lose their strength with it. Gentle entry, serious purpose.",
+    sci:[["Weight loss takes muscle with it","Without resistance work, a meaningful share of lost weight is lean mass — the tissue that drives metabolism, strength, and independence. Training while losing changes what the scale is actually removing."],
+         ["Sit-to-stand is a vital sign","How easily you rise from a chair without hands tracks with functional independence for decades to come. It's trainable at any starting point — and it's card 18."],
+         ["Muscle protects the result","Preserved lean mass supports resting metabolism, making the new weight easier to keep. Strength is the difference between losing weight and keeping it lost."]],
+    faq:["Is this safe if I'm on medication?|The drills are bodyweight and household-object based, built to start gentle. As with any exercise program, run it by your physician first — especially mid-treatment.",
+         "I've never trained before. Too much?|Level 1 of every card assumes exactly that. The deck meets you at the counter-tap, not the gym."]},
+  pump:{ accent:"var(--rea)", tag:"Look good in 20 minutes", pitch:"The fast deck. Chest, arms, shoulders, posture — visible work you can run in a bedroom before you head out. No gym, no excuses.",
+    sci:[["Consistency beats duration","Short sessions done often outperform long sessions done rarely — adherence predicts results better than any single workout variable."],
+         ["Effort equals growth","Bodyweight and household loads build muscle comparably to gym machines when sets are taken close to honest failure. The resistance is negotiable; the effort isn't."],
+         ["The pump is real work","The tight, full feeling after high-rep sets reflects genuine metabolic stress — one of the drivers of muscle growth, not just a mirror trick."]],
+    faq:["How long is a session?|One card is a 5–20 minute block. Stack two when you have time; run one when you don't.",
+         "Will I actually see results?|With honest effort and consistency, yes — the deck is built around the muscles you see first: chest, arms, shoulders, and posture."]},
+  prime:{ accent:"var(--fee)", tag:"Strength that lasts", pitch:"Bone, muscle, grip, and power — the four currencies of staying independent. Built on what the aging-strength research actually says.",
+    sci:[["Grip predicts the future","Grip strength is one of the strongest simple predictors of long-term health and independence ever measured — and it responds to training at every age."],
+         ["Bone answers to loading","The skeleton adapts to impact and resistance throughout life. Heel drops and loaded carries are deposits in an account you'll draw on later."],
+         ["Power fades before strength","The ability to produce force quickly declines faster with age than strength itself — and it's what catches a stumble. Prime trains it on purpose."]],
+    faq:["Am I too old to start?|The research says no — strength and bone respond to training at every age studied. Level 1 exists precisely for day one.",
+         "Is this a rehab program?|No. Prime builds durability; it doesn't treat injuries. Anything painful belongs with your physician or physical therapist first."]}
+};
+let cart={};
+function boxShot(k,cls){
+  const D=DECKS[k],M=DECK_META[k];
+  return `<div class="boxshot ${cls||""}" style="--da:${M.accent}">
+    <div class="bs-cards"><i></i><i></i></div>
+    <div class="bs-box"><span class="bs-vol">Vol. 1 · 52 cards</span><b>${D.name}</b><span class="bs-tag">${M.tag}</span>
+    <span class="bs-suits"><u style="color:#fff">◆</u><u style="color:#fff">●</u><u style="color:#fff">▲</u><u style="color:#fff">■</u></span></div>
+  </div>`;
+}
+function renderStore(){
+  const el=document.getElementById("store-grid"); if(!el) return;
+  el.innerHTML = Object.keys(DECKS).map(k=>{
+    const D=DECKS[k],M=DECK_META[k];
+    return `<div class="store-tile tile" style="--da:${M.accent}">
+      ${boxShot(k)}
+      <div class="st-info">
+        <h3>${D.name}</h3>
+        <p class="st-who">${D.who}</p>
+        <div class="st-row"><span class="st-price">$44</span>
+          <button class="btn ghost sm" onclick="openDeck('${k}')">Explore</button>
+          <button class="btn blue sm" onclick="preorder('${k}')">Preorder</button></div>
+      </div>
+    </div>`;}).join("");
+}
+function openDeck(k){
+  const D=DECKS[k],M=DECK_META[k];
+  document.getElementById("dv-body").innerHTML = `
+    <div class="dv-hero" style="--da:${M.accent}">
+      <div>
+        <div class="kicker" style="color:${M.accent}">${D.name} · Vol. 1 · $44</div>
+        <h1 style="font-size:clamp(30px,6vw,52px)">${M.tag}</h1>
+        <p class="sec-sub" style="max-width:520px">${M.pitch}</p>
+        <div class="hero-cta" style="margin-top:16px">
+          <button class="btn blue" onclick="preorder('${k}')">Preorder ${D.name} — $44</button>
+          <button class="btn ghost" onclick="document.getElementById('dv-sci').scrollIntoView({behavior:'smooth'})">The science</button>
+          <button class="btn ghost" onclick="showPage('videos')">Video hub</button>
+        </div>
+      </div>
+      <div class="dv-box">${boxShot(k,"big")}</div>
+    </div>
+    <div class="inside-strip">
+      <div class="tile in-item"><b>52</b><span>drill cards, linen finish, four suits</span></div>
+      <div class="tile in-item"><b>208</b><span>filmed progressions — every card at 4 levels</span></div>
+      <div class="tile in-item"><b>QR</b><span>on every card face — scan, watch, train</span></div>
+      <div class="tile in-item"><b>MAP</b><span>fold-out wall poster to track all 208</span></div>
+    </div>
+    <div class="sec-head" style="margin-top:44px"><div class="kicker">Three of the 52</div><h2>Sample the deck</h2></div>
+    <div class="hero-cards dv-cards">${D.cards.map(c=>`
+      <div class="pcard${c.lead?" lead":""}" style="--sc:${c.sc}">
+        <div class="pc-frame"></div>
+        <div class="pc-corner tl"><b>${c.sym}</b><span>${c.num}</span></div>
+        <div class="pc-corner br"><b>${c.sym}</b><span>${c.num}</span></div>
+        <div class="pc-band">${c.band}</div>
+        <h3>${c.title}</h3>
+        <p class="pc-cue">${c.cue}</p>
+        <div class="pc-qr">${QR_SVG}<span>Scan for the film</span></div>
+        <div class="pc-foot"><div class="pc-pips">${[1,2,3,4].map(n=>`<i${n<=c.pips?' class="on"':''}></i>`).join("")}</div><span>${c.dose}</span></div>
+      </div>`).join("")}</div>
+    <div class="sec-head" id="dv-sci" style="margin-top:50px"><div class="kicker">Why it works</div><h2>The science behind ${D.name}</h2></div>
+    <div class="sci-grid">${M.sci.map((s,i)=>`<div class="tile sci-card" style="--da:${M.accent}"><span class="sci-num">0${i+1}</span><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join("")}</div>
+    <div class="sec-head" style="margin-top:50px"><div class="kicker">The film system</div><h2>Every drill, four levels deep</h2></div>
+    <div class="vid-strip">${[1,2,3,4].map(n=>`<div class="vid-tile" style="--da:${M.accent}" onclick="showPage('videos')"><span class="vt-lvl">Level ${n}</span><span class="vt-play">▶</span><span class="vt-cap">${["Start today","Build the base","Load it","Full expression"][n-1]}</span></div>`).join("")}</div>
+    <div class="sec-head" style="margin-top:50px"><div class="kicker">Questions</div><h2>Before you reserve</h2></div>
+    <div class="faq-list">${M.faq.concat(["When does it ship?|We film every drill at every level before selling a single deck. Reserving is free and gets you the launch date, founders' pricing, and first shipment."]).map(f=>{const[q,a]=f.split("|");return `<details class="tile faq-item"><summary>${q}</summary><p>${a}</p></details>`;}).join("")}</div>
+    <div style="height:70px"></div>`;
+  document.getElementById("dv-buybar").innerHTML = `<div class="bb-in"><span><b>${D.name}</b> · Vol. 1 — $44</span><button class="btn blue" onclick="preorder('${k}')">Preorder</button></div>`;
+  showPage("deckview");
+}
+function renderOrder(){
+  const list=document.getElementById("order-list"), sum=document.getElementById("order-summary");
+  if(!list) return;
+  list.innerHTML = Object.keys(DECKS).map(k=>{
+    const D=DECKS[k],M=DECK_META[k],onNow=!!cart[k];
+    return `<div class="order-row tile${onNow?" picked":""}" style="--da:${M.accent}" onclick="toggleDeck('${k}')">
+      ${boxShot(k,"mini")}
+      <div class="or-info"><h3>${D.name}</h3><p>${D.who}</p></div>
+      <div class="or-side"><span class="st-price">$44</span><span class="or-btn">${onNow?"✓ In your box":"+ Add"}</span></div>
+    </div>`;}).join("");
+  const picked=Object.keys(cart).filter(k=>cart[k]);
+  sum.innerHTML = `<h3>Your box</h3>
+    ${picked.length?picked.map(k=>`<div class="sum-row"><span>${DECKS[k].name} · Vol. 1</span><span>$44</span></div>`).join(""):`<p class="sum-empty">Nothing yet — tap a deck to add it.</p>`}
+    <div class="sum-total"><span>Reserve total</span><span>$${picked.length*44}</span></div>
+    <p class="sum-note">Every box: 52 cards · 208 filmed progressions · fold-out progress map. Pay nothing today — multi-deck bundle pricing announced at launch, reservations get it first.</p>
+    <input type="email" id="order-email" placeholder="you@email.com">
+    <button class="btn blue" style="width:100%" onclick="reserveBox()">Reserve ${picked.length?picked.length+" deck"+(picked.length>1?"s":""):"my box"} — free</button>
+    <p class="sum-fine" id="order-msg"></p>`;
+}
+function toggleDeck(k){ cart[k]=!cart[k]; renderOrder(); }
+function reserveBox(){
+  const e=document.getElementById("order-email"), m=document.getElementById("order-msg");
+  const picked=Object.keys(cart).filter(k=>cart[k]);
+  if(!picked.length){ m.textContent="Add at least one deck first."; return; }
+  if(!e.value.includes("@")){ m.textContent="Enter a valid email to hold your reservation."; return; }
+  e.value=""; m.textContent="✓ Reserved. You'll hear from us the moment preorders open — founders first.";
+}
+
+const PAGES=["home","lab","explainer","deck","science","videos","mission","about","donate","news","calc","terms","privacy","disclaimer","deckview","order"];
 function hideAll(){
   PAGES.forEach(x=>document.getElementById("page-"+x).classList.add("hidden"));
   document.getElementById("quizview").classList.add("hidden");
@@ -1522,6 +1716,8 @@ function showPage(p){
   hideAll();
   document.getElementById("page-"+p).classList.remove("hidden");
   if(p==="lab") renderFeed();
+  if(p==="deck") renderStore();
+  if(p==="order") renderOrder();
   /* pocket test visible only on home */
   document.getElementById("pocket").style.display = (p==="home") ? "block" : "none";
   window.scrollTo({top:0,behavior:"smooth"});
@@ -1531,7 +1727,7 @@ function toggleMenu(force){
   if(force===false){m.classList.remove("open");return}
   m.classList.toggle("open");
 }
-function preorder(){ alert("Preorder opens soon — take a quiz and drop your email for first access."); }
+function preorder(k){ if(k&&DECKS[k]) cart[k]=true; showPage("order"); renderOrder(); }
 
 /* ================= QUIZ ENGINE ================= */
 function startQuiz(k){
