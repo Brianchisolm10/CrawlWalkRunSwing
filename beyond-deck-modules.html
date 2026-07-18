@@ -1,0 +1,125 @@
+<!-- STASHED MODULES: Beyond the Deck section, Camps page, Gear page (with pricing cards).
+     Re-insert into index.html when ready; CSS classes still exist in the stylesheet. -->
+
+<div class="beyond" id="beyond">
+      <div class="sec-head"><div class="kicker">In development · the deck ships first</div><h2>Beyond the deck</h2>
+      <p class="sec-sub">Cards and film are chapter one. These are on the bench — join a waitlist and you set the launch order.</p></div>
+      <div class="beyond-grid">
+        <div class="tile beyond-tile">
+          <span class="soon-badge">Waitlist open</span>
+          <h3>Camps &amp; Clinics</h3>
+          <p>Week-long summer camps, weekend pop-up clinics, and school &amp; team workshops — matched to what your group needs and run by a coaching team, not a solo act. The goal is bigger than sport: teaching kids and families how to move and live healthier, so athleticism becomes a longer, more independent, more self-sufficient life.</p>
+          <div class="row"><input type="email" placeholder="you@email.com" id="camp-email"><button class="btn blue" onclick="captureEmail('camp-email')">Join the camps waitlist</button></div>
+          <button class="tile-link" onclick="showPage('camps')">See the camps page →</button>
+        </div>
+        <div class="tile beyond-tile">
+          <span class="soon-badge">Waitlist open</span>
+          <h3>The Crawl Kit</h3>
+          <p>The gear the cards call for — reaction ball, mini band, and floor markers. $35 on its own, or <b>$69 bundled with the deck — a real $10 saving</b> on the two together. Ships side by side with Vol.&nbsp;1.</p>
+          <div class="row"><input type="email" placeholder="you@email.com" id="gear-email"><button class="btn blue" onclick="captureEmail('gear-email')">Get first-run access</button></div>
+          <button class="tile-link" onclick="showPage('gear')">See the gear page →</button>
+        </div>
+      </div>
+    </div>
+
+
+<!-- ================= CAMPS PAGE ================= -->
+<div id="page-camps" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('home')">← Home</button></div>
+    <div class="calc-head">
+      <div class="kicker">In development · waitlist open</div>
+      <h1 style="font-size:clamp(30px,6vw,52px)">Camps &amp; Clinics</h1>
+      <p class="sec-sub" style="max-width:720px">The deck teaches one kid at a time. Camps teach the whole family — how to move, how to train, and how athleticism now becomes independence later. Run by a coaching team, built on the same four suits.</p>
+    </div>
+    <div class="beyond-grid" style="grid-template-columns:repeat(3,1fr)" id="camp-formats">
+      <div class="tile beyond-tile" style="border-top-color:var(--bod)">
+        <span class="soon-badge">Format 01</span>
+        <h3>Summer camps</h3>
+        <p>Week-long, ages 8–14. Mornings on the four suits, afternoons applying them to sport. Every camper leaves with a deck and a Crawl Map started.</p>
+      </div>
+      <div class="tile beyond-tile" style="border-top-color:var(--bal)">
+        <span class="soon-badge">Format 02</span>
+        <h3>Weekend pop-ups</h3>
+        <p>Two-hour clinics at local rec centers. One suit per session, families train together, no experience needed. The lowest barrier in youth sports — on purpose.</p>
+      </div>
+      <div class="tile beyond-tile" style="border-top-color:var(--rea)">
+        <span class="soon-badge">Format 03</span>
+        <h3>School &amp; team workshops</h3>
+        <p>Brought to your gym, your practice, your PE block. We train the athletes and leave the coaching staff with the system — decks, film, and programming.</p>
+      </div>
+    </div>
+    <div class="tile qr-show" style="grid-template-columns:1fr;margin-top:18px">
+      <div class="qr-copy" style="max-width:none">
+        <div class="kicker">Why waitlist first</div>
+        <h3>The deck ships before a single whistle blows</h3>
+        <p style="max-width:640px">Camps launch when the coaching team, the venues, and the safety infrastructure are fully in place — waivers, certified staff, insurance, the works. Your signup tells us where to launch first and holds your family's spot at founding-family pricing.</p>
+        <div class="row" style="display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;max-width:520px"><input type="email" placeholder="parent or guardian email" id="camp-email-p" style="flex:1;min-width:200px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--chalk)"><button class="btn blue" onclick="captureEmail('camp-email-p')">Join the camps waitlist</button></div>
+        <p class="qr-note">For families and coaches 18+. We only collect adult contact info — never a child's.</p>
+      </div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+</div>
+
+
+
+<!-- ================= GEAR PAGE ================= -->
+<div id="page-gear" class="hidden">
+  <div class="wrap">
+    <div class="topbar"><button class="back" onclick="showPage('home')">← Home</button></div>
+    <div class="calc-head">
+      <div class="kicker">Launching alongside the deck · waitlist open</div>
+      <h1 style="font-size:clamp(30px,6vw,52px)">The Crawl Kit</h1>
+      <p class="sec-sub" style="max-width:720px">The cards call for a ball, a band, and a line on the floor. The Kit is exactly that — nothing more, chosen so every one of the 208 progressions runs out of one small bag.</p>
+    </div>
+    <div class="beyond-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="tile beyond-tile" style="border-top-color:var(--rea)">
+        <span class="soon-badge">Piece 01</span>
+        <h3>Reaction ball</h3>
+        <p>Unpredictable bounce for every ● Reaction card. Pocket-sized, gym-floor proof.</p>
+      </div>
+      <div class="tile beyond-tile" style="border-top-color:var(--bod)">
+        <span class="soon-badge">Piece 02</span>
+        <h3>Mini band</h3>
+        <p>Light resistance for ▲ Body Control holds and landings. One band, four levels.</p>
+      </div>
+      <div class="tile beyond-tile" style="border-top-color:var(--bal)">
+        <span class="soon-badge">Piece 03</span>
+        <h3>Floor markers</h3>
+        <p>Flat markers for ◆ Balance lines and clock drills. Any floor becomes the setup.</p>
+      </div>
+    </div>
+    <div class="price-grid">
+      <div class="tile price-card">
+        <div class="pc-kick">The program</div>
+        <h3>The Deck</h3>
+        <div class="price">$44</div>
+        <p>52 cards · 208 progressions · full video library · the Crawl Map</p>
+      </div>
+      <div class="tile price-card best">
+        <span class="best-badge">Best value · Save $10</span>
+        <div class="pc-kick">The full system</div>
+        <h3>Deck + Kit</h3>
+        <div class="price">$69 <span class="was">$79 bought separately</span></div>
+        <p>Everything in both boxes, shipped together. One bag, the whole program.</p>
+      </div>
+      <div class="tile price-card">
+        <div class="pc-kick">The tools</div>
+        <h3>The Kit</h3>
+        <div class="price">$35</div>
+        <p>Reaction ball · mini band · floor markers. Already own the deck? Just the bag.</p>
+      </div>
+    </div>
+    <div class="tile qr-show" style="grid-template-columns:1fr;margin-top:18px">
+      <div class="qr-copy" style="max-width:none">
+        <div class="kicker">Launching together</div>
+        <h3>Deck and Kit ship side by side</h3>
+        <p style="max-width:640px">Both launch at the same time — buy either alone or grab the bundle and keep $10. Waitlist members order first when the run opens.</p>
+        <div class="row" style="display:flex;gap:9px;margin-top:16px;flex-wrap:wrap;max-width:520px"><input type="email" placeholder="you@email.com" id="gear-email-p" style="flex:1;min-width:200px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--chalk)"><button class="btn blue" onclick="captureEmail('gear-email-p')">Get first-run access</button></div>
+      </div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+</div>
+

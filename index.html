@@ -6,21 +6,20 @@
 <title>Crawl — Learn to Move Again</title>
 <meta name="description" content="52 drills. 4 levels. Zero equipment. The card deck that rebuilds balance, reaction, body control, and feel — one card a day.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Source+Sans+3:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bone:#F2F0EB; --ink:#16161A; --cobalt:#1D4ED8; --chalk:#FFF; --line:#DDDAD2;
+  --bone:#FAF7F0; --ink:#1C2B23; --cobalt:#14603A; --chalk:#FFFDF8; --line:#E4DECF;
   --ecto:#7C3AED; --meso:#C2410C; --endo:#15803D;
   --bal:#1D4ED8; --rea:#C2410C; --bod:#15803D; --fee:#7C3AED; --gold:#B8860B;
-  --r:14px;
+  --sage:#E9F1E6; --moss:#0F4A2D;
+  --r:6px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background-color:var(--bone);
-  background-image:radial-gradient(#DAD7CE 1px, transparent 1px);
-  background-size:26px 26px;
-  color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.55;
+  color:var(--ink);font-family:'Source Sans 3','Space Grotesk',sans-serif;line-height:1.55;
 }
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .hidden{display:none!important}
@@ -31,11 +30,11 @@ img{display:block;max-width:100%}
 nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60}
 .nav-in{max-width:1080px;margin:0 auto;padding:13px 20px;display:flex;align-items:center;gap:20px}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex-shrink:0;cursor:pointer}
-.logo b{font-family:'Anton';font-size:22px;text-transform:uppercase;font-weight:400}
+.logo b{font-family:'Fraunces',serif;font-size:22px;font-weight:400}
 .nav-links{margin-left:auto;display:flex;gap:22px;align-items:center}
 .nav-links a{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);text-decoration:none;cursor:pointer}
 .nav-links a:hover{color:var(--cobalt)}
-.nav-cta{background:var(--ink);color:var(--chalk)!important;padding:9px 16px;border-radius:999px}
+.nav-cta{background:var(--ink);color:var(--chalk)!important;padding:9px 16px;border-radius:4px}
 .nav-cta:hover{background:var(--cobalt)}
 .burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
 .mobile-menu{display:none;background:var(--chalk);border-bottom:1px solid var(--line);padding:8px 20px 16px}
@@ -44,7 +43,7 @@ nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(
 @media(max-width:760px){.nav-links{display:none}.burger{display:block}.mobile-menu.open{display:block}}
 
 /* ===== BUTTONS / TILES ===== */
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--chalk);font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:14px 26px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;transition:background .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--chalk);font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:14px 26px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background .15s}
 .btn:hover{background:var(--cobalt)}
 .btn.blue{background:var(--cobalt)}
 .btn.blue:hover{background:var(--ink)}
@@ -52,12 +51,12 @@ nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(
 .btn.ghost:hover{background:var(--ink);color:var(--chalk)}
 .tile{background:var(--chalk);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(22,22,26,.05);transition:transform .15s, box-shadow .15s}
 .tile.hov:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,22,26,.10)}
-.icon-sq{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--tint,#EEF2FE);flex-shrink:0}
+.icon-sq{width:50px;height:50px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:var(--tint,#E9F1E6);flex-shrink:0}
 .kicker{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700}
-h1{font-family:'Anton';font-size:clamp(38px,8vw,72px);line-height:.94;text-transform:uppercase}
+h1{font-family:'Fraunces',serif;font-size:clamp(38px,8vw,72px);line-height:.94}
 h1 em{font-style:normal;color:var(--cobalt)}
 section{padding:52px 0}
-.sec-head h2{font-family:'Anton';font-size:clamp(26px,5vw,42px);text-transform:uppercase;line-height:1}
+.sec-head h2{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,42px);line-height:1}
 .sec-sub{font-size:15px;color:#555;max-width:580px;margin-top:12px}
 .photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .photo img{width:100%;height:100%;object-fit:cover}
@@ -73,13 +72,13 @@ section{padding:52px 0}
 .showcase{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:center;padding:34px;margin:8px 0}
 @media(max-width:820px){.showcase{grid-template-columns:1fr;padding:24px}}
 .showcase .photo{aspect-ratio:1/1;max-height:380px}
-.showcase h2{font-family:'Anton';font-size:clamp(24px,4.5vw,38px);text-transform:uppercase;line-height:1}
+.showcase h2{font-family:'Fraunces',serif;font-size:clamp(24px,4.5vw,38px);line-height:1}
 .showcase p{font-size:14.5px;color:#555;margin-top:10px;max-width:440px}
 .showcase ul{list-style:none;margin-top:14px}
 .showcase li{font-size:13.5px;padding:5px 0 5px 20px;position:relative;color:#444}
 .showcase li::before{content:"→";position:absolute;left:0;color:var(--cobalt);font-weight:700}
 .mission-line{padding:36px;text-align:center;margin-bottom:8px}
-.mission-line h3{font-family:'Anton';font-size:clamp(20px,3.5vw,28px);text-transform:uppercase}
+.mission-line h3{font-family:'Fraunces',serif;font-size:clamp(20px,3.5vw,28px)}
 .mission-line p{font-size:14px;color:#555;margin:8px auto 16px;max-width:480px}
 
 /* ===== POCKET TEST ===== */
@@ -89,7 +88,7 @@ section{padding:52px 0}
 #pocket .pk-head .dot{width:9px;height:9px;border-radius:50%;background:var(--endo);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 #pocket .pk-kicker{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#888}
-#pocket h4{font-family:'Anton';font-size:19px;text-transform:uppercase;margin-top:8px}
+#pocket h4{font-family:'Fraunces',serif;font-size:19px;margin-top:8px}
 #pocket .cue{font-size:12.5px;color:#555;margin-top:5px}
 #pocket .dose{font-family:'Space Mono',monospace;font-size:10px;color:var(--gold);margin-top:8px;font-weight:700}
 #pocket .test-log{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
@@ -97,7 +96,7 @@ section{padding:52px 0}
 #pocket .test-log button:hover{background:var(--cobalt);color:var(--chalk);border-color:var(--cobalt)}
 #pocket .test-log button.sel{background:var(--endo);color:var(--chalk);border-color:var(--endo)}
 #pocket .pk-min{position:absolute;top:12px;right:14px;background:none;border:none;font-family:'Space Mono',monospace;font-size:14px;cursor:pointer;color:#999}
-#pocket .pk-pill{display:none;margin-left:auto;background:var(--ink);color:var(--chalk);border:none;border-radius:999px;padding:13px 20px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px rgba(22,22,26,.25);align-items:center;gap:8px}
+#pocket .pk-pill{display:none;margin-left:auto;background:var(--ink);color:var(--chalk);border:none;border-radius:4px;padding:13px 20px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px rgba(22,22,26,.25);align-items:center;gap:8px}
 #pocket.min .pk-open{display:none}
 #pocket.min{width:auto}
 #pocket.min .pk-pill{display:inline-flex}
@@ -111,19 +110,19 @@ section{padding:52px 0}
 .fcard{padding:20px;cursor:pointer;display:flex;flex-direction:column;position:relative}
 .fcard .top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .fcard .kind{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888}
-.fcard h3{font-family:'Anton';font-size:20px;text-transform:uppercase;line-height:1.1}
+.fcard h3{font-family:'Fraunces',serif;font-size:20px;line-height:1.1}
 .fcard p{font-size:13px;color:#555;margin-top:7px}
 .fcard .spacer{flex:1;min-height:8px}
 .fcard .meta{font-family:'Space Mono',monospace;font-size:10px;color:#999;margin-top:12px;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center}
 .fcard .go{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--cobalt)}
-.fcard .done{position:absolute;top:14px;right:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:var(--endo);color:var(--chalk);padding:3px 8px;border-radius:999px}
-.poll-opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:9px;padding:10px 13px;margin-top:8px;font-family:'Space Grotesk';font-size:13px;font-weight:700;cursor:pointer}
+.fcard .done{position:absolute;top:14px;right:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:var(--endo);color:var(--chalk);padding:3px 8px;border-radius:4px}
+.poll-opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:5px;padding:10px 13px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;cursor:pointer}
 .poll-opt:hover:not(:disabled){background:var(--ink);color:var(--chalk);border-color:var(--ink)}
 .poll-thanks{font-family:'Space Mono',monospace;font-size:10px;color:var(--endo);margin-top:10px;font-weight:700}
 
 /* ===== EXPLAINER PAGE ===== */
 .exp-head{padding:44px 0 8px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;max-width:760px}
-.exp-head .icon-sq{width:64px;height:64px;border-radius:16px}
+.exp-head .icon-sq{width:64px;height:64px;border-radius:6px}
 .exp-head h1{font-size:clamp(28px,6vw,52px)}
 .exp-grid{margin-top:22px;max-width:820px}
 .exp-block{padding:24px 0;border-bottom:1px solid var(--line)}
@@ -144,7 +143,7 @@ section{padding:52px 0}
 @media(max-width:760px){.flow{grid-template-columns:1fr}}
 .flow-step{padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center}
 .flow-step .icon-sq{margin-bottom:12px}
-.flow-step h4{font-family:'Anton';font-size:17px;text-transform:uppercase}
+.flow-step h4{font-family:'Fraunces',serif;font-size:17px}
 .flow-step .stage{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:5px}
 .flow-step p{font-size:12.5px;color:#555;margin-top:7px}
 .flow-arrow{display:flex;align-items:center;justify-content:center;color:#B7B3A9}
@@ -154,18 +153,18 @@ section{padding:52px 0}
 @media(max-width:520px){.suit-grid{grid-template-columns:1fr}}
 .suit-cell{padding:20px}
 .suit-cell .icon-sq{margin-bottom:12px}
-.suit-cell h3{font-family:'Anton';font-size:18px;text-transform:uppercase}
+.suit-cell h3{font-family:'Fraunces',serif;font-size:18px}
 .suit-cell .n{font-family:'Space Mono',monospace;font-size:10px;color:#999;margin-top:2px}
 .suit-cell p{font-size:12.5px;color:#555;margin-top:8px}
 
 /* fascia section */
-section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gradient(#26262c 1px, transparent 1px);background-size:26px 26px}
+section.ink{background:var(--moss);color:var(--chalk)}
 .fascia-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:26px}
 @media(max-width:820px){.fascia-grid{grid-template-columns:1fr}}
 .fascia-copy p{font-size:15px;color:#b8b8bf;margin-top:14px}
 .fascia-copy b{color:var(--chalk)}
 .tissue{border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin-top:20px}
-.tissue h4{font-family:'Anton';font-size:18px;text-transform:uppercase;color:var(--chalk)}
+.tissue h4{font-family:'Fraunces',serif;font-size:18px;color:var(--chalk)}
 .tissue p{font-size:13.5px;color:#b8b8bf;margin-top:5px}
 .fascia-note{margin-top:24px;border:1px dashed #4a4a52;border-radius:var(--r);padding:16px 18px;font-size:13.5px;color:#b8b8bf}
 .fascia-note b{color:var(--gold)}
@@ -173,7 +172,7 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 @media(max-width:820px){.ladder{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.ladder{grid-template-columns:1fr}}
 .rung{border-left:4px solid var(--cobalt);padding:4px 0 4px 14px}
-.rung .lv{font-family:'Anton';font-size:22px;color:var(--cobalt)}
+.rung .lv{font-family:'Fraunces',serif;font-size:22px;color:var(--cobalt)}
 .rung h4{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:2px 0 5px;color:var(--chalk)}
 .rung p{font-size:12px;color:#b8b8bf}
 
@@ -186,13 +185,13 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 .vid.free .vthumb{background:var(--sc)}
 .vid.locked .vthumb{background:#E9E6DE}
 .vid .vbody{padding:11px 13px}
-.vid h4{font-family:'Anton';font-size:14px;text-transform:uppercase;line-height:1.1}
+.vid h4{font-family:'Fraunces',serif;font-size:14px;line-height:1.1}
 .vid .vmeta{font-family:'Space Mono',monospace;font-size:9px;color:#999;margin-top:4px;text-transform:uppercase}
-.vid .flag{position:absolute;top:10px;left:10px;font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--ink);color:var(--chalk)}
+.vid .flag{position:absolute;top:10px;left:10px;font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:4px;background:var(--ink);color:var(--chalk)}
 .vid.free .flag{background:var(--chalk);color:var(--ink)}
 .hub-note{margin-top:18px;border:1px dashed #b7b3a9;border-radius:var(--r);padding:15px 17px;font-size:13px;background:rgba(255,255,255,.6)}
 .social-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
-.social-btn{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--chalk);border-radius:999px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;text-decoration:none;color:var(--ink);cursor:pointer}
+.social-btn{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--chalk);border-radius:4px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;text-decoration:none;color:var(--ink);cursor:pointer}
 .social-btn:hover{background:var(--ink);color:var(--chalk)}
 
 /* mission/about */
@@ -203,12 +202,12 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 .prose b{color:var(--ink)}
 .stat-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
 .stat{padding:18px 22px;flex:1;min-width:140px}
-.stat .num{font-family:'Anton';font-size:30px;color:var(--cobalt)}
+.stat .num{font-family:'Fraunces',serif;font-size:30px;color:var(--cobalt)}
 .stat .lab{font-family:'Space Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-top:2px}
 .creds{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.cred{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;border:1px solid var(--line);background:var(--chalk);border-radius:999px;padding:8px 14px}
+.cred{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;border:1px solid var(--line);background:var(--chalk);border-radius:4px;padding:8px 14px}
 .pack-tile{padding:30px 32px;margin:8px 0 40px}
-.pack-tile h3{font-family:'Anton';font-size:20px;text-transform:uppercase;letter-spacing:.01em}
+.pack-tile h3{font-family:'Fraunces',serif;font-size:20px;letter-spacing:.01em}
 .pack-list{list-style:none;margin-top:16px}
 .pack-list li{position:relative;padding:10px 0 10px 30px;font-size:14.5px;line-height:1.4;color:#333;border-bottom:1px solid var(--line)}
 .pack-list li:last-child{border-bottom:none}
@@ -219,20 +218,20 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 
 /* quiz engine */
 .topbar{display:flex;align-items:center;gap:14px;padding:24px 0 8px}
-.back{background:var(--chalk);border:1px solid var(--line);border-radius:999px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;padding:9px 16px;cursor:pointer}
-.topbar .tt{font-family:'Anton';font-size:18px;text-transform:uppercase}
+.back{background:var(--chalk);border:1px solid var(--line);border-radius:4px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;padding:9px 16px;cursor:pointer}
+.topbar .tt{font-family:'Fraunces',serif;font-size:18px}
 .progressbar{height:6px;background:#E0DDD5;border-radius:3px;margin:16px 0 22px;overflow:hidden;max-width:760px}
 .progressbar div{height:100%;background:var(--qc,var(--cobalt));width:0%;transition:width .3s}
 .qwrap{max-width:760px}
 .qcard{padding:26px}
 .qnum{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--qc,var(--cobalt))}
-.scenario{font-family:'Space Mono',monospace;font-size:10px;background:var(--ink);color:var(--chalk);display:inline-block;padding:4px 10px;border-radius:999px;margin:12px 0 2px;letter-spacing:.08em;text-transform:uppercase}
-.qtext{font-family:'Anton';font-size:clamp(19px,4vw,25px);text-transform:uppercase;margin:10px 0 6px;line-height:1.15}
+.scenario{font-family:'Space Mono',monospace;font-size:10px;background:var(--ink);color:var(--chalk);display:inline-block;padding:4px 10px;border-radius:4px;margin:12px 0 2px;letter-spacing:.08em;text-transform:uppercase}
+.qtext{font-family:'Fraunces',serif;font-size:clamp(19px,4vw,25px);margin:10px 0 6px;line-height:1.15}
 .qhelp{font-size:13.5px;color:#666;margin-bottom:16px}
-.opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:10px;font-family:'Space Grotesk';font-size:15px;cursor:pointer}
+.opt{display:block;width:100%;text-align:left;background:var(--bone);border:1px solid var(--line);border-radius:5px;padding:14px 16px;margin-bottom:10px;font-family:'Source Sans 3',sans-serif;font-size:15px;cursor:pointer}
 .opt:hover{background:var(--qc,var(--cobalt));color:var(--chalk);border-color:var(--qc,var(--cobalt))}
 .blend{padding:26px;margin-bottom:18px}
-.blend h2{font-family:'Anton';font-size:clamp(26px,5vw,38px);text-transform:uppercase;line-height:1}
+.blend h2{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,38px);line-height:1}
 .blend .lead{font-size:15px;color:#444;margin-top:10px}
 .bars{margin-top:18px}
 .bar-row{display:grid;grid-template-columns:120px 1fr 46px;gap:10px;align-items:center;margin-bottom:10px}
@@ -242,25 +241,25 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 .bar-fill{height:100%;border-radius:6px;transition:width .8s ease}
 .bar-row .pct{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-align:right}
 .type-card{padding:24px;margin-bottom:16px;border-left:6px solid var(--tc)}
-.type-card .tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);background:var(--tc);padding:4px 11px;border-radius:999px}
-.type-card h3{font-family:'Anton';font-size:23px;text-transform:uppercase;margin:10px 0 4px;color:var(--tc)}
+.type-card .tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);background:var(--tc);padding:4px 11px;border-radius:4px}
+.type-card h3{font-family:'Fraunces',serif;font-size:23px;margin:10px 0 4px;color:var(--tc)}
 .type-card .what{font-size:14.5px;color:#3a3a42}
 .type-card h4{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:15px 0 8px;color:#555}
 .type-card ul{list-style:none}
 .type-card li{font-size:14px;padding:5px 0 5px 18px;position:relative;color:#333}
 .type-card li::before{content:"→";position:absolute;left:0;color:var(--tc);font-weight:700}
-.crawl-tie{margin-top:15px;background:var(--bone);border-radius:10px;padding:14px;font-size:13.5px}
+.crawl-tie{margin-top:15px;background:var(--bone);border-radius:5px;padding:14px;font-size:13.5px}
 .crawl-tie b{color:var(--tc)}
 .share-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
-.share-btn{flex:1;min-width:150px;background:var(--chalk);border:1px solid var(--line);border-radius:999px;padding:12px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer}
+.share-btn{flex:1;min-width:150px;background:var(--chalk);border:1px solid var(--line);border-radius:4px;padding:12px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer}
 .share-btn:hover{background:var(--ink);color:var(--chalk)}
 .email-gate{border:1px dashed #b7b3a9;border-radius:var(--r);background:rgba(255,255,255,.7);padding:20px;margin-bottom:16px}
-.email-gate h4{font-family:'Anton';font-size:17px;text-transform:uppercase}
+.email-gate h4{font-family:'Fraunces',serif;font-size:17px}
 .email-gate p{font-size:13px;color:#666;margin:6px 0 12px}
 .email-gate .row{display:flex;gap:8px;flex-wrap:wrap}
-.email-gate input{flex:1;min-width:180px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:'Space Grotesk';font-size:14px;background:var(--chalk)}
+.email-gate input{flex:1;min-width:180px;border:1px solid var(--line);border-radius:4px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--chalk)}
 .cta-block{background:var(--ink);color:var(--chalk);border-radius:var(--r);padding:26px;text-align:center}
-.cta-block h3{font-family:'Anton';font-size:23px;text-transform:uppercase}
+.cta-block h3{font-family:'Fraunces',serif;font-size:23px}
 .cta-block p{font-size:14px;color:#b8b8bf;margin:8px 0 16px}
 .restart{display:block;margin:16px auto 0;background:none;border:none;font-family:'Space Mono',monospace;font-size:12px;color:#777;cursor:pointer;text-decoration:underline}
 
@@ -270,10 +269,10 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 @media(max-width:720px){.lab-hero{grid-template-columns:1fr}}
 .lab-hero .lh-copy{padding:34px 30px}
 .lab-hero .lh-kind{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A7E3C1}
-.lab-hero h3{font-family:'Anton';font-size:clamp(28px,5vw,44px);text-transform:uppercase;line-height:.98;margin-top:10px}
+.lab-hero h3{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,44px);line-height:.98;margin-top:10px}
 .lab-hero p{font-size:14.5px;color:#D3EEDD;margin-top:12px;max-width:420px}
 .lab-hero .lh-meta{display:flex;gap:14px;align-items:center;margin-top:20px;flex-wrap:wrap}
-.lab-hero .lh-btn{background:var(--chalk);color:var(--endo);font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:12px 22px;border-radius:999px;border:none;cursor:pointer}
+.lab-hero .lh-btn{background:var(--chalk);color:var(--endo);font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:12px 22px;border-radius:4px;border:none;cursor:pointer}
 .lab-hero .lh-tag{font-family:'Space Mono',monospace;font-size:11px;color:#A7E3C1;text-transform:uppercase;letter-spacing:.06em}
 .lab-hero .lh-art{position:relative;min-height:170px;background:#116A37}
 .lab-hero .lh-art svg{position:absolute;inset:0;width:100%;height:100%}
@@ -288,47 +287,47 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 .qz8:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(22,22,26,.12)}
 .qz8 .qh{position:relative;min-height:110px;display:flex;align-items:center;justify-content:center}
 .qz8 .qh .knd{position:absolute;top:12px;left:14px;font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85)}
-.qz8 .qh .idx{position:absolute;top:10px;right:14px;font-family:'Anton';font-size:15px;color:rgba(255,255,255,.55)}
+.qz8 .qh .idx{position:absolute;top:10px;right:14px;font-family:'Fraunces',serif;font-size:15px;color:rgba(255,255,255,.55)}
 .qz8 .qb{padding:18px;display:flex;flex-direction:column;flex:1}
-.qz8 h3{font-family:'Anton';font-size:20px;text-transform:uppercase;line-height:1.08}
+.qz8 h3{font-family:'Fraunces',serif;font-size:20px;line-height:1.08}
 .qz8 p{font-size:13px;color:#555;margin-top:7px;flex:1}
 .qz8 .qm{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:'Space Mono',monospace;font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.06em}
 .qz8 .qm b{color:var(--cobalt);font-size:11px}
-.qz8 .done8{position:absolute;bottom:10px;left:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:rgba(255,255,255,.92);color:var(--ink);padding:3px 9px;border-radius:999px}
+.qz8 .done8{position:absolute;bottom:10px;left:14px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:rgba(255,255,255,.92);color:var(--ink);padding:3px 9px;border-radius:4px}
 .poll-banner{border-radius:var(--r);background:var(--ink);color:var(--chalk);padding:24px 26px;margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
 @media(max-width:760px){.poll-banner{grid-template-columns:1fr}}
 .poll-banner .pb-kind{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
-.poll-banner h3{font-family:'Anton';font-size:clamp(19px,3.4vw,26px);text-transform:uppercase;margin-top:6px}
+.poll-banner h3{font-family:'Fraunces',serif;font-size:clamp(19px,3.4vw,26px);margin-top:6px}
 .poll-banner p{font-size:13.5px;color:#b8b8bf;margin-top:4px}
 .poll-banner .pb-opts{display:flex;gap:8px;flex-wrap:wrap}
-.poll-banner .pb-opt{background:transparent;border:1px solid #4a4a52;color:var(--chalk);border-radius:999px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.poll-banner .pb-opt{background:transparent;border:1px solid #4a4a52;color:var(--chalk);border-radius:4px;padding:11px 18px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
 .poll-banner .pb-opt:hover:not(:disabled){background:var(--chalk);color:var(--ink);border-color:var(--chalk)}
 .poll-banner .pb-opt.sel{background:var(--endo);border-color:var(--endo)}
 .tools-head{display:flex;align-items:baseline;gap:12px;margin:34px 0 4px}
-.tools-head h3{font-family:'Anton';font-size:clamp(20px,3.6vw,28px);text-transform:uppercase}
+.tools-head h3{font-family:'Fraunces',serif;font-size:clamp(20px,3.6vw,28px)}
 .tools-head span{font-family:'Space Mono',monospace;font-size:10.5px;color:#999;text-transform:uppercase;letter-spacing:.1em}
 .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
 @media(max-width:680px){.tool-grid{grid-template-columns:1fr}}
 .tool8{border-radius:var(--r);border:1px solid var(--line);background:var(--chalk);padding:22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;cursor:pointer;transition:transform .15s, box-shadow .15s}
 .tool8:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(22,22,26,.10)}
-.tool8 .tnum{font-family:'Anton';font-size:30px;color:var(--cobalt);background:#EEF2FE;border-radius:13px;padding:14px 16px;line-height:1}
-.tool8 h3{font-family:'Anton';font-size:19px;text-transform:uppercase}
+.tool8 .tnum{font-family:'Fraunces',serif;font-size:30px;color:var(--cobalt);background:var(--sage);border-radius:6px;padding:14px 16px;line-height:1}
+.tool8 h3{font-family:'Fraunces',serif;font-size:19px}
 .tool8 p{font-size:12.5px;color:#555;margin-top:5px}
 .tool8 .tm{font-family:'Space Mono',monospace;font-size:10px;color:var(--cobalt);font-weight:700;margin-top:8px;text-transform:uppercase}
 .math-block{max-width:620px;margin-top:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--chalk);padding:22px}
 .math-block h4{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--cobalt)}
-.math-block .formula{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;background:var(--bone);border-radius:9px;padding:14px 16px;margin:12px 0;overflow-x:auto;white-space:nowrap}
+.math-block .formula{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;background:var(--bone);border-radius:5px;padding:14px 16px;margin:12px 0;overflow-x:auto;white-space:nowrap}
 .math-block p{font-size:13.5px;color:#444;margin-top:8px}
 .math-block b{color:var(--ink)}
 .seg{display:flex;gap:8px;margin-top:6px}
-.seg button{flex:1;border:1px solid var(--line);background:var(--chalk);border-radius:11px;padding:12px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;cursor:pointer}
+.seg button{flex:1;border:1px solid var(--line);background:var(--chalk);border-radius:5px;padding:12px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;cursor:pointer}
 .seg button.on{background:var(--ink);color:var(--chalk);border-color:var(--ink)}
 /* calculators */
 .calc-form{max-width:560px;margin-top:20px}
 .calc-form label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666;margin:14px 0 6px}
-.calc-form input{width:100%;border:1px solid var(--line);border-radius:11px;padding:13px 16px;font-family:'Space Grotesk';font-size:16px;background:var(--chalk)}
+.calc-form input{width:100%;border:1px solid var(--line);border-radius:5px;padding:13px 16px;font-family:'Source Sans 3',sans-serif;font-size:16px;background:var(--chalk)}
 .calc-result{max-width:560px;margin-top:22px;padding:24px}
-.calc-result .big{font-family:'Anton';font-size:46px;color:var(--cobalt);line-height:1}
+.calc-result .big{font-family:'Fraunces',serif;font-size:46px;color:var(--cobalt);line-height:1}
 .calc-result .unit{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-top:2px}
 .calc-result .expl{font-size:14px;color:#444;margin-top:14px}
 .calc-result table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
@@ -336,20 +335,20 @@ section.ink{background:var(--ink);color:var(--chalk);background-image:radial-gra
 .calc-result td:last-child{text-align:right;font-family:'Space Mono',monospace;font-weight:700}
 /* legal */
 .legal{max-width:700px;font-size:14px;color:#3a3a42;padding-bottom:60px}
-.legal h3{font-family:'Anton';font-size:19px;text-transform:uppercase;margin:26px 0 8px}
+.legal h3{font-family:'Fraunces',serif;font-size:19px;margin:26px 0 8px}
 .legal p{margin-top:10px}
 .legal .tpl{border:1px dashed #b7b3a9;border-radius:var(--r);padding:14px 16px;font-size:12.5px;background:rgba(255,255,255,.6);margin-top:22px;color:#666}
 /* ===== FOOTER v8 ===== */
 footer{background:var(--ink);color:var(--chalk);margin-top:56px}
 .foot-in{max-width:1080px;margin:0 auto;padding:52px 20px 30px}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #2E2E34}
-.foot-word{font-family:'Anton';font-size:clamp(44px,8vw,76px);line-height:.9;text-transform:uppercase}
+.foot-word{font-family:'Fraunces',serif;font-size:clamp(44px,8vw,76px);line-height:.9}
 .foot-word span{color:var(--cobalt)}
 .foot-tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A92;margin-top:8px}
 .foot-news{min-width:280px;flex:1;max-width:400px}
 .foot-news h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8A92;margin-bottom:10px}
 .foot-news .row{display:flex;gap:8px}
-.foot-news input{flex:1;border:1px solid #3A3A42;border-radius:999px;padding:12px 18px;font-family:'Space Grotesk';font-size:14px;background:#1F1F25;color:var(--chalk)}
+.foot-news input{flex:1;border:1px solid #3A3A42;border-radius:4px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:#1F1F25;color:var(--chalk)}
 .foot-news input::placeholder{color:#6A6A72}
 .foot-news .btn{padding:12px 20px;font-size:12px}
 .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:36px 0}
@@ -364,7 +363,183 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
 .foot-legal{display:flex;gap:22px;flex-wrap:wrap}
 .foot-legal a{font-size:13px;color:#8A8A92;text-decoration:none;cursor:pointer}
 .foot-legal a:hover{color:var(--chalk)}
-.foot-copy{font-family:'Space Mono',monospace;font-size:10.5px;color:#6A6A72}
+/* ===== WELLNESS RETHEME v11 ===== */
+h1,h2,h3,h4,.tt,.qtext{font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(36px,7vw,64px);line-height:1.04}
+h1 em,h2 em,.foot-tagline em{font-style:italic;font-weight:500;color:var(--cobalt)}
+.sec-head h2{line-height:1.08}
+.kicker{color:var(--cobalt)}
+.tile{box-shadow:0 1px 2px rgba(28,43,35,.04)}
+nav{background:rgba(250,247,240,.94)}
+.logo b{font-family:'Fraunces',serif;font-weight:600;font-size:23px;text-transform:none;letter-spacing:-.01em}
+.btn{text-transform:none;letter-spacing:.01em;font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700}
+.sub,.sec-sub{color:#4E5A50}
+
+/* green hero panel */
+.hero-panel{position:relative;margin-top:22px;border-radius:6px;background:var(--moss);color:var(--chalk);overflow:hidden;padding:64px 24px 210px;text-align:center}
+.hero-panel::before,.hero-panel::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero-panel::before{width:560px;height:560px;background:#14603A;top:-320px;left:-160px}
+.hero-panel::after{width:640px;height:640px;background:#0B3B23;bottom:-420px;right:-200px}
+.hero-panel .hp-ring{position:absolute;width:820px;height:820px;border:1.5px dashed rgba(255,253,248,.14);border-radius:50%;left:50%;top:-430px;transform:translateX(-50%);pointer-events:none}
+.hero-panel>*{position:relative;z-index:2}
+.hero-panel .kicker{color:#A7E3C1}
+.hero-panel h1{margin-top:14px}
+.hero-panel .sub{color:#D9EBDD;max-width:560px;margin:16px auto 0;font-size:17px}
+.hero-panel .hero-cta{justify-content:center}
+.hero-panel .btn.blue{background:var(--chalk);color:var(--moss)}
+.hero-panel .btn.blue:hover{background:#A7E3C1}
+.hero-panel .btn.ghost{box-shadow:inset 0 0 0 2px rgba(255,253,248,.55);color:var(--chalk)}
+.hero-panel .btn.ghost:hover{background:rgba(255,253,248,.14)}
+.hero-cards{position:relative;z-index:3;margin-top:-170px;display:flex;justify-content:center;align-items:flex-end;gap:0;padding:0 16px}
+/* ---- physical card replicas ---- */
+.pcard{position:relative;width:min(250px,26vw);aspect-ratio:63/88;background:var(--chalk);border-radius:12px;border:1px solid #E7E0D2;box-shadow:0 22px 48px rgba(15,74,45,.30), 0 2px 0 rgba(255,255,255,.9) inset;padding:34px 20px 18px;display:flex;flex-direction:column;cursor:pointer;transition:transform .2s, box-shadow .2s}
+.pcard:first-child{transform:rotate(-7deg) translateY(16px);z-index:1;margin-right:-18px}
+.pcard:last-child{transform:rotate(7deg) translateY(16px);z-index:1;margin-left:-18px}
+.pcard.lead{z-index:2;transform:translateY(-6px) scale(1.05)}
+.pcard:hover{transform:translateY(-14px) rotate(0deg) scale(1.05);z-index:4;box-shadow:0 32px 64px rgba(15,74,45,.36)}
+.pc-frame{position:absolute;inset:9px;border:1.5px solid var(--sc);border-radius:8px;opacity:.35;pointer-events:none}
+.pc-corner{position:absolute;display:flex;flex-direction:column;align-items:center;line-height:1;color:var(--sc);font-family:'Space Mono',monospace}
+.pc-corner b{font-size:15px}
+.pc-corner span{font-size:9.5px;font-weight:700;margin-top:2px;letter-spacing:.04em}
+.pc-corner.tl{top:14px;left:15px}
+.pc-corner.br{bottom:14px;right:15px;transform:rotate(180deg)}
+.pc-band{align-self:center;font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--chalk);background:var(--sc);border-radius:999px;padding:4px 11px}
+.pcard h3{font-family:'Fraunces',serif;font-size:clamp(16px,1.6vw,20px);line-height:1.08;text-align:center;margin-top:12px}
+.pc-cue{font-size:clamp(10.5px,1.05vw,12.5px);color:#4E5A50;line-height:1.45;text-align:center;margin-top:8px;flex:1}
+.pc-foot{border-top:1px dashed #E0D9C8;padding-top:9px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pc-pips{display:flex;gap:4px;flex:1;max-width:70px}
+.pc-pips i{height:4.5px;flex:1;border-radius:3px;background:#E4E9DE}
+.pc-pips i.on{background:var(--sc)}
+.pc-foot span{font-family:'Space Mono',monospace;font-size:7.8px;letter-spacing:.05em;text-transform:uppercase;color:#8A9288;text-align:right}
+.hero-note{text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8A9288;margin-top:14px}
+/* QR video-access showcase */
+.qr-show{display:grid;grid-template-columns:minmax(300px,480px) 1fr;gap:34px;align-items:center;margin-top:10px;background:var(--sage);border-color:#CBDCC6}
+@media(max-width:760px){.qr-show{grid-template-columns:1fr;justify-items:center;text-align:left}}
+.qr-cardwrap{display:flex;justify-content:center;align-items:center;gap:0}
+.pcard.qr-front{width:min(230px,64vw);cursor:default;transform:rotate(-5deg) translateX(10px);z-index:2}
+.pcard.qr-front:hover{transform:rotate(-5deg) translateX(10px)}
+.pcard.qr-card{width:min(230px,64vw);cursor:default;transform:rotate(5deg) translateX(-10px);z-index:1}
+.pcard.qr-card:hover{transform:rotate(5deg) translateX(-10px)}
+@media(max-width:560px){.qr-cardwrap{flex-direction:column;gap:18px}.pcard.qr-front,.pcard.qr-card{transform:none}.pcard.qr-front:hover,.pcard.qr-card:hover{transform:none}}
+.qr-box{background:var(--chalk);border:1.5px solid #E0D9C8;border-radius:5px;padding:12px;margin:14px auto 0;width:72%}
+.qr-svg{display:block;width:100%;height:auto}
+.qr-cap{text-align:center;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8A9288;margin-top:10px;line-height:1.6;flex:1}
+.qr-cap b{color:var(--ink)}
+.qr-copy h3{font-family:'Fraunces',serif;font-size:clamp(22px,3.4vw,30px);margin-top:8px}
+.qr-copy p{font-size:14.5px;color:#3E5147;margin-top:10px;max-width:520px}
+.qr-list{margin-top:12px;padding-left:0;list-style:none}
+.qr-list li{font-size:13.5px;color:#3E5147;padding-left:22px;position:relative;margin-top:7px}
+.qr-list li::before{content:"✓";position:absolute;left:0;color:var(--cobalt);font-weight:700}
+.qr-note{font-family:'Space Mono',monospace;font-size:9.5px !important;letter-spacing:.06em;text-transform:uppercase;color:#8A9288 !important;margin-top:14px !important}
+/* Beyond the deck */
+.beyond{margin-top:54px}
+.beyond-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media(max-width:760px){.beyond-grid{grid-template-columns:1fr}}
+.beyond-tile{position:relative;padding:28px;border-top:4px solid var(--cobalt)}
+.beyond-tile h3{font-family:'Fraunces',serif;font-size:23px;margin-top:10px}
+.beyond-tile p{font-size:14px;color:#3E5147;margin-top:9px;line-height:1.55}
+.beyond-tile .row{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+.beyond-tile input{flex:1;min-width:170px;border:1px solid var(--line);border-radius:4px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--bone)}
+.soon-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);background:var(--sage);border-radius:999px;padding:4px 11px}
+/* QR on card fronts */
+.pc-qr{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 0 10px}
+.pc-qr .qr-svg{width:clamp(52px,5.5vw,68px);height:auto;opacity:.92}
+.pc-qr span{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A9288}
+.pc-cue{flex:0 0 auto}
+/* clean card back */
+.back-face{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.back-face svg{width:64px;height:64px}
+.back-word{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.back-suits{display:flex;gap:12px;font-size:15px}
+.tile-link{margin-top:12px;background:none;border:none;color:var(--cobalt);font-family:'Source Sans 3',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;padding:0;text-align:left}
+.tile-link:hover{text-decoration:underline}
+@media(max-width:860px){#page-camps .beyond-grid,#page-gear .beyond-grid{grid-template-columns:1fr !important}}
+/* pricing cards */
+.price-grid{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:16px;margin-top:22px;align-items:stretch}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+.price-card{position:relative;padding:26px;text-align:center;display:flex;flex-direction:column;gap:8px}
+.price-card .pc-kick{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8A9288}
+.price-card h3{font-family:'Fraunces',serif;font-size:23px}
+.price-card .price{font-family:'Fraunces',serif;font-size:44px;color:var(--cobalt);line-height:1}
+.price-card .was{display:block;font-family:'Source Sans 3',sans-serif;font-size:12.5px;color:#8A9288;font-weight:600;margin-top:6px}
+.price-card p{font-size:13px;color:#4E5A50;line-height:1.5}
+.price-card.best{border:2px solid var(--cobalt);box-shadow:0 14px 34px rgba(20,96,58,.16)}
+.best-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);background:var(--cobalt);border-radius:4px;padding:5px 14px}
+/* mobile: same cards, swipeable fan */
+@media(max-width:860px){
+  .hero-panel{padding-bottom:200px}
+  .hero-cards{margin-top:-170px;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:24px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hero-cards::-webkit-scrollbar{display:none}
+  .pcard{flex:0 0 min(240px,74vw);width:auto;scroll-snap-align:center}
+  .pcard:first-child,.pcard:last-child{transform:none;margin:0}
+  .pcard.lead{transform:none;order:-1}
+  .pcard h3{font-size:19px}
+  .pc-cue{font-size:12.5px}
+  .pc-foot span{font-size:8.5px}
+}
+
+/* quiz/calc cards: health-fact framing */
+.qz8 .qh .qthought{font-style:normal;font-weight:600}
+.fact-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);background:var(--sage);border-radius:999px;padding:3px 9px;margin-bottom:6px}
+.qz8 p{color:#4E5A50}
+
+/* full-width calculator pages */
+#page-calc .wrap{max-width:1080px}
+.calc-head{padding:44px 0 8px}
+.calc-body{display:grid;grid-template-columns:minmax(320px,430px) 1fr;gap:20px;align-items:start;margin-top:20px}
+@media(max-width:860px){.calc-body{grid-template-columns:1fr}}
+.calc-panel{background:var(--chalk);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.calc-right{display:flex;flex-direction:column;gap:16px;min-width:0}
+.calc-empty{border-style:dashed;background:var(--sage);border-color:#CBDCC6}
+.calc-empty p{font-size:14.5px;color:#3E5147;max-width:420px}
+.calc-form{max-width:none;margin-top:0}
+.calc-form label:first-child{margin-top:0}
+.calc-result{max-width:none;margin-top:0;padding:28px}
+.calc-result .big{font-family:'Fraunces',serif;font-weight:600;font-size:52px}
+.calc-result table{max-width:640px}
+.calc-empty{border:1.5px dashed var(--line);border-radius:var(--r);padding:34px 28px;color:#7A857A;font-size:14.5px;background:rgba(255,253,248,.55)}
+.calc-empty b{color:var(--ink)}
+#page-calc .math-block{max-width:none;margin-bottom:56px}
+
+/* privacy & preferences banner */
+#prefs-veil{position:fixed;inset:0;background:rgba(28,43,35,.30);z-index:98}
+#prefs{position:fixed;left:16px;right:16px;bottom:16px;z-index:99;background:var(--chalk);border:1px solid var(--line);border-radius:6px;box-shadow:0 24px 60px rgba(28,43,35,.28);max-width:1080px;margin:0 auto;padding:26px 28px;display:grid;grid-template-columns:1.2fr 1fr auto;gap:26px;align-items:start}
+@media(max-width:900px){#prefs{grid-template-columns:1fr;max-height:82vh;overflow:auto}}
+#prefs h4{font-size:19px;margin-bottom:8px}
+#prefs p{font-size:13px;color:#4E5A50;line-height:1.5}
+#prefs .pf-col h5{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--cobalt);margin-bottom:8px}
+#prefs .pf-btns{display:flex;flex-direction:column;gap:9px;min-width:190px}
+#prefs .pf-btns button{border-radius:4px;padding:12px 20px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:1.5px solid var(--ink);background:var(--ink);color:var(--chalk)}
+#prefs .pf-btns button.ghost{background:transparent;color:var(--ink)}
+#prefs .pf-btns button.ghost:hover{background:var(--sage)}
+#prefs .pf-btns button:first-child{background:var(--cobalt);border-color:var(--cobalt)}
+#prefs .pf-toggles{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;display:none;gap:18px;flex-wrap:wrap}
+#prefs.manage .pf-toggles{display:flex}
+#prefs.hidden,#prefs-veil.hidden{display:none}
+#prefs .pf-tog{font-size:13px;color:#3E4A42;display:flex;gap:8px;align-items:flex-start;max-width:260px;cursor:pointer}
+#prefs .pf-tog input{accent-color:var(--cobalt);margin-top:2px}
+#prefs .pf-save{border:none;background:var(--cobalt);color:var(--chalk);border-radius:4px;padding:10px 20px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;cursor:pointer;align-self:center}
+.pf-tog{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;cursor:pointer}
+.pf-tog input{width:18px;height:18px;accent-color:var(--cobalt)}
+html.reduce-motion *{transition:none!important;animation:none!important}
+
+/* footer polish */
+footer{background:var(--moss)}
+.foot-tagline{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;line-height:1.15;max-width:420px;text-align:right}
+@media(max-width:820px){.foot-tagline{text-align:left}}
+.foot-word{font-family:'Fraunces',serif;font-weight:600;text-transform:none;font-size:clamp(38px,6vw,58px)}
+.foot-word span{color:#A7E3C1}
+.foot-top{border-bottom-color:rgba(255,253,248,.16);align-items:center}
+.foot-grid{gap:20px}
+.foot-col{background:rgba(255,253,248,.06);border:1px solid rgba(255,253,248,.10);border-radius:6px;padding:20px}
+.foot-col h5{color:#A7E3C1}
+.foot-col a{color:#E4EFE4;font-size:14.5px}
+.foot-bottom{border-top-color:rgba(255,253,248,.16)}
+.foot-legal a{color:#A9BBA9}
+.foot-copy{color:#8AA091}
+.foot-news input{background:rgba(255,253,248,.10);border-color:rgba(255,253,248,.22)}
+.foot-news .btn.blue{background:var(--chalk);color:var(--moss)}
+.foot-news .btn.blue:hover{background:#A7E3C1}
 </style>
 </head>
 <body>
@@ -372,11 +547,11 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
 <nav>
   <div class="nav-in">
     <span class="logo" onclick="showPage('home')">
-      <svg width="26" height="26" viewBox="0 0 26 26"><rect x="1" y="1" width="24" height="24" rx="6" fill="none" stroke="#16161A" stroke-width="2"/><circle cx="13" cy="17" r="3" fill="#1D4ED8"/><path d="M13 14 L13 7 M13 9 L8 12 M13 9 L18 12" stroke="#16161A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <svg width="26" height="26" viewBox="0 0 26 26"><rect x="1" y="1" width="24" height="24" rx="6" fill="none" stroke="#1C2B23" stroke-width="2"/><circle cx="13" cy="17" r="3" fill="#14603A"/><path d="M13 14 L13 7 M13 9 L8 12 M13 9 L18 12" stroke="#16161A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       <b>Crawl</b>
     </span>
     <div class="nav-links">
-      <a onclick="showPage('deck')">The Deck</a>
+      <a onclick="showPage('deck')">Deck &amp; Videos</a>
       <a onclick="showPage('lab')">The Lab</a>
       <a onclick="showPage('mission')">The Mission</a>
       <a onclick="showPage('about')">About</a>
@@ -387,7 +562,7 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
     </button>
   </div>
   <div class="mobile-menu" id="mmenu">
-    <a onclick="showPage('deck');toggleMenu(false)">The Deck</a>
+    <a onclick="showPage('deck');toggleMenu(false)">Deck &amp; Videos</a>
     <a onclick="showPage('lab');toggleMenu(false)">The Lab</a>
     <a onclick="showPage('mission');toggleMenu(false)">The Mission</a>
     <a onclick="showPage('about');toggleMenu(false)">About</a>
@@ -398,21 +573,50 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
 <!-- ================= LANDING ================= -->
 <div id="page-home">
   <div class="wrap">
-    <div class="hero">
-      <div>
-        <div class="kicker">52 drills · 4 levels · zero equipment</div>
-        <h1>Learn to <em>Move</em> Again</h1>
-        <p class="sub">One card a day rebuilds the four skills your gym routine skips — balance, reaction, body control, and feel.</p>
-        <div class="hero-cta">
-          <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
-          <button class="btn ghost" onclick="showPage('lab')">Test yourself free</button>
-        </div>
-      </div>
-      <div>
-        <div class="photo"><img src="https://design.canva.ai/TMhThftDwnrVNIf" alt="Person balancing barefoot on one leg on morning grass"></div>
-        <div class="ph-credit">Placeholder — real shoot coming</div>
+    <div class="hero-panel">
+      <span class="hp-ring"></span>
+      <div class="kicker">52 drills · 4 levels · zero equipment</div>
+      <h1>Learn to move <em>again</em></h1>
+      <p class="sub">One card a day rebuilds the four skills your gym routine skips — balance, reaction, body control, and feel.</p>
+      <div class="hero-cta">
+        <button class="btn blue" onclick="preorder()">Preorder the Deck</button>
+        <button class="btn ghost" onclick="showPage('lab')">Test yourself free</button>
       </div>
     </div>
+    <div class="hero-cards">
+      <div class="pcard" style="--sc:var(--bal)" onclick="showPage('deck')">
+        <div class="pc-frame"></div>
+        <div class="pc-corner tl"><b>◆</b><span>07</span></div>
+        <div class="pc-corner br"><b>◆</b><span>07</span></div>
+        <div class="pc-band">Balance · Level 2</div>
+        <h3>Single-Leg Clock</h3>
+        <p class="pc-cue">Stand on one foot. Reach the free foot to 12, 3, 6, and 9 o'clock without touching down.</p>
+        <div class="pc-qr"><svg class="qr-svg" viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg" fill="#1C2B23"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="32" y="0" width="8" height="8"/><rect x="40" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="48" y="8" width="8" height="8"/><rect x="0" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="32" y="16" width="8" height="8"/><rect x="48" y="16" width="8" height="8"/><rect x="0" y="24" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="32" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="24" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="48" y="32" width="8" height="8"/><rect x="0" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="0" y="48" width="8" height="8"/><rect x="8" y="48" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="48" y="48" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="120" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="136" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="160" y="0" width="8" height="8"/><rect x="112" y="8" width="8" height="8"/><rect x="160" y="8" width="8" height="8"/><rect x="112" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="160" y="16" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="128" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="160" y="24" width="8" height="8"/><rect x="112" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="144" y="32" width="8" height="8"/><rect x="160" y="32" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="160" y="40" width="8" height="8"/><rect x="112" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="128" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="144" y="48" width="8" height="8"/><rect x="152" y="48" width="8" height="8"/><rect x="160" y="48" width="8" height="8"/><rect x="0" y="112" width="8" height="8"/><rect x="8" y="112" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="24" y="112" width="8" height="8"/><rect x="32" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="48" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="48" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="24" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="0" y="136" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="24" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="48" y="136" width="8" height="8"/><rect x="0" y="144" width="8" height="8"/><rect x="16" y="144" width="8" height="8"/><rect x="24" y="144" width="8" height="8"/><rect x="32" y="144" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="48" y="152" width="8" height="8"/><rect x="0" y="160" width="8" height="8"/><rect x="8" y="160" width="8" height="8"/><rect x="16" y="160" width="8" height="8"/><rect x="24" y="160" width="8" height="8"/><rect x="32" y="160" width="8" height="8"/><rect x="40" y="160" width="8" height="8"/><rect x="48" y="160" width="8" height="8"/><rect x="80" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="96" y="8" width="8" height="8"/><rect x="64" y="16" width="8" height="8"/><rect x="96" y="16" width="8" height="8"/><rect x="64" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="72" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="64" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="80" y="64" width="8" height="8"/><rect x="96" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="120" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="24" y="72" width="8" height="8"/><rect x="32" y="72" width="8" height="8"/><rect x="56" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="88" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="104" y="72" width="8" height="8"/><rect x="112" y="72" width="8" height="8"/><rect x="136" y="72" width="8" height="8"/><rect x="144" y="72" width="8" height="8"/><rect x="152" y="72" width="8" height="8"/><rect x="0" y="80" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="24" y="80" width="8" height="8"/><rect x="40" y="80" width="8" height="8"/><rect x="88" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="104" y="80" width="8" height="8"/><rect x="112" y="80" width="8" height="8"/><rect x="128" y="80" width="8" height="8"/><rect x="160" y="80" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="88" y="88" width="8" height="8"/><rect x="96" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="128" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="160" y="88" width="8" height="8"/><rect x="8" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="96" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="112" y="96" width="8" height="8"/><rect x="136" y="96" width="8" height="8"/><rect x="152" y="96" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="80" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="136" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="152" y="104" width="8" height="8"/><rect x="160" y="104" width="8" height="8"/><rect x="72" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="96" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="120" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="64" y="120" width="8" height="8"/><rect x="80" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="136" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="72" y="128" width="8" height="8"/><rect x="80" y="128" width="8" height="8"/><rect x="88" y="128" width="8" height="8"/><rect x="152" y="128" width="8" height="8"/><rect x="160" y="128" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="72" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="152" y="136" width="8" height="8"/><rect x="160" y="136" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="80" y="144" width="8" height="8"/><rect x="96" y="144" width="8" height="8"/><rect x="104" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="136" y="144" width="8" height="8"/><rect x="144" y="144" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="72" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="120" y="152" width="8" height="8"/><rect x="128" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="144" y="152" width="8" height="8"/><rect x="152" y="152" width="8" height="8"/><rect x="64" y="160" width="8" height="8"/><rect x="88" y="160" width="8" height="8"/><rect x="96" y="160" width="8" height="8"/><rect x="104" y="160" width="8" height="8"/><rect x="112" y="160" width="8" height="8"/><rect x="128" y="160" width="8" height="8"/><rect x="152" y="160" width="8" height="8"/></svg><span>Scan for the film</span></div>
+        <div class="pc-foot"><div class="pc-pips"><i class="on"></i><i class="on"></i><i></i><i></i></div><span>3 rounds / side</span></div>
+      </div>
+      <div class="pcard lead" style="--sc:var(--bod)" onclick="showPage('deck')">
+        <div class="pc-frame"></div>
+        <div class="pc-corner tl"><b>▲</b><span>29</span></div>
+        <div class="pc-corner br"><b>▲</b><span>29</span></div>
+        <div class="pc-band">Body Control · Level 1</div>
+        <h3>Drop &amp; Stick</h3>
+        <p class="pc-cue">Step off a low ledge and land frozen — no wobble, no extra step. Own the landing before you chase the jump.</p>
+        <div class="pc-qr"><svg class="qr-svg" viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg" fill="#1C2B23"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="32" y="0" width="8" height="8"/><rect x="40" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="48" y="8" width="8" height="8"/><rect x="0" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="32" y="16" width="8" height="8"/><rect x="48" y="16" width="8" height="8"/><rect x="0" y="24" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="32" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="24" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="48" y="32" width="8" height="8"/><rect x="0" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="0" y="48" width="8" height="8"/><rect x="8" y="48" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="48" y="48" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="120" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="136" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="160" y="0" width="8" height="8"/><rect x="112" y="8" width="8" height="8"/><rect x="160" y="8" width="8" height="8"/><rect x="112" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="160" y="16" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="128" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="160" y="24" width="8" height="8"/><rect x="112" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="144" y="32" width="8" height="8"/><rect x="160" y="32" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="160" y="40" width="8" height="8"/><rect x="112" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="128" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="144" y="48" width="8" height="8"/><rect x="152" y="48" width="8" height="8"/><rect x="160" y="48" width="8" height="8"/><rect x="0" y="112" width="8" height="8"/><rect x="8" y="112" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="24" y="112" width="8" height="8"/><rect x="32" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="48" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="48" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="24" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="0" y="136" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="24" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="48" y="136" width="8" height="8"/><rect x="0" y="144" width="8" height="8"/><rect x="16" y="144" width="8" height="8"/><rect x="24" y="144" width="8" height="8"/><rect x="32" y="144" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="48" y="152" width="8" height="8"/><rect x="0" y="160" width="8" height="8"/><rect x="8" y="160" width="8" height="8"/><rect x="16" y="160" width="8" height="8"/><rect x="24" y="160" width="8" height="8"/><rect x="32" y="160" width="8" height="8"/><rect x="40" y="160" width="8" height="8"/><rect x="48" y="160" width="8" height="8"/><rect x="80" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="96" y="8" width="8" height="8"/><rect x="64" y="16" width="8" height="8"/><rect x="96" y="16" width="8" height="8"/><rect x="64" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="72" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="64" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="80" y="64" width="8" height="8"/><rect x="96" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="120" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="24" y="72" width="8" height="8"/><rect x="32" y="72" width="8" height="8"/><rect x="56" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="88" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="104" y="72" width="8" height="8"/><rect x="112" y="72" width="8" height="8"/><rect x="136" y="72" width="8" height="8"/><rect x="144" y="72" width="8" height="8"/><rect x="152" y="72" width="8" height="8"/><rect x="0" y="80" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="24" y="80" width="8" height="8"/><rect x="40" y="80" width="8" height="8"/><rect x="88" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="104" y="80" width="8" height="8"/><rect x="112" y="80" width="8" height="8"/><rect x="128" y="80" width="8" height="8"/><rect x="160" y="80" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="88" y="88" width="8" height="8"/><rect x="96" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="128" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="160" y="88" width="8" height="8"/><rect x="8" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="96" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="112" y="96" width="8" height="8"/><rect x="136" y="96" width="8" height="8"/><rect x="152" y="96" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="80" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="136" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="152" y="104" width="8" height="8"/><rect x="160" y="104" width="8" height="8"/><rect x="72" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="96" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="120" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="64" y="120" width="8" height="8"/><rect x="80" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="136" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="72" y="128" width="8" height="8"/><rect x="80" y="128" width="8" height="8"/><rect x="88" y="128" width="8" height="8"/><rect x="152" y="128" width="8" height="8"/><rect x="160" y="128" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="72" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="152" y="136" width="8" height="8"/><rect x="160" y="136" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="80" y="144" width="8" height="8"/><rect x="96" y="144" width="8" height="8"/><rect x="104" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="136" y="144" width="8" height="8"/><rect x="144" y="144" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="72" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="120" y="152" width="8" height="8"/><rect x="128" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="144" y="152" width="8" height="8"/><rect x="152" y="152" width="8" height="8"/><rect x="64" y="160" width="8" height="8"/><rect x="88" y="160" width="8" height="8"/><rect x="96" y="160" width="8" height="8"/><rect x="104" y="160" width="8" height="8"/><rect x="112" y="160" width="8" height="8"/><rect x="128" y="160" width="8" height="8"/><rect x="152" y="160" width="8" height="8"/></svg><span>Scan for the film</span></div>
+        <div class="pc-foot"><div class="pc-pips"><i class="on"></i><i></i><i></i><i></i></div><span>5 clean landings</span></div>
+      </div>
+      <div class="pcard" style="--sc:var(--rea)" onclick="showPage('deck')">
+        <div class="pc-frame"></div>
+        <div class="pc-corner tl"><b>●</b><span>41</span></div>
+        <div class="pc-corner br"><b>●</b><span>41</span></div>
+        <div class="pc-band">Reaction · Level 3</div>
+        <h3>Wall-Ball Reset</h3>
+        <p class="pc-cue">Toss a ball against the wall, clap, catch. Add claps as it gets easy — your hands learn to arrive early.</p>
+        <div class="pc-qr"><svg class="qr-svg" viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg" fill="#1C2B23"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="32" y="0" width="8" height="8"/><rect x="40" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="48" y="8" width="8" height="8"/><rect x="0" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="32" y="16" width="8" height="8"/><rect x="48" y="16" width="8" height="8"/><rect x="0" y="24" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="32" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="24" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="48" y="32" width="8" height="8"/><rect x="0" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="0" y="48" width="8" height="8"/><rect x="8" y="48" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="48" y="48" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="120" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="136" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="160" y="0" width="8" height="8"/><rect x="112" y="8" width="8" height="8"/><rect x="160" y="8" width="8" height="8"/><rect x="112" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="160" y="16" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="128" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="160" y="24" width="8" height="8"/><rect x="112" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="144" y="32" width="8" height="8"/><rect x="160" y="32" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="160" y="40" width="8" height="8"/><rect x="112" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="128" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="144" y="48" width="8" height="8"/><rect x="152" y="48" width="8" height="8"/><rect x="160" y="48" width="8" height="8"/><rect x="0" y="112" width="8" height="8"/><rect x="8" y="112" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="24" y="112" width="8" height="8"/><rect x="32" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="48" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="48" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="24" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="0" y="136" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="24" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="48" y="136" width="8" height="8"/><rect x="0" y="144" width="8" height="8"/><rect x="16" y="144" width="8" height="8"/><rect x="24" y="144" width="8" height="8"/><rect x="32" y="144" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="48" y="152" width="8" height="8"/><rect x="0" y="160" width="8" height="8"/><rect x="8" y="160" width="8" height="8"/><rect x="16" y="160" width="8" height="8"/><rect x="24" y="160" width="8" height="8"/><rect x="32" y="160" width="8" height="8"/><rect x="40" y="160" width="8" height="8"/><rect x="48" y="160" width="8" height="8"/><rect x="80" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="96" y="8" width="8" height="8"/><rect x="64" y="16" width="8" height="8"/><rect x="96" y="16" width="8" height="8"/><rect x="64" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="72" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="64" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="80" y="64" width="8" height="8"/><rect x="96" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="120" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="24" y="72" width="8" height="8"/><rect x="32" y="72" width="8" height="8"/><rect x="56" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="88" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="104" y="72" width="8" height="8"/><rect x="112" y="72" width="8" height="8"/><rect x="136" y="72" width="8" height="8"/><rect x="144" y="72" width="8" height="8"/><rect x="152" y="72" width="8" height="8"/><rect x="0" y="80" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="24" y="80" width="8" height="8"/><rect x="40" y="80" width="8" height="8"/><rect x="88" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="104" y="80" width="8" height="8"/><rect x="112" y="80" width="8" height="8"/><rect x="128" y="80" width="8" height="8"/><rect x="160" y="80" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="88" y="88" width="8" height="8"/><rect x="96" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="128" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="160" y="88" width="8" height="8"/><rect x="8" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="96" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="112" y="96" width="8" height="8"/><rect x="136" y="96" width="8" height="8"/><rect x="152" y="96" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="80" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="136" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="152" y="104" width="8" height="8"/><rect x="160" y="104" width="8" height="8"/><rect x="72" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="96" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="120" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="64" y="120" width="8" height="8"/><rect x="80" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="136" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="72" y="128" width="8" height="8"/><rect x="80" y="128" width="8" height="8"/><rect x="88" y="128" width="8" height="8"/><rect x="152" y="128" width="8" height="8"/><rect x="160" y="128" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="72" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="152" y="136" width="8" height="8"/><rect x="160" y="136" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="80" y="144" width="8" height="8"/><rect x="96" y="144" width="8" height="8"/><rect x="104" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="136" y="144" width="8" height="8"/><rect x="144" y="144" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="72" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="120" y="152" width="8" height="8"/><rect x="128" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="144" y="152" width="8" height="8"/><rect x="152" y="152" width="8" height="8"/><rect x="64" y="160" width="8" height="8"/><rect x="88" y="160" width="8" height="8"/><rect x="96" y="160" width="8" height="8"/><rect x="104" y="160" width="8" height="8"/><rect x="112" y="160" width="8" height="8"/><rect x="128" y="160" width="8" height="8"/><rect x="152" y="160" width="8" height="8"/></svg><span>Scan for the film</span></div>
+        <div class="pc-foot"><div class="pc-pips"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><span>2 min continuous</span></div>
+      </div>
+    </div>
+    <div class="hero-cta" style="justify-content:center;margin-top:26px"><button class="btn blue" style="background:var(--moss);color:var(--chalk)" onclick="showPage('deck')">Learn more about the deck</button></div>
+    <div class="hero-note">Three of the 52 cards in Crawl Vol. 1 — every drill filmed at all four levels</div>
 
     <div class="tile showcase">
       <div>
@@ -480,7 +684,8 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
       <button class="btn blue" id="exp-start">Start the assessment</button>
       <button class="btn ghost" onclick="showPage('lab')">Back to the Lab</button>
     </div>
-  </div>
+
+      </div>
 </div>
 
 <!-- ================= THE DECK PAGE (no-scroll) ================= -->
@@ -516,7 +721,7 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
     </div>
     <div class="flow" style="margin-top:10px;margin-bottom:40px">
       <div class="tile flow-step">
-        <div class="icon-sq" style="--tint:#EEF2FE"><svg width="24" height="28" viewBox="0 0 26 30"><rect x="2" y="5" width="17" height="23" rx="3" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><rect x="7" y="1" width="17" height="23" rx="3" fill="#fff" stroke="#1D4ED8" stroke-width="2.5"/><path d="M15.5 8 l4 5 -4 5 -4 -5 z" fill="#1D4ED8"/></svg></div>
+        <div class="icon-sq" style="--tint:#E9F1E6"><svg width="24" height="28" viewBox="0 0 26 30"><rect x="2" y="5" width="17" height="23" rx="3" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><rect x="7" y="1" width="17" height="23" rx="3" fill="#fff" stroke="#1D4ED8" stroke-width="2.5"/><path d="M15.5 8 l4 5 -4 5 -4 -5 z" fill="#1D4ED8"/></svg></div>
         <div class="stage">Step 01</div><h4>Draw</h4>
         <p>Pull one card — drill, cues, dose. Two minutes, anywhere.</p>
       </div>
@@ -533,6 +738,43 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
         <p>Check the box on the Crawl Map — 208 total, on your wall.</p>
       </div>
     </div>
+
+    <div class="tile qr-show">
+      <div class="qr-cardwrap">
+        <div class="pcard qr-front" style="--sc:var(--bod)">
+          <div class="pc-frame"></div>
+          <div class="pc-corner tl"><b>▲</b><span>29</span></div>
+          <div class="pc-corner br"><b>▲</b><span>29</span></div>
+          <div class="pc-band">Body Control · Level 1</div>
+          <h3>Drop &amp; Stick</h3>
+          <p class="pc-cue">Step off a low ledge and land frozen — no wobble, no extra step.</p>
+          <div class="pc-qr"><svg class="qr-svg" viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg" fill="#1C2B23"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="32" y="0" width="8" height="8"/><rect x="40" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="48" y="8" width="8" height="8"/><rect x="0" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="32" y="16" width="8" height="8"/><rect x="48" y="16" width="8" height="8"/><rect x="0" y="24" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="32" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="24" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="48" y="32" width="8" height="8"/><rect x="0" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="0" y="48" width="8" height="8"/><rect x="8" y="48" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="48" y="48" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="120" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="136" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="160" y="0" width="8" height="8"/><rect x="112" y="8" width="8" height="8"/><rect x="160" y="8" width="8" height="8"/><rect x="112" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="160" y="16" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="128" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="160" y="24" width="8" height="8"/><rect x="112" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="144" y="32" width="8" height="8"/><rect x="160" y="32" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="160" y="40" width="8" height="8"/><rect x="112" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="128" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="144" y="48" width="8" height="8"/><rect x="152" y="48" width="8" height="8"/><rect x="160" y="48" width="8" height="8"/><rect x="0" y="112" width="8" height="8"/><rect x="8" y="112" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="24" y="112" width="8" height="8"/><rect x="32" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="48" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="48" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="24" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="0" y="136" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="24" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="48" y="136" width="8" height="8"/><rect x="0" y="144" width="8" height="8"/><rect x="16" y="144" width="8" height="8"/><rect x="24" y="144" width="8" height="8"/><rect x="32" y="144" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="48" y="152" width="8" height="8"/><rect x="0" y="160" width="8" height="8"/><rect x="8" y="160" width="8" height="8"/><rect x="16" y="160" width="8" height="8"/><rect x="24" y="160" width="8" height="8"/><rect x="32" y="160" width="8" height="8"/><rect x="40" y="160" width="8" height="8"/><rect x="48" y="160" width="8" height="8"/><rect x="80" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="96" y="8" width="8" height="8"/><rect x="64" y="16" width="8" height="8"/><rect x="96" y="16" width="8" height="8"/><rect x="64" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="72" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="64" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="80" y="64" width="8" height="8"/><rect x="96" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="120" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="24" y="72" width="8" height="8"/><rect x="32" y="72" width="8" height="8"/><rect x="56" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="88" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="104" y="72" width="8" height="8"/><rect x="112" y="72" width="8" height="8"/><rect x="136" y="72" width="8" height="8"/><rect x="144" y="72" width="8" height="8"/><rect x="152" y="72" width="8" height="8"/><rect x="0" y="80" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="24" y="80" width="8" height="8"/><rect x="40" y="80" width="8" height="8"/><rect x="88" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="104" y="80" width="8" height="8"/><rect x="112" y="80" width="8" height="8"/><rect x="128" y="80" width="8" height="8"/><rect x="160" y="80" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="88" y="88" width="8" height="8"/><rect x="96" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="128" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="160" y="88" width="8" height="8"/><rect x="8" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="96" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="112" y="96" width="8" height="8"/><rect x="136" y="96" width="8" height="8"/><rect x="152" y="96" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="80" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="136" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="152" y="104" width="8" height="8"/><rect x="160" y="104" width="8" height="8"/><rect x="72" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="96" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="120" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="64" y="120" width="8" height="8"/><rect x="80" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="136" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="72" y="128" width="8" height="8"/><rect x="80" y="128" width="8" height="8"/><rect x="88" y="128" width="8" height="8"/><rect x="152" y="128" width="8" height="8"/><rect x="160" y="128" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="72" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="152" y="136" width="8" height="8"/><rect x="160" y="136" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="80" y="144" width="8" height="8"/><rect x="96" y="144" width="8" height="8"/><rect x="104" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="136" y="144" width="8" height="8"/><rect x="144" y="144" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="72" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="120" y="152" width="8" height="8"/><rect x="128" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="144" y="152" width="8" height="8"/><rect x="152" y="152" width="8" height="8"/><rect x="64" y="160" width="8" height="8"/><rect x="88" y="160" width="8" height="8"/><rect x="96" y="160" width="8" height="8"/><rect x="104" y="160" width="8" height="8"/><rect x="112" y="160" width="8" height="8"/><rect x="128" y="160" width="8" height="8"/><rect x="152" y="160" width="8" height="8"/></svg><span>Scan for the film</span></div>
+          <div class="pc-foot"><div class="pc-pips"><i class="on"></i><i></i><i></i><i></i></div><span>5 clean landings</span></div>
+        </div>
+        <div class="pcard qr-card" style="--sc:var(--bod)">
+          <div class="pc-frame"></div>
+          <div class="pc-band">Back</div>
+          <div class="back-face">
+            <svg width="54" height="54" viewBox="0 0 26 26"><rect x="1" y="1" width="24" height="24" rx="6" fill="none" stroke="#1C2B23" stroke-width="2"/><circle cx="13" cy="17" r="3" fill="#14603A"/><path d="M13 14 L13 7 M13 9 L8 12 M13 9 L18 12" stroke="#1C2B23" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <div class="back-word">Crawl</div>
+            <div class="back-suits"><span style="color:var(--bal)">◆</span><span style="color:var(--rea)">●</span><span style="color:var(--bod)">▲</span><span style="color:var(--fee)">■</span></div>
+          </div>
+          <div class="qr-cap">Vol. 1 · Learn to move again</div>
+        </div>
+      </div>
+      <div class="qr-copy">
+        <div class="kicker">The video access piece</div>
+        <h3>The film lives on the face of every card</h3>
+        <p>Every card face carries its own QR at the bottom — scan it with any phone camera and that drill's videos open on the spot, <b>all four levels, filmed</b>. See exactly what Level 1 looks like before you try it and what Level 4 looks like when you get there. The back stays clean: the mark, the name, the four suits. Front and back, exactly as they'll print.</p>
+        <ul class="qr-list">
+          <li>No app to download, no account, no login — the camera is the whole system</li>
+          <li>260 demos across the deck, unlocked from day one of ownership</li>
+          <li>Works at the park, the gym, the driveway — wherever the card is, the coach is</li>
+        </ul>
+        <p class="qr-note">QR shown is a display mock — live codes are printed on the production run.</p>
+      </div>
+    </div>
+    <div style="height:44px"></div>
   </div>
 </div>
 
@@ -647,7 +889,7 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
     <div class="email-gate" style="max-width:720px">
       <h4>Join the list</h4>
       <p>Free forever. Your first email includes the 5-test Movement Age protocol as a printable sheet.</p>
-      <div class="row"><input type="email" placeholder="you@email.com" id="news-email"><button class="btn blue" onclick="captureEmail('news-email')">Sign up</button></div>
+      <div class="row"><input type="email" placeholder="you@email.com" id="news-email"><button class="btn blue" onclick="captureEmail('news-email')">Join newsletter</button></div>
     </div>
     <div style="height:60px"></div>
   </div>
@@ -710,14 +952,24 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
 <div id="page-calc" class="hidden">
   <div class="wrap">
     <div class="topbar"><button class="back" onclick="showPage('lab')">← The Lab</button></div>
-    <div class="exp-head">
-      <div class="icon-sq" id="calc-icon"></div>
-      <div><div class="kicker" id="calc-kick"></div><h1 id="calc-title" style="font-size:clamp(26px,5.5vw,46px)"></h1></div>
+    <div class="calc-head">
+      <div class="exp-head">
+        <div class="icon-sq" id="calc-icon"></div>
+        <div><div class="kicker" id="calc-kick"></div><h1 id="calc-title" style="font-size:clamp(26px,5.5vw,46px)"></h1></div>
+      </div>
+      <p class="sec-sub" id="calc-desc" style="margin-top:8px;max-width:760px"></p>
     </div>
-    <p class="sec-sub" id="calc-desc" style="margin-top:8px"></p>
-    <div class="calc-form" id="calc-form"></div>
-    <div class="hero-cta" style="margin-top:18px"><button class="btn blue" id="calc-run">Calculate</button></div>
-    <div class="tile calc-result hidden" id="calc-out"></div>
+    <div class="calc-body">
+      <div class="calc-panel">
+        <div class="calc-form" id="calc-form"></div>
+        <div class="hero-cta" style="margin-top:18px"><button class="btn blue" id="calc-run" style="width:100%">Calculate</button></div>
+      </div>
+      <div class="calc-right">
+        <div class="calc-empty tile" id="calc-empty"><p>Enter your numbers and hit <b>Calculate</b> — your full results land here, with every formula shown.</p></div>
+        <div class="tile calc-result hidden" id="calc-out"></div>
+        <div id="calc-math"></div>
+      </div>
+    </div>
     <div style="height:60px"></div>
   </div>
 </div>
@@ -850,7 +1102,7 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
       </div>
       <div class="foot-news">
         <h5>One drill, every week — free</h5>
-        <div class="row"><input type="email" placeholder="you@email.com" id="foot-email"><button class="btn blue" onclick="captureEmail('foot-email')">Join</button></div>
+        <div class="row"><input type="email" placeholder="you@email.com" id="foot-email"><button class="btn blue" onclick="captureEmail('foot-email')">Join newsletter</button></div>
       </div>
     </div>
     <div class="foot-grid">
@@ -887,6 +1139,7 @@ footer{background:var(--ink);color:var(--chalk);margin-top:56px}
       <div class="foot-legal">
         <a onclick="showPage('terms')">Terms</a>
         <a onclick="showPage('privacy')">Privacy</a>
+        <a onclick="openPrefs()">Privacy choices</a>
         <a onclick="showPage('disclaimer')">Disclaimer</a>
       </div>
       <div class="foot-copy">© 2026 CRAWL · BUILT BY A SPORTS PERFORMANCE SPECIALIST (MS, CISSN)</div>
@@ -900,7 +1153,7 @@ const QUIZZES = {
 somato:{
   title:"What's Your Body Type?", color:"var(--meso)", tint:"#FDEEE6", kind:"Quiz",
   icon:`<svg width="26" height="26" viewBox="0 0 26 26"><rect x="2" y="8" width="4" height="14" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/><rect x="10" y="5" width="6" height="17" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/><rect x="19" y="10" width="6" height="12" rx="1.5" fill="none" stroke="#C2410C" stroke-width="2"/></svg>`,
-  desc:"Eight tiny scenarios reveal your somatotype blend — and how to train WITH your body.", meta:"8 questions · 2 min",
+  desc:"Elite athletes in the same sport cluster into strikingly similar body types — sprinters look like sprinters for a reason. Knowing your blend tells you what to train, not what you're stuck with.", meta:"8 questions · 2 min",
   explainer:{
     kick:"Assessment 03 · Somatotype",
     measures:"Your somatotype blend — where your natural frame sits between ectomorph (lean), mesomorph (muscular), and endomorph (powerful). Nobody is one pure type; the quiz maps your mix across all three.",
@@ -934,9 +1187,9 @@ somato:{
   blendLead:"Nobody is one pure type — your blend is your starting point, not your ceiling."
 },
 sense:{
-  title:"What's Your Dominant Sense?", color:"var(--cobalt)", tint:"#EEF2FE", kind:"Quiz",
+  title:"What's Your Dominant Sense?", color:"var(--cobalt)", tint:"#E9F1E6", kind:"Quiz",
   icon:`<svg width="28" height="26" viewBox="0 0 28 26"><ellipse cx="14" cy="13" rx="11" ry="7" fill="none" stroke="#1D4ED8" stroke-width="2"/><circle cx="14" cy="13" r="3.2" fill="#1D4ED8"/></svg>`,
-  desc:"Eyes, inner ear, or feet — which system runs your balance? Seven scenarios expose it.", meta:"7 questions · 2 min",
+  desc:"Your balance runs on three inputs — eyes, inner ear, and pressure sensors in your feet. Close your eyes and most adults sway nearly twice as much. One system is doing most of your work.", meta:"7 questions · 2 min",
   explainer:{
     kick:"Assessment 02 · Sensory profile",
     measures:"Which of your three balance inputs you over-rely on: vision (eyes), the vestibular system (inner ear motion sensors), or somatosensation (the feel from your feet, joints, and muscles).",
@@ -971,7 +1224,7 @@ sense:{
 age:{
   title:"What's Your Movement Age?", color:"var(--endo)", tint:"#E9F5EE", kind:"Physical test",
   icon:`<svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="none" stroke="#15803D" stroke-width="2"/><path d="M13 7 L13 13 L17.5 15.5" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
-  desc:"Five real micro-tests. Your body answers, not your opinions. Results may sting — usefully.", meta:"5 tests · 3 min · stand up",
+  desc:"In a 12-year study of 2,000+ adults, people who needed hands or knees to get up off the floor had a far higher mortality risk than those who rose freely. Floor-to-stand ability is trainable at any age.", meta:"5 tests · 3 min · stand up",
   explainer:{
     kick:"Assessment 01 · Physical",
     measures:"Your movement age — a playful composite of five real capacities: single-leg balance (eyes open and closed), floor-to-stand ability, tandem gait, and lower-body power endurance. It's the difference between your calendar age and how your body actually moves.",
@@ -994,7 +1247,7 @@ age:{
 suit:{
   title:"Which Suit Are You?", color:"var(--fee)", tint:"#F2ECFC", kind:"Quiz",
   icon:`<svg width="26" height="26" viewBox="0 0 26 26"><path d="M7 3 l4 5 -4 5 -4 -5 z" fill="#7C3AED"/><circle cx="19" cy="8" r="4" fill="#7C3AED"/><path d="M7 15 l4 7 -8 0 z" fill="#7C3AED"/><rect x="15.5" y="15" width="7" height="7" rx="1" fill="#7C3AED"/></svg>`,
-  desc:"Every mover has a home suit — and one they've been quietly avoiding. Six scenarios expose both.", meta:"6 questions · 90 sec",
+  desc:"Motor learning research is blunt: athletes who train their weak patterns alongside their strengths adapt faster than those who repeat what they're already good at. First step is knowing which is which.", meta:"6 questions · 90 sec",
   explainer:{
     kick:"Assessment 04 · Movement identity",
     measures:"Your movement personality — which of the deck's four suits (◆ Balance, ● Reaction, ▲ Body Control, ■ Feel) matches how you naturally move, compete, and respond to the world.",
@@ -1055,9 +1308,9 @@ let current=null, idx=0, scores={}, completed={}, pollsState={}, testLog=null;
 
 /* ============ CALCULATORS ============ */
 const CALCS = {
-  onerm:{ title:"1-Rep Max Calculator", kind:"Calculator", tint:"#EEF2FE", kick:"Tool 01 · Strength", tnum:"1RM",
+  onerm:{ title:"1-Rep Max Calculator", kind:"Calculator", tint:"#E9F1E6", kick:"Tool 01 · Strength", tnum:"1RM",
     icon:`<svg width="26" height="26" viewBox="0 0 26 26"><rect x="1" y="9" width="4" height="8" rx="1" fill="#1D4ED8"/><rect x="21" y="9" width="4" height="8" rx="1" fill="#1D4ED8"/><rect x="6" y="11" width="14" height="4" rx="1" fill="none" stroke="#1D4ED8" stroke-width="2"/></svg>`,
-    desc:"Estimate your one-rep max from any set — plus working weights for every training zone.",
+    desc:"Submaximal reps predict a true 1RM within a few percent for most lifters — which is why coaches program off estimates instead of risky max-out days. Two numbers in, your whole strength chart out.",
     meta:"2 inputs · instant",
     math:{formula:"1RM = weight × (1 + reps ÷ 30)",
       expl:"This is the <b>Epley formula</b>, the most widely used 1RM estimate. The logic: every clean rep you complete beyond the first suggests roughly 1/30th more strength in reserve. Lift 185 lbs for 5 reps and the math reads 185 × (1 + 5/30) = 185 × 1.167 ≈ <b>216 lbs</b>. It's most accurate between 2 and 10 reps — past 12, fatigue muddies the estimate, which is why the calculator caps there. The same equation also runs backward: once your 1RM is known, your approximate max for any rep count is <b>1RM ÷ (1 + reps÷30)</b> — that's how the full 1RM–12RM chart in your results is built."},
@@ -1081,7 +1334,7 @@ const CALCS = {
     }},
   bodyfat:{ title:"Body Fat & BMI", kind:"Calculator", tint:"#F2ECFC", kick:"Tool 02 · Body composition", tnum:"BF%",
     icon:`<svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="6" r="4" fill="none" stroke="#7C3AED" stroke-width="2.2"/><path d="M13 10 L13 18 M13 12 L7 16 M13 12 L19 16 M13 18 L9 24 M13 18 L17 24" stroke="#7C3AED" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`,
-    desc:"Height, weight, age — nothing else. Get your BMI and an estimated body fat percentage, with the math shown.",
+    desc:"BMI was invented in the 1830s by an astronomer studying populations — not people. Useful starting point, blunt instrument. We show the math, the estimate, and exactly where it can mislead you.",
     meta:"4 inputs · no equipment",
     math:{formula:"BMI = weight(kg) ÷ height(m)²   ·   BF% = 1.20×BMI + 0.23×age − 10.8×S − 5.4",
       expl:"Two equations working together. <b>BMI</b> is just weight scaled to height — a rough size index. The <b>Deurenberg formula</b> then estimates body fat from BMI, age, and sex (S = 1 for male, 0 for female — the formula was built that way because typical fat distribution differs by sex; age matters because body composition shifts even at the same BMI). <b>Straight talk:</b> both are population estimates. BMI can read muscular people as 'overfat' and can miss low muscle mass — treat the number as a starting point to track over time, not a verdict."},
@@ -1112,9 +1365,11 @@ function openCalc(k){
   document.getElementById("calc-form").innerHTML=C.inputs.map(i=>{
     if(i.type==="seg") return `<label>${i.label}</label><div class="seg" id="ci-${i.id}">${i.opts.map((o,j)=>`<button type="button" data-v="${j}" onclick="segPick('${i.id}',${j})">${o}</button>`).join("")}</div>`;
     return `<label for="ci-${i.id}">${i.label}</label><input type="number" inputmode="decimal" id="ci-${i.id}" placeholder="${i.ph}">`;
-  }).join("") + (C.math?`<div class="math-block"><h4>The math — shown, not hidden</h4><div class="formula">${C.math.formula}</div><p>${C.math.expl}</p></div>`:"");
+  }).join("");
+  document.getElementById("calc-math").innerHTML = C.math?`<div class="math-block"><h4>The math — shown, not hidden</h4><div class="formula">${C.math.formula}</div><p>${C.math.expl}</p></div>`:"";
   segState={};
   document.getElementById("calc-out").classList.add("hidden");
+  document.getElementById("calc-empty").classList.remove("hidden");
   document.getElementById("calc-run").onclick=runCalc;
   window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -1128,6 +1383,7 @@ function runCalc(){
   C.inputs.forEach(i=>{ vals[i.id] = i.type==="seg" ? segState[i.id] : document.getElementById("ci-"+i.id).value; });
   const r=C.run(vals);
   const out=document.getElementById("calc-out");
+  document.getElementById("calc-empty").classList.add("hidden");
   out.classList.remove("hidden");
   out.innerHTML = r.err
     ? `<div class="expl" style="color:#C2410C;font-weight:700">${r.err}</div>`
@@ -1138,10 +1394,10 @@ function runCalc(){
 /* ================= LAB FEED ================= */
 const ORDER=["age","sense","somato","suit"];
 const THOUGHTS = {
-  age:`Your birth certificate has one number. Your body keeps a different one.`,
-  sense:`Close your eyes mid-step and one of three systems takes the wheel. Do you know which?`,
-  somato:`Sherrington called it "our secret sense" — the one nobody taught you to train.`,
-  suit:`Everyone has a home suit. Everyone also has one they've been quietly avoiding.`
+  age:`One-leg balance time falls off a cliff with age — and rebuilds within weeks of practice.`,
+  sense:`Close your eyes and your sway nearly doubles. One of three systems is carrying you.`,
+  somato:`Body types were mapped in the 1940s — sport science kept the math and dropped the myths.`,
+  suit:`Training your weakest movement pattern speeds up everything else. That's the research.`
 };
 const QCOLOR = {age:"#15803D", sense:"#1D4ED8", somato:"#C2410C", suit:"#7C3AED"};
 function renderFeed(){
@@ -1156,7 +1412,7 @@ function renderFeed(){
       <p>Five real micro-tests — one-leg stands, the floor get-up, the tightrope walk. Your body answers, not your opinions.</p>
       <div class="lh-meta"><button class="lh-btn">How it works →</button><span class="lh-tag">${A.meta}</span></div>
     </div>
-    <div class="lh-art lh-think"><p>Researchers time how long you can stand on one leg with your eyes closed — because the number falls off a cliff with age, and climbs back within weeks of practice.</p><span>Food for thought before you test</span></div>
+    <div class="lh-art lh-think"><p>Researchers time how long you can stand on one leg with your eyes closed — because the number falls off a cliff with age, and climbs back within weeks of practice.</p><span>Health fact</span></div>
   </div>`;
   /* quiz cards */
   ["sense","somato","suit"].forEach((k,i)=>{
@@ -1167,7 +1423,7 @@ function renderFeed(){
         <p class="qthought">${THOUGHTS[k]}</p>
         ${completed[k]?'<span class="done8">✓ Taken</span>':''}
       </div>
-      <div class="qb"><h3>${Q.title}</h3><p>${Q.desc}</p>
+      <div class="qb"><h3>${Q.title}</h3><p><span class="fact-tag">Health fact</span><br>${Q.desc}</p>
         <div class="qm"><span>${Q.meta}</span><b>How it works →</b></div></div>
     </div>`;
   });
@@ -1181,7 +1437,7 @@ function renderFeed(){
   f.innerHTML+=`<div style="grid-column:1/-1"><div class="tools-head"><h3>Tools</h3><span>Numbers, with the math shown</span></div>
     <div class="tool-grid">${CALC_ORDER.map(k=>{const C=CALCS[k];return `<div class="tool8" onclick="openCalc('${k}')">
       <div class="tnum">${C.tnum}</div>
-      <div><h3>${C.title}</h3><p>${C.desc}</p><div class="tm">Open the tool →</div></div>
+      <div><h3>${C.title}</h3><p><span class="fact-tag">Health fact</span><br>${C.desc}</p><div class="tm">Open the tool →</div></div>
     </div>`}).join("")}</div></div>`;
 }
 function renderFeat(){
@@ -1190,15 +1446,15 @@ function renderFeat(){
   f.innerHTML=`
     <div class="qz8" onclick="openExplainer('age')">
       <div class="qh" style="background:${QCOLOR.age}"><span class="knd">Physical test</span><p class="qthought">${THOUGHTS.age}</p></div>
-      <div class="qb"><h3>${A.title}</h3><p>Five real micro-tests. Your body answers, not your opinions.</p>
+      <div class="qb"><h3>${A.title}</h3><p><span class="fact-tag">Health fact</span><br>${A.desc}</p>
       <div class="qm"><span>${A.meta}</span><b>How it works →</b></div></div></div>
     <div class="qz8" onclick="openExplainer('sense')">
       <div class="qh" style="background:${QCOLOR.sense}"><span class="knd">Quiz</span><p class="qthought">${THOUGHTS.sense}</p></div>
-      <div class="qb"><h3>${S.title}</h3><p>${S.desc}</p>
+      <div class="qb"><h3>${S.title}</h3><p><span class="fact-tag">Health fact</span><br>${S.desc}</p>
       <div class="qm"><span>${S.meta}</span><b>How it works →</b></div></div></div>
     <div class="qz8" onclick="openCalc('onerm')">
       <div class="qh" style="background:#16161A"><span class="knd">Calculator</span><svg width="60" height="60" viewBox="0 0 60 60"><rect x="4" y="22" width="8" height="16" rx="2" fill="#fff"/><rect x="48" y="22" width="8" height="16" rx="2" fill="#fff"/><rect x="14" y="26" width="32" height="8" rx="2" fill="none" stroke="#fff" stroke-width="3.5"/></svg></div>
-      <div class="qb"><h3>${C.title}</h3><p>${C.desc}</p>
+      <div class="qb"><h3>${C.title}</h3><p><span class="fact-tag">Health fact</span><br>${C.desc}</p>
       <div class="qm"><span>${C.meta}</span><b>Open →</b></div></div></div>`;
 }
 function votePoll(id,i){ pollsState[id]=i; renderFeed(); }
@@ -1380,6 +1636,54 @@ function renderVids(){
   });
 }
 renderFeed(); renderVids(); renderFeat();
+</script>
+<div id="prefs-veil" class="hidden"></div>
+<div id="prefs" class="hidden">
+  <div class="pf-col">
+    <h4>Your choices on this site</h4>
+    <p>Crawl runs entirely in your browser. Your test results, quiz answers, and calculator numbers are processed on this device and never sent anywhere — there are no ad trackers here and nothing is sold. Email signups (newsletter and waitlists) are the one exception: those reach us only when you press join. The only other question is whether we may <b>remember</b> your results and settings between visits, so your streaks and scores are waiting when you come back.</p>
+    <p style="margin-top:8px"><a onclick="showPage('privacy');closePrefs(false)" style="text-decoration:underline;cursor:pointer">Read the full privacy note</a></p>
+  </div>
+  <div class="pf-col">
+    <h5>What we'd remember (10)</h5>
+    <p>Movement Age result · quiz outcomes · daily poll streak · calculator inputs · preferred units · deck progress · newsletter status · last visit · display settings · this very choice. All of it stays in this browser's local storage, deletable any time by clearing site data.</p>
+  </div>
+  <div class="pf-btns">
+    <button onclick="setPrefs({results:true,display:true})">Accept All</button>
+    <button class="ghost" onclick="setPrefs({results:false,display:false})">Decline All</button>
+    <button class="ghost" onclick="document.getElementById('prefs').classList.toggle('manage')">Manage Settings</button>
+  </div>
+  <div class="pf-toggles">
+    <label class="pf-tog"><input type="checkbox" checked disabled> <b>Strictly necessary</b> — remembering this choice itself (always on)</label>
+    <label class="pf-tog"><input type="checkbox" id="pt-results" checked> <b>Results &amp; progress</b> — scores, streaks, and completed tests</label>
+    <label class="pf-tog"><input type="checkbox" id="pt-display" checked> <b>Display preferences</b> — units and view settings</label>
+    <button class="pf-save" onclick="setPrefs({results:document.getElementById('pt-results').checked,display:document.getElementById('pt-display').checked})">Save my choices</button>
+  </div>
+</div>
+<script>
+/* ===== PRIVACY PREFERENCES ===== */
+function loadPrefs(){ try{ return JSON.parse(localStorage.getItem("crawl_prefs")||"null"); }catch(e){ return null; } }
+function canStore(kind){ const p=loadPrefs(); return !!(p&&p[kind]); }
+function setPrefs(p){
+  try{ localStorage.setItem("crawl_prefs", JSON.stringify(p)); }catch(e){}
+  if(!p.results){ try{ ["crawl_results","crawl_streak"].forEach(k=>localStorage.removeItem(k)); }catch(e){} }
+  closePrefs(true);
+}
+function closePrefs(chosen){
+  document.getElementById("prefs").classList.add("hidden");
+  document.getElementById("prefs-veil").classList.add("hidden");
+  if(!chosen){ try{ sessionStorage.setItem("crawl_prefs_snooze","1"); }catch(e){} }
+}
+function openPrefs(){
+  const p=loadPrefs();
+  if(p){ const r=document.getElementById("pt-results"), d=document.getElementById("pt-display"); if(r) r.checked=!!p.results; if(d) d.checked=!!p.display; }
+  document.getElementById("prefs").classList.remove("hidden");
+  document.getElementById("prefs-veil").classList.remove("hidden");
+}
+(function(){
+  let snoozed=false; try{ snoozed=!!sessionStorage.getItem("crawl_prefs_snooze"); }catch(e){}
+  if(!loadPrefs() && !snoozed) setTimeout(openPrefs, 700);
+})();
 </script>
 </body>
 </html>
