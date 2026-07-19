@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FAF7F0">
 <title>Crawl — Learn to Move Again</title>
 <meta name="description" content="52 drills. 4 levels. Zero equipment. The card deck that rebuilds balance, reaction, body control, and feel — one card a day.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Source+Sans+3:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light;
   --bone:#FAF7F0; --ink:#1C2B23; --cobalt:#14603A; --chalk:#FFFDF8; --line:#E4DECF;
   --ecto:#7C3AED; --meso:#C2410C; --endo:#15803D;
   --bal:#1D4ED8; --rea:#C2410C; --bod:#15803D; --fee:#7C3AED; --gold:#B8860B; --car:#0F766E;
@@ -16,35 +19,43 @@
   --r:6px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bone);-webkit-text-size-adjust:100%;text-size-adjust:100%;min-height:100%}
+body>div[id^="page-"]:not(.hidden){min-height:62vh}
 body{
+  overflow-x:hidden;
   background-color:var(--bone);
   color:var(--ink);font-family:'Source Sans 3','Space Grotesk',sans-serif;line-height:1.55;
 }
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-@media(max-width:720px){.wrap{padding:0 18px}}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media(max-width:1000px){.wrap{padding:0 28px}}
+@media(max-width:720px){.wrap{padding:0 20px}}
 .hidden{display:none!important}
 .mono{font-family:'Space Mono',monospace}
 img{display:block;max-width:100%}
 
 /* ===== NAV ===== */
 nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60}
-.nav-in{max-width:1080px;margin:0 auto;padding:13px 20px;display:flex;align-items:center;gap:20px}
-.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex-shrink:0;cursor:pointer}
+.nav-in{max-width:1240px;margin:0 auto;padding:16px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+@media(max-width:1000px){.nav-in{padding:14px 28px}}
+@media(max-width:720px){.nav-in{padding:12px 20px}}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex-shrink:0;cursor:pointer;justify-self:start}
 .logo b{font-family:'Fraunces',serif;font-size:22px;font-weight:400}
-.nav-links{margin-left:auto;display:flex;gap:22px;align-items:center}
+.nav-links{justify-self:center;display:flex;gap:34px;align-items:center}
+.nav-in>.nav-cta{justify-self:end}
 .nav-links a{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink);text-decoration:none;cursor:pointer}
 .nav-links a:hover{color:var(--cobalt)}
-.nav-cta{background:var(--ink);color:var(--chalk)!important;padding:9px 16px;border-radius:4px}
+.nav-cta{background:var(--ink);color:var(--chalk)!important;padding:10px 18px;border-radius:6px}
 .nav-cta:hover{background:var(--cobalt)}
 .burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
 .mobile-menu{display:none;background:var(--chalk);border-bottom:1px solid var(--line);padding:8px 20px 16px}
 .mobile-menu a{display:block;padding:13px 4px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);cursor:pointer}
 .mobile-menu a:last-child{border-bottom:none}
-@media(max-width:760px){.nav-links{display:none}.burger{display:block}.mobile-menu.open{display:block}}
+@media(max-width:760px){.nav-in{display:flex}.nav-links{display:none}.nav-in>.nav-cta{display:none}.burger{display:block}.mobile-menu.open{display:block}}
 
 /* ===== BUTTONS / TILES ===== */
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--chalk);font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:14px 26px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--chalk);font-family:'Space Mono',monospace;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:15px 28px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;transition:background .15s ease, transform .12s cubic-bezier(.23,1,.32,1)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 .btn:hover{background:var(--cobalt)}
 .btn.blue{background:var(--cobalt)}
 .btn.blue:hover{background:var(--ink)}
@@ -56,10 +67,10 @@ nav{position:sticky;top:0;background:rgba(242,240,235,.92);backdrop-filter:blur(
 .kicker{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700}
 h1{font-family:'Fraunces',serif;font-size:clamp(38px,8vw,72px);line-height:.94}
 h1 em{font-style:normal;color:var(--cobalt)}
-section{padding:68px 0}
-@media(max-width:720px){section{padding:44px 0}}
-.sec-head h2{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,42px);line-height:1}
-.sec-sub{font-size:15px;color:#555;max-width:580px;margin-top:12px}
+section{padding:100px 0}
+@media(max-width:720px){section{padding:56px 0}}
+.sec-head h2{font-family:'Fraunces',serif;font-size:clamp(28px,4.5vw,48px);line-height:1}
+.sec-sub{font-size:16px;color:#555;max-width:660px;margin-top:14px}
 .photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .photo img{width:100%;height:100%;object-fit:cover}
 .ph-credit{font-family:'Space Mono',monospace;font-size:9.5px;color:#aaa;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
@@ -176,9 +187,10 @@ section.ink{background:var(--moss);color:var(--chalk)}
 .social-btn:hover{background:var(--ink);color:var(--chalk)}
 
 /* mission/about */
-.page-head{padding:44px 0 8px;max-width:720px}
-.page-head .sub{font-size:16px;color:#4a4a52;margin-top:12px}
-.prose{max-width:660px;font-size:15px;color:#3a3a42}
+.page-head{padding:80px 0 10px;max-width:800px}
+@media(max-width:720px){.page-head{padding:48px 0 8px}}
+.page-head .sub{font-size:17px;color:#4a4a52;margin-top:14px;line-height:1.65}
+.prose{max-width:740px;font-size:16px;color:#3a3a42;line-height:1.7}
 .prose p{margin-top:14px}
 .prose b{color:var(--ink)}
 .stat-row{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
@@ -315,38 +327,40 @@ section.ink{background:var(--moss);color:var(--chalk)}
 .calc-result td{padding:7px 4px;border-bottom:1px solid var(--line)}
 .calc-result td:last-child{text-align:right;font-family:'Space Mono',monospace;font-weight:700}
 /* legal */
-.legal{max-width:700px;font-size:14px;color:#3a3a42;padding-bottom:60px}
+.legal{max-width:760px;font-size:15px;color:#3a3a42;padding-bottom:90px;line-height:1.7}
 .legal h3{font-family:'Fraunces',serif;font-size:19px;margin:26px 0 8px}
 .legal p{margin-top:10px}
 .legal .tpl{border:1px dashed #b7b3a9;border-radius:var(--r);padding:14px 16px;font-size:12.5px;background:rgba(255,255,255,.6);margin-top:22px;color:#666}
 /* ===== FOOTER v8 ===== */
-footer{background:var(--ink);color:var(--chalk);margin-top:56px}
-.foot-in{max-width:1080px;margin:0 auto;padding:52px 20px 30px}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #2E2E34}
+footer{background:var(--ink);color:var(--chalk);margin-top:40px}
+.foot-in{max-width:1240px;margin:0 auto;padding:44px 40px 20px}
+@media(max-width:1000px){.foot-in{padding:36px 28px 18px}}
+@media(max-width:720px){.foot-in{padding:30px 20px 16px}}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #2E2E34}
 .foot-word{font-family:'Fraunces',serif;font-size:clamp(44px,8vw,76px);line-height:.9}
 .foot-word span{color:var(--cobalt)}
-.foot-tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A92;margin-top:8px}
+.foot-tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A92;margin-top:6px}
 .foot-news{min-width:280px;flex:1;max-width:400px}
 .foot-news h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8A92;margin-bottom:10px}
 .foot-news .row{display:flex;gap:8px}
-.foot-news input{flex:1;border:1px solid #3A3A42;border-radius:4px;padding:12px 18px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:#1F1F25;color:var(--chalk)}
+.foot-news input{flex:1;border:1px solid #3A3A42;border-radius:4px;padding:11px 14px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:#1F1F25;color:var(--chalk)}
 .foot-news input::placeholder{color:#6A6A72}
-.foot-news .btn{padding:12px 20px;font-size:12px}
-.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;padding:52px 0 44px}
+.foot-news .btn{padding:11px 16px;font-size:12px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;padding:24px 0 26px}
 @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
-.foot-col h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A92;margin-bottom:16px}
-.foot-col a{display:block;font-size:15px;color:#D6D6DC;text-decoration:none;padding:7px 0;cursor:pointer;transition:color .12s, transform .12s}
-.foot-col a:hover{color:var(--chalk);transform:translateX(4px)}
-.foot-col a::after{content:" →";opacity:0;transition:opacity .12s}
-.foot-col a:hover::after{opacity:1}
-.foot-bottom{border-top:1px solid #2E2E34;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.foot-legal{display:flex;gap:22px;flex-wrap:wrap}
+.foot-col h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A92;margin-bottom:8px}
+.foot-col a{display:block;font-size:14px;color:#D6D6DC;text-decoration:none;padding:4px 0;cursor:pointer;transition:color .12s ease}
+.foot-col a:hover{color:var(--chalk)}
+.foot-bottom{border-top:1px solid #2E2E34;padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-legal{display:flex;gap:24px;flex-wrap:wrap}
+@media(min-width:901px){.foot-bottom{flex-wrap:nowrap}.foot-legal{flex-wrap:nowrap}.foot-legal a{white-space:nowrap}.foot-copy{white-space:nowrap}}
+.foot-copy{font-size:12px;letter-spacing:.02em}
 .foot-legal a{font-size:13px;color:#8A8A92;text-decoration:none;cursor:pointer}
 .foot-legal a:hover{color:var(--chalk)}
 /* ===== WELLNESS RETHEME v11 ===== */
 h1,h2,h3,h4,.tt,.qtext{font-weight:600;letter-spacing:-.01em}
-h1{font-size:clamp(36px,7vw,64px);line-height:1.04}
+h1{font-size:clamp(38px,6.5vw,74px);line-height:1.04}
 h1 em,h2 em,.foot-tagline em{font-style:italic;font-weight:500;color:var(--cobalt)}
 .hero-panel h1 em{color:#A7E3C1}
 .hero-panel h1{line-height:1.06}
@@ -362,15 +376,15 @@ nav{background:rgba(250,247,240,.94)}
 .sub,.sec-sub{color:#4E5A50}
 
 /* green hero panel */
-.hero-panel{position:relative;margin-top:26px;border-radius:6px;background:var(--moss);color:var(--chalk);overflow:hidden;padding:78px 28px 220px;text-align:center}
+.hero-panel{position:relative;margin:0 calc(50% - 50vw);border-radius:0;background:var(--moss);color:var(--chalk);overflow:hidden;padding:118px 28px 236px;text-align:center}
 .hero-panel::before,.hero-panel::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.hero-panel::before{width:560px;height:560px;background:#14603A;top:-320px;left:-160px}
-.hero-panel::after{width:640px;height:640px;background:#0B3B23;bottom:-420px;right:-200px}
-.hero-panel .hp-ring{position:absolute;width:820px;height:820px;border:1.5px dashed rgba(255,253,248,.14);border-radius:50%;left:50%;top:-430px;transform:translateX(-50%);pointer-events:none}
+.hero-panel::before{width:52vw;height:52vw;min-width:560px;min-height:560px;background:#14603A;top:-58%;left:-12%}
+.hero-panel::after{width:58vw;height:58vw;min-width:640px;min-height:640px;background:#0B3B23;bottom:-72%;right:-14%}
+.hero-panel .hp-ring{position:absolute;width:min(1080px,92vw);height:min(1080px,92vw);border:1.5px dashed rgba(255,253,248,.14);border-radius:50%;left:50%;top:-56%;transform:translateX(-50%);pointer-events:none}
 .hero-panel>*{position:relative;z-index:2}
 .hero-panel .kicker{color:#A7E3C1}
 .hero-panel h1{margin-top:14px}
-.hero-panel .sub{color:#D9EBDD;max-width:560px;margin:16px auto 0;font-size:17px}
+.hero-panel .sub{color:#D9EBDD;max-width:620px;margin:18px auto 0;font-size:18px;line-height:1.65}
 .hero-panel .hero-cta{justify-content:center}
 .hero-panel .btn.blue{background:var(--chalk);color:var(--moss)}
 .hero-panel .btn.blue:hover{background:#A7E3C1}
@@ -420,7 +434,7 @@ nav{background:rgba(250,247,240,.94)}
 .boxshot.mini .bs-tag,.boxshot.mini .bs-suits{display:none}
 .boxshot.mini .bs-vol{font-size:6.5px}
 /* ===== storefront grid ===== */
-.store-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:34px}
+.store-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin-top:44px}
 @media(max-width:1000px){.store-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
 @media(max-width:700px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:460px){.store-grid{grid-template-columns:1fr}}
@@ -440,20 +454,23 @@ nav{background:rgba(250,247,240,.94)}
 .btn.sm{padding:8px 13px;font-size:12.5px;flex:1;text-align:center}
 .give-line{margin-top:22px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#6B7A70}
 /* ===== deck detail ===== */
-.dv-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center;padding:38px 0 18px}
+.dv-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center;padding:40px 0 0}
 @media(max-width:820px){.dv-hero{grid-template-columns:1fr}.dv-box{order:-1}}
 .dv-box{display:flex;justify-content:center}
-.inside-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:42px}
+.inside-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 @media(max-width:820px){.inside-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.in-item{padding:18px;text-align:center}
-.in-item b{display:block;font-family:'Fraunces',serif;font-size:30px;color:var(--cobalt)}
-.in-item span{display:block;font-size:12px;color:#4E5A50;margin-top:5px;line-height:1.4}
-.dv-cards{margin-top:8px;padding-bottom:24px}
-.sci-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.in-item{padding:18px 22px 18px 0;text-align:left}
+.in-item+.in-item{border-left:1px solid var(--line);padding-left:22px}
+@media(max-width:820px){.in-item{padding:14px 16px 14px 0}.in-item:nth-child(odd){border-left:none;padding-left:0}.in-item:nth-child(n+3){border-top:1px solid var(--line)}}
+.in-item b{display:block;font-family:'Fraunces',serif;font-size:21px;color:var(--moss)}
+.in-item span{display:block;font-size:12.5px;color:#4E5A50;margin-top:4px;line-height:1.45}
+.dv-cards{margin-top:40px;padding-bottom:28px}
+.sci-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px;margin-top:36px}
+@media(max-width:820px){.sci-grid{gap:26px}}
 @media(max-width:820px){.sci-grid{grid-template-columns:1fr}}
-.sci-card{padding:24px;border-top:4px solid var(--da)}
+.sci-card{padding:22px 0 0;border-top:1px solid var(--ink)}
 .sci-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--da);letter-spacing:.1em}
-.sci-card h4{font-family:'Fraunces',serif;font-size:19px;margin-top:8px}
+.sci-card h4{font-family:'Fraunces',serif;font-size:19px;margin-top:0}
 .sci-card p{font-size:13.5px;color:#3E5147;margin-top:8px;line-height:1.55}
 .vid-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
 @media(max-width:820px){.vid-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -465,20 +482,65 @@ nav{background:rgba(250,247,240,.94)}
 .vt-cap{font-size:11.5px;color:rgba(255,255,255,.85);font-weight:600;z-index:1}
 
 
+/* mission page */
+.mission-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
+@media(max-width:900px){.mission-grid{grid-template-columns:1fr;gap:36px}}
+.pledge{margin-top:104px;border:1px solid var(--line);background:var(--chalk);border-radius:var(--r);padding:28px 32px 22px}
+@media(max-width:900px){.pledge{margin-top:0;padding:24px 24px 18px}}
+.pledge h5{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);padding-bottom:14px;border-bottom:1px solid var(--line)}
+.pl-row{display:grid;grid-template-columns:118px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.pl-row b{font-family:'Fraunces',serif;font-size:25px;color:var(--moss);font-weight:600;white-space:nowrap}
+.pl-row span{font-size:13.5px;color:#4E5A50;line-height:1.55}
+.pl-note{margin-top:16px;font-size:12px;color:#8A9288}
+/* mission band (landing, full-bleed) */
+.mission-band{margin:84px calc(50% - 50vw) 0;background:var(--ink);color:var(--chalk);padding:84px 0;text-align:center}
+@media(max-width:820px){.mission-band{margin-top:72px;padding:68px 0}}
+.mission-band h2{font-family:'Fraunces',serif;font-size:clamp(30px,4.8vw,52px);line-height:1.06;margin-top:14px}
+.mission-band p{font-size:16px;color:#B9C6BC;max-width:560px;margin:16px auto 0;line-height:1.65}
+.mission-band .mb-btn{background:var(--chalk);color:var(--ink)}
+.mission-band .mb-btn:hover{background:#A7E3C1}
+.mission-band .mb-ghost{box-shadow:inset 0 0 0 2px rgba(255,253,248,.5);color:var(--chalk)}
+.mission-band .mb-ghost:hover{background:rgba(255,253,248,.12);color:var(--chalk)}
+footer{margin-top:0}
+#page-home~footer{margin-top:0}
 /* how it works */
-.how{margin-top:56px}
-.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.how{margin-top:88px;margin-bottom:88px}
+@media(max-width:820px){.how{margin-top:60px;margin-bottom:60px}}
+.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px;margin-top:44px}
+@media(max-width:820px){.how-steps{gap:26px}}
 @media(max-width:820px){.how-steps{grid-template-columns:1fr}}
-.how-step{padding:30px 26px;position:relative;border-top:4px solid var(--cobalt)}
+.how-step{padding:24px 0 0;position:relative;border-top:1px solid var(--ink)}
 .hs-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--cobalt)}
-.how-step h4{font-family:'Fraunces',serif;font-size:22px;margin-top:10px}
-.how-step p{font-size:14px;color:#4E5A50;line-height:1.6;margin-top:10px}
-.proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:20px;background:var(--sage);border:1px solid #CBDCC6;border-radius:var(--r);padding:28px 20px}
-@media(max-width:600px){.proof-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+.how-step h4{font-family:'Fraunces',serif;font-size:21px;margin-top:0}
+.how-step p{font-size:14.5px;color:#4E5A50;line-height:1.65;margin-top:12px}
+.how-step .hs-detail{font-size:13px;color:#6B7A70;margin-top:14px}
+/* spec line */
+.spec-line{margin-top:56px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px 36px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5C6B60}
+.spec-line b{font-family:'Fraunces',serif;font-size:17px;letter-spacing:0;color:var(--moss);font-weight:600;margin-right:7px}
+@media(max-width:720px){.spec-line{justify-content:flex-start}}
 .proof{text-align:center}
 .proof b{display:block;font-family:'Fraunces',serif;font-size:clamp(30px,4.4vw,42px);color:var(--moss);line-height:1}
 .proof span{display:block;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#5C6B60;margin-top:8px}
 .how-note{text-align:center;font-size:13px;color:#6B7A70;margin-top:18px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
+/* level row */
+.lvl-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px;margin-top:36px}
+@media(max-width:820px){.lvl-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}}
+.lvl-cell{border-top:1px solid var(--ink);padding-top:20px;cursor:pointer}
+.lvl-k{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt)}
+.lvl-cell h4{font-family:'Fraunces',serif;font-size:19px;margin-top:8px}
+.lvl-cell p{font-size:13.5px;color:#4E5A50;line-height:1.55;margin-top:7px}
+.lvl-go{display:inline-block;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt);margin-top:12px;opacity:0;transition:opacity .15s ease}
+@media(hover:hover) and (pointer:fine){.lvl-cell:hover .lvl-go{opacity:1}}
+@media(hover:none){.lvl-go{opacity:1}}
+/* citation list */
+.cite-list{margin-top:30px;border-top:1px solid var(--ink)}
+.cite{display:grid;grid-template-columns:1fr 230px;gap:40px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:start}
+@media(max-width:720px){.cite{grid-template-columns:1fr;gap:6px}}
+.cite h4{font-family:'Fraunces',serif;font-size:18px;line-height:1.3;color:var(--ink);transition:color .12s ease}
+.cite:hover h4{color:var(--cobalt)}
+.cite p{font-size:13.5px;color:#4E5A50;margin-top:6px;line-height:1.55}
+.cite-src{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A9288;text-align:right;padding-top:5px}
+@media(max-width:720px){.cite-src{text-align:left;order:-1;padding-top:0}}
 /* further reading */
 .read-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
 @media(max-width:860px){.read-list{grid-template-columns:1fr}}
@@ -523,7 +585,7 @@ nav{background:rgba(250,247,240,.94)}
 .order-summary input{width:100%;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:'Source Sans 3',sans-serif;font-size:14px;background:var(--bone);margin-bottom:10px}
 .sum-fine{font-size:12px;color:var(--cobalt);font-weight:600;margin-top:10px;min-height:16px}
 /* deck line selector */
-.deck-tabs{position:relative;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-width:1040px;margin:30px auto 0;padding:0 16px}
+.deck-tabs{position:relative;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;max-width:1200px;margin:34px auto 0;padding:0 16px}
 @media(max-width:1000px) and (min-width:861px){.deck-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .dtab{background:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:13px 10px 11px;cursor:pointer;text-align:center;font-family:'Source Sans 3',sans-serif;transition:border-color .15s, box-shadow .15s;display:flex;flex-direction:column;justify-content:flex-start}
 .dtab b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--ink)}
@@ -588,7 +650,7 @@ nav{background:rgba(250,247,240,.94)}
 .best-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk);background:var(--cobalt);border-radius:4px;padding:5px 14px}
 /* mobile: same cards, swipeable fan */
 @media(max-width:860px){
-  .hero-panel{padding:56px 22px 210px}
+  .hero-panel{padding:76px 20px 208px}
   .hero-cards{margin-top:-170px;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:24px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .hero-cards::-webkit-scrollbar{display:none}
   .pcard{flex:0 0 min(240px,74vw);width:auto;scroll-snap-align:center}
@@ -605,8 +667,8 @@ nav{background:rgba(250,247,240,.94)}
 .qz8 p{color:#4E5A50}
 
 /* full-width calculator pages */
-.calc-head{padding:52px 0 14px}
-@media(max-width:720px){.calc-head{padding:34px 0 10px}}
+.calc-head{padding:80px 0 16px}
+@media(max-width:720px){.calc-head{padding:44px 0 10px}}
 .calc-body{display:grid;grid-template-columns:minmax(320px,430px) 1fr;gap:20px;align-items:start;margin-top:20px}
 @media(max-width:860px){.calc-body{grid-template-columns:1fr}}
 .calc-panel{background:var(--chalk);border:1px solid var(--line);border-radius:var(--r);padding:26px}
@@ -642,24 +704,68 @@ nav{background:rgba(250,247,240,.94)}
 .pf-tog{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;cursor:pointer}
 .pf-tog input{width:18px;height:18px;accent-color:var(--cobalt)}
 html.reduce-motion *{transition:none!important;animation:none!important}
+/* first-visit offer */
+#promo-veil{position:fixed;inset:0;background:rgba(28,43,35,.34);z-index:96}
+#promo{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) translateY(10px);opacity:0;z-index:97;width:min(92vw,540px);background:var(--chalk);border:1px solid var(--line);border-radius:8px;box-shadow:0 30px 80px rgba(28,43,35,.35);padding:40px 42px 32px;transition:opacity .2s cubic-bezier(.23,1,.32,1), transform .2s cubic-bezier(.23,1,.32,1)}
+#promo.in{opacity:1;transform:translate(-50%,-50%)}
+@media(max-width:520px){#promo{padding:30px 24px 24px}}
+#promo .promo-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bone);font-size:15px;line-height:1;cursor:pointer;color:var(--ink);transition:background .12s ease}
+#promo .promo-x:hover{background:var(--ink);color:var(--chalk)}
+#promo h3{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,34px);font-weight:600;line-height:1.05;margin-top:10px}
+#promo p{font-size:14.5px;color:#4E5A50;margin-top:12px;line-height:1.6}
+#promo .row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+#promo input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:4px;padding:13px 16px;font-family:'Source Sans 3',sans-serif;font-size:15px;background:var(--bone)}
+#promo .promo-fine{font-size:11.5px;color:#8A9288;margin-top:14px}
+#promo.hidden,#promo-veil.hidden{display:none}
+@media (prefers-reduced-motion:reduce){#promo{transition:opacity .15s ease;transform:translate(-50%,-50%)}}
+/* toast */
+#toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:var(--chalk);font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:6px;box-shadow:0 16px 40px rgba(28,43,35,.35);opacity:0;pointer-events:none;transition:opacity .18s cubic-bezier(.23,1,.32,1), transform .18s cubic-bezier(.23,1,.32,1);z-index:120;max-width:min(92vw,480px);text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (prefers-reduced-motion: reduce){#toast{transition:opacity .18s ease}}
 
 /* footer polish */
 footer{background:var(--moss)}
-.foot-tagline{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,36px);font-weight:500;line-height:1.15;max-width:420px;text-align:right}
+.foot-tagline{font-family:'Fraunces',serif;font-size:clamp(17px,2.4vw,22px);font-weight:500;line-height:1.25;max-width:400px;text-align:right}
 @media(max-width:820px){.foot-tagline{text-align:left}}
-.foot-word{font-family:'Fraunces',serif;font-weight:600;text-transform:none;font-size:clamp(38px,6vw,58px)}
+.foot-word{font-family:'Fraunces',serif;font-weight:600;text-transform:none;font-size:clamp(28px,3.5vw,40px);letter-spacing:-.02em}
 .foot-word span{color:#A7E3C1}
 .foot-top{border-bottom-color:rgba(255,253,248,.16);align-items:center}
-.foot-grid{gap:20px}
-.foot-col{background:rgba(255,253,248,.06);border:1px solid rgba(255,253,248,.10);border-radius:6px;padding:20px}
+.foot-grid{gap:36px}
+@media(max-width:820px){.foot-grid{gap:22px;padding:20px 0 24px}}
+.foot-col{background:none;border:none;border-radius:0;padding:0}
 .foot-col h5{color:#A7E3C1}
-.foot-col a{color:#E4EFE4;font-size:14.5px}
+.foot-col a{color:#E4EFE4;font-size:14px}
 .foot-bottom{border-top-color:rgba(255,253,248,.16)}
 .foot-legal a{color:#A9BBA9}
 .foot-copy{color:#8AA091}
 .foot-news input{background:rgba(255,253,248,.10);border-color:rgba(255,253,248,.22)}
 .foot-news .btn.blue{background:var(--chalk);color:var(--moss)}
 .foot-news .btn.blue:hover{background:#A7E3C1}
+
+/* ===== MOBILE POLISH v14 ===== */
+@media(max-width:860px){
+  /* deck-detail sample cards were inheriting the landing fan's -170px pull — this restores their place */
+  .hero-cards.dv-cards{margin-top:16px;padding:10px 20px 24px}
+}
+@media(max-width:720px){
+  h1{line-height:1.08}
+  .page-head{padding:44px 0 8px}
+  .page-head .sub{font-size:16px}
+  .sec-sub{font-size:15px}
+  .prose{font-size:15.5px}
+  .dv-hero{gap:16px;padding:20px 0 0}
+  .dv-box{margin-bottom:4px}
+  .inside-strip{margin-top:18px}
+  .sec-head h2{line-height:1.06}
+  section{padding:52px 0}
+}
+@media(max-width:600px){
+  .hero-cta{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-cta .btn{width:100%;padding:16px 20px;font-size:14px;justify-content:center}
+  .hub-grid .vid .vthumb{aspect-ratio:16/9}
+  .pl-row{grid-template-columns:96px 1fr;gap:14px}
+  .pl-row b{font-size:21px}
+}
 </style>
 </head>
 <body>
@@ -674,8 +780,8 @@ footer{background:var(--moss)}
       <a onclick="showPage('deck')">The Decks</a>
       <a onclick="showPage('mission')">The Mission</a>
       <a onclick="showPage('about')">About</a>
-      <a class="nav-cta" onclick="preorder()">Reserve a deck</a>
     </div>
+    <a class="nav-cta" onclick="preorder()">Reserve a deck</a>
     <button class="burger" onclick="toggleMenu()" aria-label="Menu">
       <svg width="26" height="20" viewBox="0 0 26 20"><line x1="1" y1="2" x2="25" y2="2" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="10" x2="25" y2="10" stroke="#16161A" stroke-width="3" stroke-linecap="round"/><line x1="1" y1="18" x2="25" y2="18" stroke="#16161A" stroke-width="3" stroke-linecap="round"/></svg>
     </button>
@@ -705,44 +811,17 @@ footer{background:var(--moss)}
     <div class="hero-note" id="hero-note"></div>
     <div class="deck-tabs" id="deck-tabs"></div>
     <div class="hero-cta" style="justify-content:center;margin-top:34px;margin-bottom:8px"><button class="btn blue" style="background:var(--moss);color:var(--chalk)" onclick="showPage('deck')">See all the decks</button></div>
+  </div>
 
-
-    <div class="how" id="how">
-      <div class="sec-head" style="text-align:center">
-        <div class="kicker">How it works</div>
-        <h2>No app. No gym. <em>No deciding.</em></h2>
-        <p class="sec-sub" style="max-width:600px;margin-left:auto;margin-right:auto">The hardest part of training is choosing what to do. A card chooses for you — then shows you exactly how.</p>
-      </div>
-      <div class="how-steps">
-        <div class="tile how-step">
-          <span class="hs-num">01</span>
-          <h4>Draw a card</h4>
-          <p>Shuffle, pull one, read it. Drill, cue, and dose on the face — no programming, no scrolling, no decision to make.</p>
-        </div>
-        <div class="tile how-step">
-          <span class="hs-num">02</span>
-          <h4>Scan the QR</h4>
-          <p>Point any phone camera at the code on the card face. That drill's film opens instantly — all four levels, so you see it before you try it.</p>
-        </div>
-        <div class="tile how-step">
-          <span class="hs-num">03</span>
-          <h4>Train it, mark it</h4>
-          <p>Two to twenty minutes, wherever you're standing. Check the box on the progress map and put the card back in the deck.</p>
-        </div>
-      </div>
-      <div class="proof-strip">
-        <div class="proof"><b>52</b><span>cards per deck</span></div>
-        <div class="proof"><b>208</b><span>filmed progressions</span></div>
-        <div class="proof"><b>4</b><span>levels on every drill</span></div>
-        <div class="proof"><b>0</b><span>equipment required</span></div>
-      </div>
-      <div class="how-note">Every claim on a deck page links to the research behind it. Read it, argue with it, bring it to your doctor.</div>
-    </div>
-
-    <div class="tile mission-line">
-      <h3>Every deck moves a kid.</h3>
+  <div class="mission-band">
+    <div class="wrap">
+      <div class="kicker" style="color:#A7E3C1">The Mission</div>
+      <h2>Every deck moves a kid.</h2>
       <p>One deck donated to DMV youth programs for every ten sold — free movement coaching for kids whose zip code shouldn't decide their access.</p>
-      <button class="btn ghost" onclick="showPage('mission')">The Mission</button>
+      <div class="hero-cta" style="justify-content:center;margin-top:28px">
+        <button class="btn mb-btn" onclick="showPage('mission')">Read the Mission</button>
+        <button class="btn ghost mb-ghost" onclick="showPage('donate')">Donate</button>
+      </div>
     </div>
   </div>
 </div>
@@ -752,29 +831,41 @@ footer{background:var(--moss)}
   <div class="wrap">
     <div class="calc-head" style="padding-top:28px">
       <div class="kicker">The Decks · one system, many lives</div>
-      <h1 style="font-size:clamp(30px,6vw,52px)">Pick the deck built<br><em>for your life</em></h1>
+      <h1 style="font-size:clamp(32px,5.5vw,60px)">Pick the deck built<br><em>for your life</em></h1>
       <p class="sec-sub" style="max-width:700px">Same 52-card system, same filmed levels, same suits — tuned to different bodies and different goals, with more decks on the way. Every box: 52 cards, 208 filmed progressions, and a fold-out progress map for your wall.</p>
     </div>
     <div class="store-grid" id="store-grid"></div>
     <div class="give-line">◆ One deck donated to a DMV youth program for every ten sold.</div>
-<div class="flow" style="margin-top:10px;margin-bottom:40px">
-      <div class="tile flow-step">
-        <div class="icon-sq" style="--tint:#E9F1E6"><svg width="24" height="28" viewBox="0 0 26 30"><rect x="2" y="5" width="17" height="23" rx="3" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><rect x="7" y="1" width="17" height="23" rx="3" fill="#fff" stroke="#1D4ED8" stroke-width="2.5"/><path d="M15.5 8 l4 5 -4 5 -4 -5 z" fill="#1D4ED8"/></svg></div>
-        <div class="stage">Step 01</div><h4>Draw</h4>
-        <p>Pull one card — drill, cues, dose. Two minutes, anywhere.</p>
+<div class="how">
+      <div class="sec-head" style="text-align:center">
+        <div class="kicker">How it works</div>
+        <h2>No app. No gym. <em>No deciding.</em></h2>
+        <p class="sec-sub" style="max-width:660px;margin-left:auto;margin-right:auto">The hardest part of training is choosing what to do. A card chooses for you — then shows you exactly how, at the level you're ready for today.</p>
       </div>
-      <div class="flow-arrow"><svg width="22" height="16" viewBox="0 0 24 16"><path d="M0 8 H20 M14 2 L21 8 L14 14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
-      <div class="tile flow-step">
-        <div class="icon-sq" style="--tint:#FDEEE6"><svg width="26" height="26" viewBox="0 0 28 28" fill="#C2410C"><path d="M2 2h9v9H2V2zm2 2v5h5V4H4z"/><rect x="5.5" y="5.5" width="2" height="2"/><path d="M17 2h9v9h-9V2zm2 2v5h5V4h-5z"/><rect x="20.5" y="5.5" width="2" height="2"/><path d="M2 17h9v9H2v-9zm2 2v5h5v-5H4z"/><rect x="5.5" y="20.5" width="2" height="2"/><rect x="13" y="2" width="2" height="2"/><rect x="13" y="6" width="2" height="2"/><rect x="13" y="10" width="2" height="2"/><rect x="2" y="13" width="2" height="2"/><rect x="6" y="13" width="2" height="2"/><rect x="10" y="13" width="2" height="2"/><rect x="17" y="13" width="2" height="2"/><rect x="21" y="13" width="2" height="2"/><rect x="24" y="13" width="2" height="2"/><rect x="13" y="17" width="2" height="2"/><rect x="17" y="17" width="2" height="2"/><rect x="21" y="21" width="2" height="2"/><rect x="17" y="24" width="2" height="2"/><rect x="24" y="17" width="2" height="2"/><rect x="13" y="21" width="2" height="2"/></svg></div>
-        <div class="stage">Step 02</div><h4>Train</h4>
-        <p>Scan the QR — every drill filmed at all 4 levels.</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <h4>Draw a card</h4>
+          <p>Shuffle the deck and pull one. The face holds everything: the drill, the coaching cue, and the dose — sets, reps, or time. No program to write, no feed to scroll, no decision left to make before you move.</p>
+          <p class="hs-detail">Too easy or too hard today? Every card runs at four levels — you pick the depth, the card picks the work.</p>
+        </div>
+        <div class="how-step">
+          <h4>Scan for the film</h4>
+          <p>Point any phone camera at the QR printed on the card face. That drill's film opens on the spot — all four levels, so you can watch Level 1 before you try it and see what Level 4 looks like when you get there.</p>
+          <p class="hs-detail">No app to download, no account, no login. The camera you already own is the whole system.</p>
+        </div>
+        <div class="how-step">
+          <h4>Train it, mark it</h4>
+          <p>Two to twenty minutes, wherever you're standing — a bedroom, a driveway, a hotel room. When you're done, check the drill off on the fold-out progress map and slide the card back into the deck.</p>
+          <p class="hs-detail">208 boxes on the wall map — one per drill per level. The wall keeps score so you don't have to.</p>
+        </div>
       </div>
-      <div class="flow-arrow"><svg width="22" height="16" viewBox="0 0 24 16"><path d="M0 8 H20 M14 2 L21 8 L14 14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
-      <div class="tile flow-step">
-        <div class="icon-sq" style="--tint:#E9F5EE"><svg width="26" height="26" viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" fill="none" stroke="#15803D" stroke-width="2.5"/><path d="M7 14 L12 19 L21 9" stroke="#15803D" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="stage">Step 03</div><h4>Track</h4>
-        <p>Check the box on the Crawl Map — 208 total, on your wall.</p>
+      <div class="spec-line">
+        <span><b>52</b> cards per deck</span>
+        <span><b>208</b> filmed progressions</span>
+        <span><b>4</b> levels on every drill</span>
+        <span><b>0</b> equipment required</span>
       </div>
+      <div class="how-note">Every claim on a deck page links to the research behind it. Read it, argue with it, bring it to your doctor.</div>
     </div>
 
     <div class="tile qr-show">
@@ -831,7 +922,7 @@ footer{background:var(--moss)}
     <div class="topbar"><button class="back" onclick="showPage('deck')">← All decks</button></div>
     <div class="calc-head">
       <div class="kicker">Reserve · pay nothing today</div>
-      <h1 style="font-size:clamp(28px,5.5vw,46px)">Build your box</h1>
+      <h1 style="font-size:clamp(30px,5vw,54px)">Build your box</h1>
       <p class="sec-sub" style="max-width:700px">Pick one deck or stack several. Reserving is free — it locks founders' access, first shipment, and first crack at multi-deck bundle pricing when preorders open.</p>
     </div>
     <div class="order-body">
@@ -911,9 +1002,9 @@ footer{background:var(--moss)}
     <div class="hub-grid" id="vidgrid"></div>
     <div class="hub-note"><b class="mono" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase">Filming in progress —</b> the library goes live at launch. Preorders get every video from day one; free drills post here and on our channels weekly.</div>
     <div class="social-row" style="margin-bottom:50px">
-      <span class="social-btn" onclick="alert('YouTube channel launches with the video library.')">YouTube</span>
-      <span class="social-btn" onclick="alert('Instagram launches with daily drill Reels.')">Instagram</span>
-      <span class="social-btn" onclick="alert('TikTok launches with daily drill clips.')">TikTok</span>
+      <span class="social-btn" onclick="notify('YouTube launches with the full video library.')">YouTube</span>
+      <span class="social-btn" onclick="notify('Instagram launches with the deck — daily drill Reels.')">Instagram</span>
+      <span class="social-btn" onclick="notify('TikTok launches with the deck — daily drill clips.')">TikTok</span>
     </div>
   </div>
 </div>
@@ -962,22 +1053,30 @@ footer{background:var(--moss)}
 <!-- ================= MISSION PAGE ================= -->
 <div id="page-mission" class="hidden">
   <div class="wrap">
-    <div class="page-head">
-      <div class="kicker">The Mission</div>
-      <h1>Every deck<br><em>moves a kid.</em></h1>
-      <p class="sub">This started on courts and rec-center floors in the DMV — coaching young athletes whose access to real movement training depended on their zip code. Every deck we add still answers to it.</p>
-    </div>
-    <div class="prose" style="margin-top:26px">
-      <p><b>A share of every deck sold — whichever one it is — funds free movement sessions and equipment for youth programs</b> in Prince George's and Montgomery County, Maryland. Whichever deck you buy, a kid gets coached. Simple math.</p>
-      <p>The same drills in your box run at those sessions — no tryouts, no fees, no barriers. Movement skill shouldn't be a luxury good, and a deck of cards is cheap enough to make sure it isn't.</p>
-    </div>
-    <div class="stat-row">
-      <div class="tile stat"><div class="num">1:10</div><div class="lab">Deck donated per 10 sold</div></div>
-      <div class="tile stat"><div class="num">DMV</div><div class="lab">Where it starts</div></div>
-      <div class="tile stat"><div class="num">$0</div><div class="lab">Cost to a kid, ever</div></div>
-    </div>
-    <div class="hero-cta" style="margin:28px 0 60px">
-      <button class="btn blue" onclick="showPage('donate')">Support the Mission</button>
+    <div class="mission-grid">
+      <div>
+        <div class="page-head" style="padding-bottom:0;max-width:none">
+          <div class="kicker">The Mission</div>
+          <h1>Every deck<br><em>moves a kid.</em></h1>
+          <p class="sub">This started on courts and rec-center floors in the DMV — coaching young athletes whose access to real movement training depended on their zip code. Every deck we add still answers to it.</p>
+        </div>
+        <div class="prose" style="margin-top:28px;max-width:none">
+          <p><b>A share of every deck sold — whichever one it is — funds free movement sessions and equipment for youth programs</b> in Prince George's and Montgomery County, Maryland. Whichever deck you buy, a kid gets coached. Simple math.</p>
+          <p>The same drills in your box run at those sessions — no tryouts, no fees, no barriers. Movement skill shouldn't be a luxury good, and a deck of cards is cheap enough to make sure it isn't.</p>
+          <p>If you'd rather fund it directly, every dollar goes to sessions, decks, and equipment — not overhead.</p>
+        </div>
+        <div class="hero-cta" style="margin:36px 0 70px">
+          <button class="btn blue" onclick="showPage('donate')">Support the Mission</button>
+          <button class="btn ghost" onclick="showPage('deck')">See the decks</button>
+        </div>
+      </div>
+      <aside class="pledge">
+        <h5>The pledge</h5>
+        <div class="pl-row"><b>1 : 10</b><span>One deck donated to a DMV youth program for every ten sold.</span></div>
+        <div class="pl-row"><b>PG &amp; MoCo</b><span>Prince George's and Montgomery County, Maryland — where the free sessions run.</span></div>
+        <div class="pl-row"><b>$0</b><span>What a kid ever pays. No tryouts, no fees, no barriers.</span></div>
+        <p class="pl-note">Written into how the company operates — not a campaign.</p>
+      </aside>
     </div>
   </div>
 </div>
@@ -1082,31 +1181,29 @@ footer{background:var(--moss)}
     </div>
     <div class="foot-grid">
       <div class="foot-col">
-        <h5>The Decks</h5>
+        <h5>Product</h5>
+        <a onclick="showPage('deck')">All decks</a>
         <a onclick="showPage('deck')">How it works</a>
-        <a onclick="showPage('science')">The science</a>
         <a onclick="showPage('videos')">Video hub</a>
         <a onclick="preorder()">Reserve a deck</a>
       </div>
       <div class="foot-col">
-        <h5>Explore</h5>
-        <a onclick="showPage('deck')">All decks</a>
+        <h5>Learn</h5>
         <a onclick="showPage('science')">The science</a>
-        <a onclick="showPage('videos')">Video hub</a>
-        <a onclick="preorder()">Reserve a deck</a>
+        <a onclick="showPage('news')">Newsletter</a>
+        <a onclick="showPage('disclaimer')">Health &amp; safety</a>
       </div>
       <div class="foot-col">
         <h5>Company</h5>
         <a onclick="showPage('mission')">The Mission</a>
         <a onclick="showPage('about')">About Crawl</a>
         <a onclick="showPage('donate')">Donate</a>
-        <a onclick="showPage('news')">Newsletter</a>
       </div>
       <div class="foot-col">
         <h5>Follow</h5>
-        <a onclick="alert('Instagram launches with daily drill Reels.')">Instagram</a>
-        <a onclick="alert('TikTok launches with daily drill clips.')">TikTok</a>
-        <a onclick="alert('YouTube launches with the video library.')">YouTube</a>
+        <a onclick="notify('Instagram launches with the deck — daily drill Reels.')">Instagram</a>
+        <a onclick="notify('TikTok launches with the deck — daily drill clips.')">TikTok</a>
+        <a onclick="notify('YouTube launches with the full video library.')">YouTube</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1114,7 +1211,6 @@ footer{background:var(--moss)}
         <a onclick="showPage('terms')">Terms</a>
         <a onclick="showPage('privacy')">Privacy</a>
         <a onclick="openPrefs()">Privacy choices</a>
-        <a onclick="exportLeads()">Export saved signups</a>
         <a onclick="showPage('disclaimer')">Disclaimer</a>
       </div>
       <div class="foot-copy">© 2026 CRAWL · BUILT BY A SPORTS PERFORMANCE SPECIALIST (MS, CISSN)</div>
@@ -1243,6 +1339,7 @@ const DECK_META = {
 let cart={};
 let RESEARCH_LIVE=null;
 (function loadResearch(){
+  if(location.protocol==="file:") return;
   fetch("/api/research").then(r=>r.ok?r.json():null).then(j=>{
     if(j && Object.keys(j).length){ RESEARCH_LIVE=j; }
   }).catch(()=>{});
@@ -1287,7 +1384,7 @@ function openDeck(k){
     <div class="dv-hero" style="--da:${M.accent}">
       <div>
         <div class="kicker" style="color:${M.accent}">${D.name} · Vol. 1 · $44</div>
-        <h1 style="font-size:clamp(30px,6vw,52px)">${M.tag}</h1>
+        <h1 style="font-size:clamp(32px,5.5vw,60px)">${M.tag}</h1>
         <p class="sec-sub" style="max-width:520px">${M.pitch}</p>
         <div class="hero-cta" style="margin-top:16px">
           <button class="btn blue" onclick="preorder('${k}')">Preorder ${D.name} — $44</button>
@@ -1298,12 +1395,12 @@ function openDeck(k){
       <div class="dv-box">${boxShot(k,"big")}</div>
     </div>
     <div class="inside-strip">
-      <div class="tile in-item"><b>52</b><span>drill cards, linen finish, four suits</span></div>
-      <div class="tile in-item"><b>208</b><span>filmed progressions — every card at 4 levels</span></div>
-      <div class="tile in-item"><b>QR</b><span>on every card face — scan, watch, train</span></div>
-      <div class="tile in-item"><b>MAP</b><span>fold-out wall poster to track all 208</span></div>
+      <div class="in-item"><b>52</b><span>drill cards, linen finish, four suits</span></div>
+      <div class="in-item"><b>208</b><span>filmed progressions — every card at 4 levels</span></div>
+      <div class="in-item"><b>QR</b><span>on every card face — scan, watch, train</span></div>
+      <div class="in-item"><b>MAP</b><span>fold-out wall poster to track all 208</span></div>
     </div>
-    <div class="sec-head" style="margin-top:44px"><div class="kicker">Three of the 52</div><h2>Sample the deck</h2></div>
+    <div class="sec-head" style="margin-top:64px"><div class="kicker">Three of the 52</div><h2>Sample the deck</h2></div>
     <div class="hero-cards dv-cards">${D.cards.map(c=>`
       <div class="pcard${c.lead?" lead":""}" style="--sc:${c.sc}">
         <div class="pc-frame"></div>
@@ -1316,17 +1413,15 @@ function openDeck(k){
         <div class="pc-foot"><div class="pc-pips">${[1,2,3,4].map(n=>`<i${n<=c.pips?' class="on"':''}></i>`).join("")}</div><span>${c.dose}</span></div>
       </div>`).join("")}</div>
     <div class="sec-head" id="dv-sci" style="margin-top:50px"><div class="kicker">Why it works</div><h2>The science behind ${D.name}</h2></div>
-    <div class="sci-grid">${M.sci.map((s,i)=>`<div class="tile sci-card" style="--da:${M.accent}"><span class="sci-num">0${i+1}</span><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join("")}</div>
+    <div class="sci-grid">${M.sci.map(s=>`<div class="sci-card"><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join("")}</div>
     <div class="sec-head" style="margin-top:50px"><div class="kicker">The film system</div><h2>Every drill, four levels deep</h2></div>
-    <div class="vid-strip">${[1,2,3,4].map(n=>`<div class="vid-tile" style="--da:${M.accent}" onclick="showPage('videos')"><span class="vt-lvl">Level ${n}</span><span class="vt-play">▶</span><span class="vt-cap">${["Start today","Build the base","Load it","Full expression"][n-1]}</span></div>`).join("")}</div>
+    <div class="lvl-row">${[["Start today","Stable and slow — learn the shape with full control."],["Build the base","A smaller base, added motion — the pattern under light stress."],["Load it","Speed, surfaces, and honest reps — capacity is built here."],["Full expression","The drill at game speed, running without thought."]].map((L,i)=>`<div class="lvl-cell" onclick="showPage('videos')"><span class="lvl-k">Level ${i+1}</span><h4>${L[0]}</h4><p>${L[1]}</p><span class="lvl-go">Watch the demos →</span></div>`).join("")}</div>
     <div class="sec-head" style="margin-top:50px"><div class="kicker">Keep reading</div><h2>The research behind it</h2></div>
     <p class="sec-sub" style="max-width:640px">We don't ask you to take our word for it. These are the sources — read them, argue with them, bring them to your doctor.</p>
-    <div class="read-list">${readingFor(k).map(r=>`
-      <a class="tile read-item" style="--da:${M.accent}" href="${r.u}" target="_blank" rel="noopener noreferrer">
-        <span class="rd-src">${r.s}</span>
-        <span class="rd-title">${r.t}</span>
-        <span class="rd-note">${r.n}</span>
-        <span class="rd-go">Read it →</span>
+    <div class="cite-list">${readingFor(k).map(r=>`
+      <a class="cite" href="${r.u}" target="_blank" rel="noopener noreferrer">
+        <div><h4>${r.t}</h4><p>${r.n}</p></div>
+        <span class="cite-src">${r.s}</span>
       </a>`).join("")}</div>
     <p class="qr-note" style="margin-top:14px">Links open on the publisher's site. Educational reading, not medical advice.</p>
     <div class="sec-head" style="margin-top:50px"><div class="kicker">Questions</div><h2>Before you reserve</h2></div>
@@ -1365,6 +1460,13 @@ function reserveBox(){
 }
 
 const PAGES=["home","deck","science","videos","mission","about","donate","news","terms","privacy","disclaimer","deckview","order"];
+let _toastT=null;
+function notify(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(_toastT);
+  _toastT=setTimeout(()=>t.classList.remove('show'),2600);
+}
 function hideAll(){
   PAGES.forEach(x=>document.getElementById("page-"+x).classList.add("hidden"));
 }
@@ -1385,11 +1487,21 @@ function toggleMenu(force){
 function preorder(k){ if(k&&DECKS[k]) cart[k]=true; showPage("order"); renderOrder(); }
 
 /* ===== LEAD CAPTURE PIPELINE =====
-   Set LEAD_ENDPOINT to your Google Apps Script Web App URL (or any POST endpoint).
-   Until it is set, leads are held in this browser and can be exported from the
-   footer "Export saved signups" link — nothing is ever lost during testing. */
-const LEAD_ENDPOINT = "/api/lead";  // Vercel serverless route → Microsoft Excel
-const LEAD_MODE     = "cors";       // same-origin route: real responses, confirmed delivery
+   ▼▼▼ PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BETWEEN THE QUOTES BELOW ▼▼▼
+   It looks like: https://script.google.com/macros/s/AKfy..../exec
+   Setup instructions: google-apps-script-setup.md in this repo.
+
+   Until it is set, every signup is still saved in this browser and can be
+   downloaded from the footer's "Export saved signups" link — nothing is lost.
+
+   To switch to Microsoft Excel later, change these two lines back to
+   "/api/lead" and "cors". Nothing else in the site needs to change. */
+/* Supabase (client-side): URL + publishable key only. The publishable key is
+   designed to be public; the SECRET key must never appear in this file. */
+const SUPA_URL = "https://mbvayrbjqbuskmfdzbiv.supabase.co";
+const SUPA_KEY = "sb_publishable_weHwTChptExLp_IQ3nwuJg_H3OYqzJs";
+const LEAD_ENDPOINT = "";           // optional extra endpoint (Apps Script / /api/lead)
+const LEAD_MODE     = "no-cors";
 
 function leadPayload(email, type, extra){
   return Object.assign({
@@ -1412,11 +1524,31 @@ function stashLead(p){
 function submitLead(email, type, extra){
   const p = leadPayload(email, type, extra);
   stashLead(p);
-  if(!LEAD_ENDPOINT) return Promise.resolve(true);
-  const opts = LEAD_MODE==="no-cors"
-    ? { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(p) }
-    : { method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body:JSON.stringify(p) };
-  return fetch(LEAD_ENDPOINT, opts).then(()=>true).catch(()=>false);
+  const jobs = [];
+  if(SUPA_URL && SUPA_KEY){
+    jobs.push(fetch(SUPA_URL + "/rest/v1/leads", {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey": SUPA_KEY,
+        "Authorization": "Bearer " + SUPA_KEY,
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({
+        email: p.email,
+        type: p.type,
+        source: p.source,
+        extra: { decks:p.decks, referrer:p.referrer, user_agent:p.user_agent, remember_consent:p.remember_consent }
+      })
+    }).catch(()=>false));
+  }
+  if(LEAD_ENDPOINT){
+    const opts = LEAD_MODE==="no-cors"
+      ? { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(p) }
+      : { method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body:JSON.stringify(p) };
+    jobs.push(fetch(LEAD_ENDPOINT, opts).catch(()=>false));
+  }
+  return Promise.all(jobs).then(()=>true).catch(()=>false);
 }
 function exportLeads(){
   let all=[];
@@ -1458,7 +1590,7 @@ const VIDS=[
 function renderVids(){
   const g=document.getElementById("vidgrid"); if(!g) return; g.innerHTML="";
   VIDS.forEach(v=>{
-    g.innerHTML+=`<div class="tile hov vid ${v.free?"free":"locked"}" style="--sc:${v.sc}" onclick="${v.free?"alert('Free videos post here after the filming sessions.')":"alert('Levels 2\\u20134 unlock with the deck.')"}">
+    g.innerHTML+=`<div class="tile hov vid ${v.free?"free":"locked"}" style="--sc:${v.sc}" onclick="${v.free?"notify('Free videos post here after the filming sessions.')":"notify('Levels 2\\u20134 unlock with the deck.')"}">
       <div class="vthumb">${v.free?PLAY:LOCKSVG}<span class="flag">${v.free?"Free":"Deck only"}</span></div>
       <div class="vbody"><h4>${v.nm}</h4><div class="vmeta">${v.lvl}</div></div>
     </div>`;
@@ -1466,6 +1598,16 @@ function renderVids(){
 }
 renderVids();
 </script>
+<div id="promo-veil" class="hidden"></div>
+<div id="promo" class="hidden" role="dialog" aria-modal="true" aria-label="Founders offer">
+  <button class="promo-x" onclick="closePromo()" aria-label="Close">✕</button>
+  <div class="kicker">Founders' list</div>
+  <h3>Take 10% off your first deck.</h3>
+  <p>Join the list and your code arrives the day preorders open — along with one drill a week to train in the meantime.</p>
+  <div class="row"><input type="email" id="promo-email" placeholder="you@email.com"><button class="btn blue" onclick="promoSubmit()">Claim 10% off</button></div>
+  <p class="promo-fine">One code per person, good on any deck. No spam — unsubscribe anytime.</p>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
 <div id="prefs-veil" class="hidden"></div>
 <div id="prefs" class="hidden">
   <div class="pf-col">
@@ -1502,6 +1644,7 @@ function closePrefs(chosen){
   document.getElementById("prefs").classList.add("hidden");
   document.getElementById("prefs-veil").classList.add("hidden");
   if(!chosen){ try{ sessionStorage.setItem("crawl_prefs_snooze","1"); }catch(e){} }
+  setTimeout(maybeShowPromo, 900);
 }
 function openPrefs(){
   const p=loadPrefs();
@@ -1509,9 +1652,41 @@ function openPrefs(){
   document.getElementById("prefs").classList.remove("hidden");
   document.getElementById("prefs-veil").classList.remove("hidden");
 }
+/* ===== FIRST-VISIT OFFER ===== */
+let _promoShown=false;
+function _promoSeen(){ try{ return !!localStorage.getItem("crawl_promo_v1"); }catch(e){ return _promoShown; } }
+function _promoMark(){ _promoShown=true; try{ localStorage.setItem("crawl_promo_v1","1"); }catch(e){} }
+function maybeShowPromo(){
+  if(_promoShown||_promoSeen()) return; _promoShown=true;
+  document.getElementById("promo-veil").classList.remove("hidden");
+  const m=document.getElementById("promo");
+  m.classList.remove("hidden");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>m.classList.add("in")));
+  document.getElementById("promo-veil").addEventListener("click", closePromo, {once:true});
+}
+function closePromo(){
+  _promoMark();
+  const m=document.getElementById("promo");
+  m.classList.remove("in");
+  setTimeout(()=>{ m.classList.add("hidden"); document.getElementById("promo-veil").classList.add("hidden"); },180);
+}
+function promoSubmit(){
+  const e=document.getElementById("promo-email");
+  if(!e.value.includes("@")){ e.placeholder="Enter a valid email"; e.value=""; return; }
+  submitLead(e.value,"promo10");
+  document.querySelector("#promo .row").outerHTML =
+    '<p style="margin-top:20px;font-weight:700;color:var(--cobalt)">✓ You&#39;re in — your 10% code arrives when preorders open.</p>';
+  _promoMark();
+  setTimeout(closePromo, 2200);
+}
+document.addEventListener("keydown",function(e){
+  var m=document.getElementById("promo");
+  if(e.key==="Escape" && m && !m.classList.contains("hidden")) closePromo();
+});
 (function(){
   let snoozed=false; try{ snoozed=!!sessionStorage.getItem("crawl_prefs_snooze"); }catch(e){}
   if(!loadPrefs() && !snoozed) setTimeout(openPrefs, 700);
+  else setTimeout(maybeShowPromo, 1600);
 })();
 </script>
 </body>
